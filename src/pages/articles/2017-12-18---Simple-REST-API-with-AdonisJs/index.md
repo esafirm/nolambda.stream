@@ -7,7 +7,7 @@ path: '/posts/simple-rest-api-with-adonis-js/'
 category: 'Tech'
 tags:
   - 'Tech'
-description: 'On the last ADB meetup, we have a conversation about what framework we usually use in creating a REST API. Then, Adonis.Js is being mentioned. I know Adonis but haven't got a chance to test it, so let's test it now!'
+description: "On the last ADB meetup, we have a conversation about what framework we usually use in creating a REST API. Then, Adonis.Js is being mentioned. I know Adonis but haven't got a chance to test it, so let's test it now!"
 ---
 
 On the last [ADB](https://github.com/AndroidDeveloperBandung/) meetup, we have a conversation about what framework we usually use in creating a REST API. Then, [Adonis.Js](adonisjs.com) is being mentioned. I know Adonis but haven't got a chance to test it, so let's test it now! 
