@@ -9,7 +9,7 @@ tags:
   - 'Javascript'
   - 'React'
   - 'React Native'
-description: 'When i started React Native app development, it started just fine. I love how composition is used rather than inheritance. I prefer…'
+description: "When i started React Native app development, it started just fine. I love how composition is used rather than inheritance. I prefer…"
 ---
 
 When i started React Native app development, it started just fine. I love how composition is used rather than inheritance. I prefer the [functional component](https://facebook.github.io/react/docs/components-and-props.html), to me it is more familiar than a [Javascript Class](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes). It is just a simple `f(x) = y`.Then, times come when i have to create a click handler in class

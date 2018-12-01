@@ -8,7 +8,7 @@ category: 'Tech'
 tags:
   - 'Kotlin'
   - 'VSCode'
-description: 'Suppose you want to test some Kotlin code, but it is too simple for you so you don't want to create a project in your IDE and it also too complex to put it in your [REPL]'
+description: "Suppose you want to test some Kotlin code, but it is too simple for you so you don't want to create a project in your IDE and it also too complex to put it in your REPL"
 ---
 
 Suppose you want to test some Kotlin code, but it is too simple for you so you don't want to create a project in your IDE and it also too complex to put it in your [REPL](https://nolambda.stream/experimenting-kotlin-without-editor/)
