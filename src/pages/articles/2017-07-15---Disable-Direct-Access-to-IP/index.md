@@ -8,7 +8,7 @@ category: 'Tech'
 tags:
   - 'Nginx'
   - 'VPS'
-description: 'Often times we don't want to expose our server IP address to public. We just want to access our domain address.'
+description: "Often times we don't want to expose our server IP address to public. We just want to access our domain address."
 ---
 
 Often times we don't want to expose our server IP address to public. We just want to access our domain address.
