@@ -1,15 +1,15 @@
 ---
 title: "Easy & Free HTTPS with Let's Encrypt"
-date: "2017-07-13T12:30:45.0Z"
+date: '2017-07-13T12:30:45.0Z'
 layout: post
 draft: false
-path: "/posts/free-https-with-lets-encrypt/"
-category: "Tech"
+path: '/posts/free-https-with-lets-encrypt/'
+category: 'Tech'
 tags:
- - "HTTPS"
- - "SSL"
- - "VPS"
-description: ""
+  - 'HTTPS'
+  - 'SSL'
+  - 'VPS'
+description: 'HTTPS make the internet better and safer. It allows us to communicate securely in insecure channel such as public Wi-Fi or Internet Cafe.'
 ---
 
 HTTPS make the internet better and safer. It allows us to communicate securely in insecure channel such as public Wi-Fi or Internet Cafe.
@@ -33,18 +33,18 @@ $ sudo apt-get update
 $ sudo apt-get install software-properties-common
 $ sudo add-apt-repository ppa:certbot/certbot
 $ sudo apt-get update
-$ sudo apt-get install python-certbot-nginx 
+$ sudo apt-get install python-certbot-nginx
 ```
 
 For others web server or OS please visit [Certbot Website](https://certbot.eff.org/)
 
 **2. Installing Certificate**
 
-Now with `Certbot`, we can automatically get our certificate and edit `Nginx` configuration! 
+Now with `Certbot`, we can automatically get our certificate and edit `Nginx` configuration!
 
 ```
 $ sudo certbot --nginx
-``` 
+```
 
 Follow the instruction and submit all the required data.
 
@@ -70,9 +70,3 @@ $ sudo certbot --nginx --cert-only
 For others web server or OS please go to [Certbot Website](https://certbot.eff.org/)
 
 Until next time, cao ~
-
-
-
-
-
- 

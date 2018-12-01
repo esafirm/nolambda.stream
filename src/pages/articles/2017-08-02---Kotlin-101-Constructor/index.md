@@ -7,7 +7,8 @@ path: "/posts/kotlin-101-consturctors/"
 category: "Tech"
 tags:
  - "Kotlin"
-description: ""
+description: "If you're familiar with OOP then you must be familiar with constructors.
+A constructors is a special method of a `class` that initialize an object of that type. Simply put, a constructors is a function that return your object."
 ---
 
 If you're familiar with OOP then you must be familiar with constructors. 

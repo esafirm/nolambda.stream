@@ -6,13 +6,14 @@ draft: false
 path: '/posts/disable-direct-access-to-your-ip/'
 category: 'Tech'
 tags:
-  - 'Tech'
-description: ''
+  - 'Nginx'
+  - 'VPS'
+description: 'Often times we don't want to expose our server IP address to public. We just want to access our domain address.'
 ---
 
 Often times we don't want to expose our server IP address to public. We just want to access our domain address.
 
-If you're using [Nginx](https://www.nginx.com) like me, there's a simple workaround for this problem. 
+If you're using [Nginx](https://www.nginx.com) like me, there's a simple workaround for this problem.
 
 Just add another `server` block in your config file under `/etc/nginx/site-available` like this
 
