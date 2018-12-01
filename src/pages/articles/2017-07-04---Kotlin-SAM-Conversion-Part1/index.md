@@ -7,7 +7,7 @@ path: "/posts/lambda-and-sam-conversion-in-kotlin-part-1/"
 category: "Kotlin"
 tags:
  - "Tech"
-description: ""
+description: "I love lambda expression. Whether it's in Java, Kotlin, or Javascript (arrow function). It helps me remove verbosity from my code"
 ---
 
 I love lambda expression. Whether it's in Java, Kotlin, or Javascript (arrow function). It helps me remove verbosity from my code, for example:
