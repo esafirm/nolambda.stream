@@ -4,9 +4,9 @@ date: "2017-07-04T11:09:01.0Z"
 layout: post
 draft: false
 path: "/posts/kotlin_coroutines_introduction/"
-category: "Kotlin"
+category: "Tech"
 tags:
- - "Tech"
+ - "Kotlin"
 description: "Just like async/await in Javascript and C#, Kotlin Couroutines is trying to make asyncrhronous programming easier by enabling you to write async code with imperative style"
 ---
 

@@ -3,17 +3,15 @@ import get from 'lodash/get'
 import { Link } from 'gatsby'
 import Menu from '../Menu'
 import Links from '../Links'
-import profilePic from '../../pages/photo.jpg'
 import './style.scss'
+
+const gravatarProfile = 'https://www.gravatar.com/avatar/dcafc93100ece4c0582543b020a63ec8?s=250&d=mm&r=x'
 
 class Sidebar extends React.Component {
   render() {
     const { location } = this.props
     const {
-      author,
-      subtitle,
-      copyright,
-      menu,
+      author, subtitle, copyright, menu,
     } = this.props.data.site.siteMetadata
     const isHomePage = get(location, 'pathname', '/') === '/'
 
@@ -22,7 +20,7 @@ class Sidebar extends React.Component {
       <div>
         <Link to="/">
           <img
-            src={profilePic}
+            src={gravatarProfile}
             className="sidebar__author-photo"
             width="75"
             height="75"

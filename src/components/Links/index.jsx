@@ -35,15 +35,15 @@ class Links extends React.Component {
               <i className="icon-github" />
             </a>
           </li>
-          <li className="links__list-item">
-            <a
-              href={`https://www.vk.com/${links.vk}`}
-              target="_blank"
-              rel="noopener noreferrer"
-            >
-              <i className="icon-vkontakte" />
-            </a>
-          </li>
+
+          {/* Only show VK if it exists */
+          links.vk ? (
+            <li className="links__list-item">
+              <a href={`https://www.vk.com/${links.vk}`} target="_blank" rel="noopener noreferrer">
+                <i className="icon-vkontakte" />
+              </a>
+            </li>
+          ) : null}
         </ul>
         <ul className="links__list">
           <li className="links__list-item">
@@ -57,13 +57,16 @@ class Links extends React.Component {
             </a>
           </li>
         </ul>
-        <ul className="links__list">
-          <li className="links__list-item">
-            <a href={links.rss}>
-              <i className="icon-rss" />
-            </a>
-          </li>
-        </ul>
+        {/* Only show RSS if it exists */
+        links.rss ? (
+          <ul className="links__list">
+            <li className="links__list-item">
+              <a href={links.rss}>
+                <i className="icon-rss" />
+              </a>
+            </li>
+          </ul>
+        ) : null}
       </div>
     )
   }
