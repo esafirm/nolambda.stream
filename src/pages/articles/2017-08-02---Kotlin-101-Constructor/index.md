@@ -148,6 +148,6 @@ animal.name         // return "chicken"
 animal.isChicken()  // return true
 ```
 More compact isn't i? 
-For another example on this, please find it on my [Github](https://github.com/esafirm/kotlin-playground/blob/master/src/main/kotlin/nolambda.playground/constructors/ConstructorsPlayground.kt) \ud83d\udc19
+For another example on this, please find it on my [Github](https://github.com/esafirm/kotlin-playground/blob/master/src/main/kotlin/nolambda.playground/constructors/ConstructorsPlayground.kt) 🐙
 
 Up next, we're gonna talk about inheritance in Kotlin. Stay tune, cao ~ 👋

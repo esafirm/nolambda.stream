@@ -57,7 +57,7 @@ Select the appropriate numbers separated by commas and/or spaces, or leave input
 blank to select all options shown (Enter 'c' to cancel):
 ```
 
-That's pretty much it, your site should be accessible by HTTPS now! \ud83d\udd10
+That's pretty much it, your site should be accessible by HTTPS now! 🔐
 
 **Extra**
 
