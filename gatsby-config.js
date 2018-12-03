@@ -5,8 +5,7 @@ module.exports = {
   siteMetadata: {
     url: 'https://nolambda.stream',
     title: 'I Have no Lambda',
-    subtitle:
-      'Technical Stuff. Rants',
+    subtitle: 'Technical Stuff. Rants',
     copyright: '© All rights reserved.',
     disqusShortname: '',
     menu: [
@@ -199,6 +198,12 @@ module.exports = {
           }),
         ],
         precision: 8,
+      },
+    },
+    {
+      resolve: 'gatsby-plugin-google-analytics',
+      options: {
+        trackingId: 'UA-102328330-1',
       },
     },
   ],
