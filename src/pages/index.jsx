@@ -4,6 +4,7 @@ import { graphql } from 'gatsby'
 import Layout from '../components/Layout'
 import Post from '../components/Post'
 import Sidebar from '../components/Sidebar'
+import favicon from './favicon.ico'
 
 class IndexRoute extends React.Component {
   render() {
@@ -20,6 +21,7 @@ class IndexRoute extends React.Component {
           <Helmet>
             <title>{title}</title>
             <meta name="description" content={subtitle} />
+            <link rel="shortcut icon" type="image/png" href={favicon} />
           </Helmet>
           <Sidebar {...this.props} />
           <div className="content">
