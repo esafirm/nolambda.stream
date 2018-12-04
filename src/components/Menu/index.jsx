@@ -2,6 +2,8 @@ import React from 'react'
 import { Link } from 'gatsby'
 import './style.scss'
 
+import PortFolioMenu from './PortfolioMenu'
+
 class Menu extends React.Component {
   render() {
     const menu = this.props.data
@@ -19,6 +21,7 @@ class Menu extends React.Component {
             </Link>
           </li>
         ))}
+        <PortFolioMenu />
       </ul>
     )
 
