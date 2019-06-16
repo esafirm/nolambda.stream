@@ -14,13 +14,13 @@ module.exports = {
         path: '/',
       },
       {
-        label: 'About me',
-        path: '/about/',
-      },
-      {
         label: 'Contact me',
         path: '/contact/',
       },
+      {
+        label: 'Talks & Workshops',
+        path: '/talks/'
+      }
     ],
     author: {
       name: 'Esa Firman',
