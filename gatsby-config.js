@@ -3,7 +3,7 @@ const pxtorem = require('postcss-pxtorem')
 
 module.exports = {
   siteMetadata: {
-    siteUrl: 'https://nolambda.stream',
+    siteUrl: `https://nolambda.stream`,
     title: 'I Have no Lambda',
     subtitle: 'Technical Stuff. Rants',
     copyright: '© All rights reserved.',
