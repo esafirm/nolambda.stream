@@ -4,6 +4,8 @@ layout: page
 path: "/talks"
 ---
 
+<p><strong>Kotlin/Everywhere Bandung</strong>, Sept 28, 2019 - <a href="https://docs.google.com/presentation/d/1-wji-2FQgaIaItNZW5MLV_90ZF6Jope1uOz60Si-e_Y/edit?usp=sharing">Building DSL in Kotlin</a></p>
+
 <p><strong>Bukalapak Android Guild</strong>, Jul 31, 2019 - <a href="https://docs.google.com/presentation/d/1w61Zs5-qv6dwEBjrw0GsDyTSdMPYmzDea7j_Njj1Z5Q">Android Performance, and How to Profile It</a></p>
 
 <p><strong>FOSTI UMS, Seminar Nasional</strong>, Apr 21, 2019 - <a href="https://docs.google.com/presentation/d/1xmNaF31SRjblg4WGwzcJjHi89yjwupmrPuuR39Kao1U/edit?usp=sharing">Secure Android Applications Workshop</a></p>
