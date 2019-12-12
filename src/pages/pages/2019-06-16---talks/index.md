@@ -4,6 +4,10 @@ layout: page
 path: "/talks"
 ---
 
+<p><strong>Devfest 2019 Bandung</strong>, Dec 8, 2019 - <a href="https://docs.google.com/presentation/d/1w61Zs5-qv6dwEBjrw0GsDyTSdMPYmzDea7j_Njj1Z5Q/edit?usp=sharing">Android Performance, and How to Profile It</a></p>
+
+<p><strong>Devfest 2019 Jakarta</strong>, Nov 23, 2019 - <a href="https://docs.google.com/presentation/d/1CitAj5FNmboKvDkWpz_hLFXQpMU3hBSpyMmPpDNIWyc/edit?usp=sharing">Handling The New Gesture Navigation</a></p>
+
 <p><strong>Kotlin/Everywhere Bandung</strong>, Sept 28, 2019 - <a href="https://docs.google.com/presentation/d/1-wji-2FQgaIaItNZW5MLV_90ZF6Jope1uOz60Si-e_Y/edit?usp=sharing">Building DSL in Kotlin</a></p>
 
 <p><strong>Bukalapak Android Guild</strong>, Jul 31, 2019 - <a href="https://docs.google.com/presentation/d/1w61Zs5-qv6dwEBjrw0GsDyTSdMPYmzDea7j_Njj1Z5Q">Android Performance, and How to Profile It</a></p>
