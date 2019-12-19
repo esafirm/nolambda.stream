@@ -1,16 +1,10 @@
 #!/usr/bin/env bash
 set -e
 
-TITLE=$1
-
-help() {
-    echo "Usage:"
-    echo "./scripts/article.sh <title>"
-}
+read -p "Enter your title: " TITLE
 
 if [[ -z ${TITLE} ]]; then
     echo "Title should not be empty"
-    help
     exit 1
 fi
 
