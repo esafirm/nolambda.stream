@@ -25,6 +25,10 @@ Dir.mkdir(NEW_PATH)
 `cp -r #{TEMPALTE_PATH} #{NEW_PATH}`
 
 TARGET = "#{NEW_PATH}/index"
-`sed "s/{{DATE}}/#{ARTICLE_DATE}/g" #{TARGET} > #{TARGET}`
+
+puts "Target: #{TARGET}"
+puts "Article Date: #{ARTICLE_DATE}"
+
+`sed -i '' "s/{{DATE}}/#{ARTICLE_DATE}/g" #{TARGET}`
 
 puts "Your new article is ready!"
