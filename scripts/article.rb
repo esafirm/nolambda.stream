@@ -13,7 +13,7 @@ ARTICLE_DATE = `date -u +"%Y-%m-%dT%H:%M:%SZ"`.chomp
 FORMATTED_DATE = `date +%F`.chomp
 TEMPALTE_PATH = "temp---template/"
 
-NEW_PATH = "#{FORMATTED_DATE}---#{DRAFT_KEY}---#{TITLE}"
+NEW_PATH = "temp---#{DRAFT_KEY}---#{FORMATTED_DATE}---#{TITLE}".gsub(" ", "-")
 
 puts "new path #{NEW_PATH}"
 
