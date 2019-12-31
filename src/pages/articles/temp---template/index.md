@@ -1,10 +1,10 @@
 ---
-title: Upgraded to Gatsby v2
+title: {{TITLE}}
 date: "{{DATE}}"
 layout: post
-draft: false
-path: "/posts/upgraded-to-gatsby-v2/"
-category: "Gatsby"
+draft: true
+path: "/posts/{{PATH}}/"
+category: "Journal"
 tags:
   - "Gatsby"
   - "Web Development"

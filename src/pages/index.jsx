@@ -69,7 +69,6 @@ export const pageQuery = graphql`
             categorySlug
           }
           frontmatter {
-            title
             date
             category
             description

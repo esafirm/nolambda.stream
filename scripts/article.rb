@@ -24,11 +24,14 @@ Dir.mkdir(NEW_PATH)
 
 `cp -r #{TEMPALTE_PATH} #{NEW_PATH}`
 
-TARGET = "#{NEW_PATH}/index"
+TARGET = "#{NEW_PATH}/index.md"
 
-puts "Target: #{TARGET}"
-puts "Article Date: #{ARTICLE_DATE}"
+def replaceInFile(placeholder, value)
+  `sed -i '' "s/#{placeholder}/#{value}/g" #{TARGET}`
+end
 
-`sed -i '' "s/{{DATE}}/#{ARTICLE_DATE}/g" #{TARGET}`
+replaceInFile("{{DATE}}", ARTICLE_DATE)
+replaceInFile("{{TITLE}}", TITLE)
+replaceInFile("{{PATH}}", TITLE.downcase.gsub(" ", "-"))
 
 puts "Your new article is ready!"
