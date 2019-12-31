@@ -2,7 +2,7 @@
 title: "Docker Startup Script - Stay Interactive"
 date: "2019-12-31T01:09:24Z"
 layout: post
-draft: true
+draft: false
 path: "/posts/docker-startup-script/"
 category: "Tech"
 tags:
