@@ -68,7 +68,7 @@ fi
 
 And set this script as your entrypoint
 
-```
+```bash
 ## Copy the script to PATH, don't forget to add executable
 COPY entrypoint.sh bin/entrypoint.sh
 
