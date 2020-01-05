@@ -2,7 +2,7 @@
 title: "Gradle Tips and Trick #1"
 date: "2020-01-05T08:26:05Z"
 layout: post
-draft: true
+draft: false
 path: "/posts/gradle-tips-and-trick-#1/"
 category: "Tech"
 tags:
