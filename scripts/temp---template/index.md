@@ -1,10 +1,10 @@
 ---
-title: {{TITLE}}
+title: "{{TITLE}}"
 date: "{{DATE}}"
 layout: post
 draft: true
 path: "/posts/{{PATH}}/"
-category: "Journal"
+category: "Tech"
 tags:
   - "Gatsby"
   - "Web Development"
