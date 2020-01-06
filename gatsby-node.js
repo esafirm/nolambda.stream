@@ -91,19 +91,24 @@ exports.createPages = ({ graphql, actions }) => {
   })
 }
 
+function createSlug(node) {
+  const parsedFilePath = path.parse(node.absolutePath)
+  return `/${parsedFilePath.dir.split('---')[1]}/`
+}
+
 exports.onCreateNode = ({ node, actions, getNode }) => {
   const { createNodeField } = actions
 
   if (node.internal.type === 'File') {
-    const parsedFilePath = path.parse(node.absolutePath)
-    const slug = `/${parsedFilePath.dir.split('---')[1]}/`
+    const slug = createSlug(node)
     createNodeField({ node, name: 'slug', value: slug })
   } else if (
     node.internal.type === 'MarkdownRemark' &&
     typeof node.slug === 'undefined'
   ) {
+
     const fileNode = getNode(node.parent)
-    let slug = fileNode.fields.slug
+    let slug = createSlug(fileNode)
     if (typeof node.frontmatter.path !== 'undefined') {
       slug = node.frontmatter.path
     }

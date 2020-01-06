@@ -3,11 +3,12 @@ title: "Gradle Tips and Trick #1"
 date: "2020-01-05T08:26:05Z"
 layout: post
 draft: false
-path: "/posts/gradle-tips-and-trick-#1/"
+path: "/posts/gradle-tips-and-trick-1/"
 category: "Tech"
 tags:
   - "Gradle"
   - "Android"
+  - "ByteSize"
 description: "The first series of Gradle tips and tricks that might be helpful for you"
 ---
 
