@@ -13,7 +13,8 @@
     "deploy": "rm -rf public && gatsby clean && gatsby build --prefix-paths",
     "new": "./scripts/article.rb",
     "draft": "./scripts/draft_list.rb",
-    "clearDraft": "./scripts/clear_draft.rb"
+    "clearDraft": "./scripts/clear_draft.rb",
+    "publish": "./scripts/publish.rb"
   },
   "repository": "git+https://github.com/alxshelepenok/gatsby-starter-lumen.git",
   "keywords": [

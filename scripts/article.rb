@@ -1,20 +1,19 @@
 #!/usr/bin/env ruby
+# frozen_string_literal: true
 
-require_relative "helpers.rb"
+require_relative 'helpers.rb'
 
-print "Enter your title: "
+print 'Enter your title: '
 TITLE = gets.chomp
 
-if TITLE.empty?
-  abort "Title should not be empty"
-end
+abort 'Title should not be empty' if TITLE.empty?
 
-ARTICLE_DIR = "src/pages/articles"
-ARTICLE_DATE = `date -u +"%Y-%m-%dT%H:%M:%SZ"`.chomp
-FORMATTED_DATE = `date +%F`.chomp
-TEMPALTE_PATH = "scripts/temp---template"
+FORMATTED_DATE = CURRENT_DATE_SIMPLE
+ARTICLE_DATE = CURRENT_DATE
 
-NEW_PATH = "temp---#{DRAFT_KEY}---#{FORMATTED_DATE}---#{TITLE}".gsub(" ", "-")
+TEMPALTE_PATH = 'scripts/temp---template'
+
+NEW_PATH = "temp---#{DRAFT_KEY}---#{FORMATTED_DATE}---#{TITLE}".gsub(' ', '-')
 
 puts "new path #{NEW_PATH}"
 
@@ -27,12 +26,12 @@ Dir.chdir(ARTICLE_DIR)
 
 TARGET = "#{NEW_PATH}/index.md"
 
-def replaceInFile(placeholder, value)
+def replace_in_file(placeholder, value)
   `sed -i '' "s/#{placeholder}/#{value}/g" #{TARGET}`
 end
 
-replaceInFile("{{DATE}}", ARTICLE_DATE)
-replaceInFile("{{TITLE}}", TITLE)
-replaceInFile("{{PATH}}", TITLE.downcase.gsub(" ", "-"))
+replace_in_file('{{DATE}}', ARTICLE_DATE)
+replace_in_file('{{TITLE}}', TITLE)
+replace_in_file('{{PATH}}', TITLE.downcase.gsub(' ', '-'))
 
-puts "Your new article is ready!"
+puts 'Your new article is ready!'
