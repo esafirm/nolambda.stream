@@ -12,7 +12,7 @@
     "format": "prettier --write './*.js' 'src/**/*.js' 'src/**/*.jsx'",
     "deploy": "rm -rf public && gatsby clean && gatsby build --prefix-paths",
     "new": "./scripts/article.rb",
-    "draft": "./scripts/draft_list.rb",
+    "draft": "./scripts/draft_list.rb print",
     "clearDraft": "./scripts/clear_draft.rb",
     "publish": "./scripts/publish.rb"
   },
