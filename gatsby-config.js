@@ -7,7 +7,7 @@ module.exports = {
     title: 'I Have no Lambda',
     subtitle: 'Technical Stuff. Rants',
     copyright: '© All rights reserved.',
-    disqusShortname: '',
+    disqusShortname: 'esafirm',
     menu: [
       {
         label: 'Articles',
