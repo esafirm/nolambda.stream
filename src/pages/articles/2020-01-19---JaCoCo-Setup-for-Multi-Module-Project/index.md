@@ -113,19 +113,19 @@ task jacocoFullReport(type: JacocoReport, group: 'Coverage reports') {
  executionData.setFrom files(projects.jacocoReport.executionData)
 
  reports {
- html {
- enabled true
- destination file('build/reports/jacoco/html')
- }
- csv {
- enabled true
- destination file('build/reports/jacoco/jacocoFullReport.csv')
- }
+  html {
+    enabled true
+    destination file('build/reports/jacoco/html')
+  }
+  csv {
+    enabled true
+    destination file('build/reports/jacoco/jacocoFullReport.csv')
+  }
  }
 
  doFirst {
- //noinspection GroovyAssignabilityCheck
- executionData.setFrom files(executionData.findAll { it.exists() })
+    //noinspection GroovyAssignabilityCheck
+    executionData.setFrom files(executionData.findAll { it.exists() })
  }
 }
 ```
