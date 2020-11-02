@@ -1,8 +1,16 @@
 ---
-title: "Talks & Workshops"
+title: 'Talks & Workshops'
 layout: page
-path: "/talks"
+path: '/talks'
 ---
+
+<p><strong>Devfest 2020 Jakarta</strong>, Oct 17, 2020 - <a href="https://www.youtube.com/watch?v=tEHWD-KEh6k">Crisis to Change - How to create your own opportunities and building your developer career now in this situation</a></p>
+
+<p><strong>Bukalapak Android Guild</strong>, Sept 25, 2020 - <a href="https://docs.google.com/presentation/d/1zNjmNUtyIxyyu_pzVoZ6RYyMBzpzClKicxw-qbC35k4/edit?usp=sharing">Socket Programmig for Fun and Profit</a></p>
+
+<p><strong>Bangkit</strong>, June 2020 - <a href="https://docs.google.com/presentation/d/1R031q20Kjbrej0GBiV88uO8SWohotmK-m7ZN0vnCuP4/edit?usp=sharing">Image Classification with TFLite</a></p>
+
+<p><strong>Global Diversity CFP Day Bandung 2020</strong>, Feb 2020 - <a href="https://docs.google.com/presentation/d/1nXWoGU_1TZcs7QXJ1qDWATGhQ8QdJHT5iOjfyeTByN8/edit?usp=sharing">Managing Demo for Tech Talk</a></p>
 
 <p><strong>Devfest 2019 Bandung</strong>, Dec 8, 2019 - <a href="https://docs.google.com/presentation/d/1w61Zs5-qv6dwEBjrw0GsDyTSdMPYmzDea7j_Njj1Z5Q/edit?usp=sharing">Android Performance, and How to Profile It</a></p>
 
