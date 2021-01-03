@@ -10,9 +10,9 @@ DRAFT_KEY = 'DRAFT'
 
 # Helper methods
 
-def moveToPosition
+def move_to_position
   Dir.chdir("#{__dir__}/..")
   puts "current dir: #{Dir.pwd}"
 end
 
-moveToPosition
+move_to_position
