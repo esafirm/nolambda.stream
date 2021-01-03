@@ -4,9 +4,9 @@ layout: page
 path: '/talks'
 ---
 
-<p><string>Bhinneka Sharing Session</string>, Des 2020 - <a href="https://docs.google.com/presentation/d/1xrBk7TxDz7BdqAl-SHD6asFxhXKn9H6uRy8-SIwUlqg/edit?usp=sharing">CI/CD in Mobile App Development</a></p>
+<p><strong>Bhinneka Sharing Session</strong>, Des 2020 - <a href="https://docs.google.com/presentation/d/1xrBk7TxDz7BdqAl-SHD6asFxhXKn9H6uRy8-SIwUlqg/edit?usp=sharing">CI/CD in Mobile App Development</a></p>
 
-<p><string>Binus International DSC, Android Adeventure Quest</string>, Nov 2020 - <a href="https://docs.google.com/presentation/d/191t4A6sisOlnQH_t1wKMA9NSf7Ew-gye8IvkdGuVSLY/edit?usp=sharing">Android App Development in 2020</a></p>
+<p><strong>Binus International DSC, Android Adeventure Quest</strong>, Nov 2020 - <a href="https://docs.google.com/presentation/d/191t4A6sisOlnQH_t1wKMA9NSf7Ew-gye8IvkdGuVSLY/edit?usp=sharing">Android App Development in 2020</a></p>
 
 <p><strong>Devfest 2020 Jakarta</strong>, Oct 17, 2020 - <a href="https://www.youtube.com/watch?v=tEHWD-KEh6k">Crisis to Change - How to create your own opportunities and building your developer career now in this situation</a></p>
 
