@@ -20,8 +20,8 @@ puts "Publishing #{published_draft}…"
 markdown_file = "#{ARTICLE_DIR}/#{published_draft}/index.md"
 `sed -i '' 's/date: ".*"/date: "#{CURRENT_DATE}"/g' #{markdown_file}`
 
-## Replace draft:false to true
-`sed -i '' 's/draft: false/draft: true/g' #{markdown_file}`
+## Replace draft:true to draft:false
+`sed -i '' 's/draft: true/draft: false/g' #{markdown_file}`
 
 ## Rename directory
 new_dir_name = published_draft.gsub(

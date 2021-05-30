@@ -9,7 +9,7 @@ tags:
   - "Nginx"
   - "Wordpress"
   - "Web"
-description: "This starter has been forked and upgraded to Gatsby v2"
+description: "How you can setup WordPress in your blog path and integrate it with your app"
 ---
 
 I had this (I think) common problem where we have this web app on `example.com` but we want to have our WordPress blog on `example.com/blog`. Since this is outside the main app we should handle this on the web server, in this case, nginx.
