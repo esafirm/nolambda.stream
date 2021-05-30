@@ -8,6 +8,8 @@ module.exports = {
     subtitle: 'Technical Stuff. Rants',
     copyright: '© All rights reserved.',
     disqusShortname: 'esafirm',
+    image:
+      'https://www.gravatar.com/avatar/dcafc93100ece4c0582543b020a63ec8?s=250&d=mm&r=x',
     menu: [
       {
         label: 'Articles',
@@ -19,8 +21,8 @@ module.exports = {
       },
       {
         label: 'Talks & Workshops',
-        path: '/talks/'
-      }
+        path: '/talks/',
+      },
     ],
     author: {
       name: 'Esa Firman',
