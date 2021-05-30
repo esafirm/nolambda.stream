@@ -11,10 +11,19 @@ class PostTemplate extends React.Component {
     const { title: postTitle, description: postDescription } = post.frontmatter
     const description = postDescription !== null ? postDescription : subtitle
 
+    const { ogimage } = post.frontmatter
+    console.log('ogimage', ogimage)
+
+    const ogImagePath = ogimage && ogimage.publicURL
+
     return (
       <Layout>
         <div>
-          <SEO title={`${postTitle} - ${title}`} description={description} />
+          <SEO
+            title={`${postTitle} - ${title}`}
+            description={description}
+            image={ogImagePath}
+          />
           <PostTemplateDetails {...this.props} />
         </div>
       </Layout>
@@ -50,6 +59,9 @@ export const pageQuery = graphql`
         tags
         date
         description
+        ogimage {
+          publicURL
+        }
       }
     }
   }

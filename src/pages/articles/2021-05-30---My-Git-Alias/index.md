@@ -9,6 +9,7 @@ tags:
   - 'Git'
   - 'CLI'
 description: 'My Git aliases that I use on daily basis to help me with works and make Git more interactive and efficient'
+ogimage: './1.gif'
 ---
 
 ## Intro to Git Aliases

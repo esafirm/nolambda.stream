@@ -19,7 +19,7 @@ const SEO = ({ title, description, image, article }) => {
   const seo = {
     title: title || defaultTitle,
     description: description || defaultDescription,
-    image: defaultImage,
+    image: image ? `${siteUrl}${image}`.replace('/static', '') : defaultImage,
     url: `${siteUrl}${pathname}`,
   }
 

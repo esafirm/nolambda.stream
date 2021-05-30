@@ -1,15 +1,15 @@
 ---
-title: "Setup Wordpress Behind Reverse Proxy"
-date: "2021-05-24T15:47:44Z"
+title: 'Setup Wordpress Behind Reverse Proxy'
+date: '2021-05-24T15:47:44Z'
 layout: post
 draft: false
-path: "/posts/setup-wordpress-behind-reverse-proxy/"
-category: "Tech"
+path: '/posts/setup-wordpress-behind-reverse-proxy/'
+category: 'Tech'
 tags:
-  - "Nginx"
-  - "Wordpress"
-  - "Web"
-description: "How you can setup WordPress in your blog path and integrate it with your app"
+  - 'Nginx'
+  - 'Wordpress'
+  - 'Web'
+description: 'How you can setup WordPress in your blog path and integrate it with your app'
 ---
 
 I had this (I think) common problem where we have this web app on `example.com` but we want to have our WordPress blog on `example.com/blog`. Since this is outside the main app we should handle this on the web server, in this case, nginx.
@@ -37,7 +37,7 @@ server {
   location /blog {
     # Reverse proxy for wordpress
     # Change this to your WordPress location
-    proxy_pass http://0.0.0.0/blog; 
+    proxy_pass http://0.0.0.0/blog;
     proxy_redirect off;
 
     proxy_http_version 1.1;
@@ -54,6 +54,7 @@ server {
 After that, you must change the site and home URL to the target address, in this case, `example.com/blog`
 
 Open WordPress config file
+
 ```
 $ vim /usr/share/wordpress/wp-config.php
 ```
@@ -84,4 +85,4 @@ Note: you can also change this by logging into your WordPress and change the hom
 
 ---
 
-That's it, restart nginx and now `example.com/blog` should be routed to your WordPress instance.  
+That's it, restart nginx and now `example.com/blog` should be routed to your WordPress instance.
