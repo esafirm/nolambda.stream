@@ -65,8 +65,8 @@ Add this to the top of the file
 // Also a ceremony to get WP working behind reverse proxy https
 // HTTPS is also works
 $target_url='http://example.com/blog';
-define('WP_HOME', $setoko_web);
-define('WP_SITEURL',$setoko_web);
+define('WP_HOME', $target_url);
+define('WP_SITEURL',$target_url);
 
 // Setup for reverse proxy
 // Needed if you use HTTPS
