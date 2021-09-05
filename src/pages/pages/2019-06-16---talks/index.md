@@ -4,7 +4,7 @@ layout: page
 path: '/talks'
 ---
 
-<p><strong>Android & Kotlin Dev Talks Indonesia 2021</strong>, Jun 15 2021 - Sekolah Beta - Kelas Daring Serial Hacker: Android App Development Tools State in 2021
+<p><strong>Sekolah Beta - Kelas Daring Serial Hacker</strong>, Jun 15 2021 - Android App Development Tools State in 2021
  ( <a href="https://www.youtube.com/watch?v=pL7LQyywO4E">Video</a> | <a href="https://docs.google.com/presentation/d/1zaEvSF62FRfh2cuXqfM7w3reIqWoBFCsFXoGknQedEk/edit?usp=sharing">Slide</a> )
 
 
