@@ -4,9 +4,12 @@ layout: page
 path: '/talks'
 ---
 
+<p><strong>Blibli x tiket.com Talk</strong>, 26 Sept 2021 - Scaling The Navigation System in tiket | <a href="https://docs.google.com/presentation/d/1ibsju-2A7TvXarqYJFQCN5dn1ZiM7nNx7FlZPHXNvH4/edit?usp=sharing">Slide</a>
+
+<p><strong>Flutter Jakarta Online Meetup</strong>, 23 Sept 2021 - Socket Programming for Fun and Profit (Flutter) ( <a href="https://youtu.be/Ih9xCjEDMco?t=322">Video</a> | <a href="https://docs.google.com/presentation/d/1zaEvSF62FRfh2cuXqfM7w3reIqWoBFCsFXoGknQedEk/edit?usp=sharing">Slide</a> )
+
 <p><strong>Sekolah Beta - Kelas Daring Serial Hacker</strong>, Jun 15 2021 - Android App Development Tools State in 2021
  ( <a href="https://www.youtube.com/watch?v=pL7LQyywO4E">Video</a> | <a href="https://docs.google.com/presentation/d/1zaEvSF62FRfh2cuXqfM7w3reIqWoBFCsFXoGknQedEk/edit?usp=sharing">Slide</a> )
-
 
 <p><strong>Android & Kotlin Dev Talks Indonesia 2021</strong>, Apr 8 2021 - Scaling Android App Development @ tiket.com ( <a href="https://www.youtube.com/watch?v=qhkNL0o7x3o">Video</a> | <a href="https://drive.google.com/file/d/11ZS4g1vgY8lAb7Cmj8WBOkc9q7YTI_2Z/view">Slide</a> )
 
