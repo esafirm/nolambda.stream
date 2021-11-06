@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@use "mixins/breakpoints";
-@use "mixins/margin";
-@use "mixins/padding";
-@use "mixins/line-height";
+@import 'mixins/breakpoints';
+@import 'mixins/margin';
+@import 'mixins/padding';
+@import 'mixins/line-height';

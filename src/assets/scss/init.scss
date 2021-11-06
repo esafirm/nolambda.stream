@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-@use "variables";
-@use "mixins";
-@use "base";
-@use "pages";
+@import "variables";
+@import "mixins";
+@import "base";
+@import "pages";

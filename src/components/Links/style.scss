@@ -1,36 +1,35 @@
-@use "sass:color";
-@use "../../assets/scss/variables";
-@use "../../assets/scss/mixins";
+@import '../../assets/scss/variables';
+@import '../../assets/scss/mixins';
 
 .links {
-    @include margin-bottom(1);
-    &__list {
-        display: flex;
-        list-style: none;
-        padding: 0;
-        margin: 10px -3px;
-        &-item {
-            padding: 0;
-            margin: 0 3px;
-            height: 24px;
-            width: 24px;
-            line-height: 24px;
-            border-radius: 3px;
-            text-align: center;
-            background: variables.$color-gray-bg;
-            & a {
-                border: 0;
-                & i {
-                    font-size: 14px;
-                    color: color.adjust(variables.$color-base, $lightness: 20%);
-                }
-                &:hover,
-                &:focus {
-                    & i {
-                        color: variables.$color-base;
-                    }
-                }
-            }
+  @include margin-bottom(1);
+  &__list {
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 10px -3px;
+    &-item {
+      padding: 0;
+      margin: 0 3px;
+      height: 24px;
+      width: 24px;
+      line-height: 24px;
+      border-radius: 3px;
+      text-align: center;
+      background: $color-gray-bg;
+      & a {
+        border: 0;
+        & i {
+          font-size: 14px;
+          color: lighten($color-base, 20%);
         }
+        &:hover,
+        &:focus {
+          & i {
+            color: $color-base;
+          }
+        }
+      }
     }
+  }
 }

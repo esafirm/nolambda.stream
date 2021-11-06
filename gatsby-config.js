@@ -93,6 +93,7 @@ module.exports = {
                 }
               }
             `,
+            title: 'Nolambda Stream Feed',
             output: '/rss.xml',
           },
         ],
