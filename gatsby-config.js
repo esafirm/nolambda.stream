@@ -93,6 +93,7 @@ module.exports = {
                 }
               }
             `,
+            title: 'Nolambda Stream Feed',
             output: '/rss.xml',
           },
         ],
@@ -163,7 +164,6 @@ module.exports = {
             minPixelValue: 0,
           }),
         ],
-        precision: 8,
       },
     },
     {
