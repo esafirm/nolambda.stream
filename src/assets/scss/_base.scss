@@ -1,5 +1,5 @@
 @charset "UTF-8";
 
-@import "base/normalize";
-@import "base/generic";
-@import "base/highlight";
+@use "base/normalize";
+@use "base/generic";
+@use "base/highlight";

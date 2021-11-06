@@ -1,5 +1,5 @@
-@import "../../assets/scss/variables";
-@import "../../assets/scss/mixins";
+@use "../../assets/scss/variables";
+@use "../../assets/scss/mixins";
 
 .menu {
     @include margin-bottom(1);
@@ -11,18 +11,18 @@
             padding: 0;
             margin: 10px 0;
             &-link {
-                font-size: $typographic-base-font-size;
-                color: $typographic-base-font-color;
+                font-size: variables.$typographic-base-font-size;
+                color: variables.$typographic-base-font-color;
                 font-weight: 400;
                 border: 0;
                 &:hover,
                 &:focus {
-                    color: $color-primary;
-                    border-bottom: 1px solid $color-primary;
+                    color: variables.$color-primary;
+                    border-bottom: 1px solid variables.$color-primary;
                 }
                 &--active {
-                    color: $color-base;
-                    border-bottom: 1px solid $color-base;
+                    color: variables.$color-base;
+                    border-bottom: 1px solid variables.$color-base;
                 }
             }
         }

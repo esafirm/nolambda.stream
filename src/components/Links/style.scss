@@ -1,5 +1,6 @@
-@import "../../assets/scss/variables";
-@import "../../assets/scss/mixins";
+@use "sass:color";
+@use "../../assets/scss/variables";
+@use "../../assets/scss/mixins";
 
 .links {
     @include margin-bottom(1);
@@ -16,17 +17,17 @@
             line-height: 24px;
             border-radius: 3px;
             text-align: center;
-            background: $color-gray-bg;
+            background: variables.$color-gray-bg;
             & a {
                 border: 0;
                 & i {
                     font-size: 14px;
-                    color: lighten($color-base, 20%);
+                    color: color.adjust(variables.$color-base, $lightness: 20%);
                 }
                 &:hover,
                 &:focus {
                     & i {
-                        color: $color-base;
+                        color: variables.$color-base;
                     }
                 }
             }

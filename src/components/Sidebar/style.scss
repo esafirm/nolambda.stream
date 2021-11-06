@@ -1,5 +1,6 @@
-@import "../../assets/scss/variables";
-@import "../../assets/scss/mixins";
+@use "sass:color";
+@use "../../assets/scss/variables";
+@use "../../assets/scss/mixins";
 
 .sidebar {
     width: 100%;
@@ -15,27 +16,27 @@
             background-clip: padding-box;
         }
         &-title {
-            font-size: $typographic-base-font-size * 1.125;
+            font-size: variables.$typographic-base-font-size * 1.125;
             font-weight: 500;
             @include line-height(1.125);
             @include margin(.5, 0, .5, 0);
             &-link {
-                color: $color-base;
+                color: variables.$color-base;
                 &:hover,
                 &:focus {
-                    color: $color-base;
+                    color: variables.$color-base;
                 }
             }
         }
         &-subtitle {
-            color: $color-gray;
+            color: variables.$color-gray;
             @include line-height(1);
             @include margin-bottom(1);
         }
     }
     &__copyright {
-        color: lighten($color-gray, 18%);
-        font-size: $typographic-small-font-size;
+        color: color.adjust(variables.$color-gray, $lightness: 18%);
+        font-size: variables.$typographic-small-font-size;
     }
 }
 
@@ -45,8 +46,8 @@
         &__inner {
             padding: 30px 20px 0;
             &:after {
-                background: $color-gray-border;
-                background: linear-gradient(to bottom, $color-gray-border 0%, $color-gray-border 48%, $color-white 100%);
+                background: variables.$color-gray-border;
+                background: linear-gradient(to bottom, variables.$color-gray-border 0%, variables.$color-gray-border 48%, variables.$color-white 100%);
                 position: absolute;
                 content: "";
                 width: 1px;

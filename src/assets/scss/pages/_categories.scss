@@ -1,3 +1,5 @@
+@use "../variables";
+
 /** 
  * Categories
  */
@@ -6,11 +8,11 @@
     &__list {
         &-item {
             &-link {
-                color: $color-base;
+                color: variables.$color-base;
                 &:hover,
                 &:focus {
-                    color: $color-primary;
-                    border-bottom: 1px solid $color-primary;
+                    color: variables.$color-primary;
+                    border-bottom: 1px solid variables.$color-primary;
                 }
             }
         }
