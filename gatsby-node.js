@@ -106,7 +106,6 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
     node.internal.type === 'MarkdownRemark' &&
     typeof node.slug === 'undefined'
   ) {
-
     const fileNode = getNode(node.parent)
     let slug = createSlug(fileNode)
     if (typeof node.frontmatter.path !== 'undefined') {
@@ -131,5 +130,24 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       )}/`
       createNodeField({ node, name: 'categorySlug', value: categorySlug })
     }
+  }
+}
+
+/**
+ * This functions changee Gatsby's default configuration
+ * Currently it only uses is to ignure mini css extract plugin warnings
+ */
+exports.onCreateWebpackConfig = ({ stage, actions, getConfig }) => {
+  if (stage === 'build-javascript') {
+    const config = getConfig()
+    const miniCssExtractPlugin = config.plugins.find(
+      plugin => plugin.constructor.name === 'MiniCssExtractPlugin'
+    )
+
+    console.log('MiniPlugin:', miniCssExtractPlugin)
+    if (miniCssExtractPlugin) {
+      miniCssExtractPlugin.options.ignoreOrder = true
+    }
+    actions.replaceWebpackConfig(config)
   }
 }

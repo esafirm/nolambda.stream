@@ -5,7 +5,7 @@ module.exports = {
   siteMetadata: {
     siteUrl: `https://nolambda.stream`,
     title: 'I Have no Lambda',
-    subtitle: "I prefer to write code, really.",
+    subtitle: 'I prefer to write code, really.',
     copyright: '© All rights reserved.',
     disqusShortname: 'esafirm',
     image:
