@@ -15,7 +15,7 @@
     "new": "./scripts/article.rb",
     "draft": "./scripts/draft_list.rb print",
     "clearDraft": "./scripts/clear_draft.rb",
-    "publish": "./scripts/publish.rb"
+    "pub": "./scripts/publish.rb"
   },
   "repository": "git+https://github.com/alxshelepenok/gatsby-starter-lumen.git",
   "keywords": [
