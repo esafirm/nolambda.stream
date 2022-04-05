@@ -1,13 +1,13 @@
 ---
-title: "Personal Life Log: 2022"
-date: "2022-03-15T01:16:40Z"
+title: 'Personal Life Log: 2022'
+date: '2022-03-15T01:16:40Z'
 layout: post
 draft: false
-path: "/posts/personal-life-log-2022/"
-category: "Tech"
+path: '/posts/personal-life-log-2022/'
+category: 'Tech'
 tags:
-  - "Life Log"
-description: "Just a personal log for me and myself"
+  - 'Life Log'
+description: 'Just a personal log for me and myself'
 ---
 
 Hi! It's been a long time since the last time I write a blog post.
@@ -26,13 +26,11 @@ workflow for our mobile apps team. It means there's no CI yet when we start. It'
 I feel that we add an extra time to the overall process not cutting it. This is also caused because at the time, we don't have
 a metric to measure developers productivity yet.
 
-On the other note, I'm very happy for the works that I did for the couple years back. I explored a lot of interesting stuff, measure 
+On the other note, I'm very happy for the works that I did for the couple years back. I explored a lot of interesting stuff, measure
 a lot of builds, and standardize a couple of things. Surely, I also can do all that things in my current position.
 
-I'm also glad for the [public project](https://github.com/esafirm?tab=repositories) (you can say OSS) that I did, it surely a niche project and not great in popularity, but It brings me a lot of joy and satisfy my curiosity.
+I'm also glad for the [public projects](https://github.com/esafirm?tab=repositories) (you can say OSS) that I did for the past two years, it surely a niche project and not great in popularity, but It brings me a lot of joy and satisfy my curiosity.
 
 Until next time.
 
 Cao ~ 👋
-
-
