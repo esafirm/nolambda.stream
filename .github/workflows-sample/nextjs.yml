@@ -1,5 +1,6 @@
 # To get started with Next.js see: https://nextjs.org/docs/getting-started
 #
+# We currenly do not use this because this repo is integrated with Netlify
 name: Deploy Next.js site to Pages
 
 on:
