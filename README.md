@@ -1,32 +1,14 @@
 ## Nolambda Blog
 
-### Scripts
+Based on this template: https://vercel.com/templates/next.js/tailwind-css-starter-blog
 
-Some script to make managing this blog easier
+### Note to self
 
-Create new article draft:
+I rarely update this blog, so for reminder hare are importan file if you need to update soemthing
 
-```
-$ ./scripts article.rb
-```
-
-List the draft:
-
-```
-$ ./scripts draft_list.rb
-```
-
-Publish the draft:
-
-```
-$ ./scripts publish.rb
-```
-
-Clear all drafts:
-
-```
-$ ./scripts clear_draft.rb
-```
-
-
-
+| File                | Description       |
+| ------------------- | ----------------- |
+| `data/blog`         | Blog post         |
+| `data/authors`      | Author profile    |
+| `headerNavLinks.js` | Header navigation |
+| `siteMetadata.js`   | Site metadata     |
