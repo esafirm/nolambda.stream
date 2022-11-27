@@ -1,16 +1,20 @@
 ---
-name: Tails Azimuth
+name: Esa Firman
 avatar: /static/images/avatar.png
-occupation: Professor of Atmospheric Science
-company: Stanford University
-email: address@yoursite.com
-twitter: https://twitter.com/Twitter
-linkedin: https://www.linkedin.com
-github: https://github.com
+occupation: Software Engineer
+# company: Stanford University
+email: esafirm21@gmail.com
+twitter: https://twitter.com/esafirm
+linkedin: https://www.linkedin.com/esa-firman-3
+github: https://github.com/esafirm
 ---
 
-Tails Azimuth is a professor of atmospheric sciences at the Stanford AI Lab. His research interests includes complexity modelling of tailwinds, headwinds and crosswinds.
+Prefer to write code than a blog post. Enjoy writing confluence doc for someone else give a thumbs up react without actually reading it.
 
-He leads the clean energy group which develops 3D air pollution-climate models, writes differential equation solvers, and manufactures titanium plated air ballons. In his free time he bakes raspberry pi.
+---
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed neque elit, tristique placerat feugiat ac, facilisis vitae arcu. Proin eget egestas augue. Praesent ut sem nec arcu pellentesque aliquet. Duis dapibus diam vel metus tempus vulputate.
+You can contact me at:
+
+Telegram: @esafirm
+
+or any social handle with username `esafirm`
