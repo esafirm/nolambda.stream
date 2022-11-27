@@ -1,6 +1,4 @@
 [build]
-  publish = "public"
-  command = "yarn run deploy"
-[build.environment]
-  YARN_VERSION = "1.22.11"
-  YARN_FLAGS = "--no-ignore-optional"
+  publish = ".next"
+  command = "npm run build"
+
