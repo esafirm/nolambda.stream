@@ -11,3 +11,4 @@ I rarely update this blog, so for reminder hare are importan file if you need to
 | `data/blog`         | Blog post         |
 | `data/authors`      | Author profile    |
 | `headerNavLinks.js` | Header navigation |
+| `siteMetadata.js`   | Site metadata     |
