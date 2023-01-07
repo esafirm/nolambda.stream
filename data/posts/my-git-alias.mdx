@@ -81,7 +81,7 @@ selected = prompt.select(label, git_result, filter: true)
 system "git checkout #{selected}"
 ```
 
-![git recent usage](/static/images/blog/git_alias_1.gif)
+![git recent usage](/static/images/posts/git_alias_1.gif)
 
 ## 2. `git del`
 
@@ -111,7 +111,7 @@ selected_string = selected.map(&:chomp).join(' ') if selected.is_a?(Array)
 system "git branch -D #{selected_string}"
 ```
 
-![git del usage](/static/images/blog/git_alias_2.gif)
+![git del usage](/static/images/posts/git_alias_2.gif)
 
 ## 3. `git today`
 

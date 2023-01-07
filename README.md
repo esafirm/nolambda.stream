@@ -4,11 +4,11 @@ Based on this template: https://vercel.com/templates/next.js/tailwind-css-starte
 
 ### Note to self
 
-I rarely update this blog, so for reminder hare are importan file if you need to update soemthing
+I rarely update this blog, so for reminder here are important file if you need to update soemthing
 
 | File                | Description       |
 | ------------------- | ----------------- |
-| `data/blog`         | Blog post         |
+| `data/posts`        | Blog post         |
 | `data/authors`      | Author profile    |
 | `headerNavLinks.js` | Header navigation |
 | `siteMetadata.js`   | Site metadata     |
