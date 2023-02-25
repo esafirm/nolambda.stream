@@ -12,3 +12,12 @@ I rarely update this blog, so for reminder here are important file if you need t
 | `data/authors`      | Author profile    |
 | `headerNavLinks.js` | Header navigation |
 | `siteMetadata.js`   | Site metadata     |
+
+### Development
+
+```
+yarn install
+yarn dev
+
+For more, read the `package.json`
+```
