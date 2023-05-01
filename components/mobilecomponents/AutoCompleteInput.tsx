@@ -3,6 +3,7 @@ import React, { useEffect, useState, useRef } from 'react'
 interface AutocompleteInputProps {
   options: string[]
   selected: string
+  placeholder?: string
   onValueChange: (option: string) => void
 }
 
@@ -10,6 +11,7 @@ const AutocompleteInput: React.FC<AutocompleteInputProps> = ({
   options,
   onValueChange,
   selected,
+  placeholder,
 }) => {
   const [filteredOptions, setFilteredOptions] = useState<string[]>(options)
   const [value, setValue] = useState<string>(selected)
@@ -60,7 +62,7 @@ const AutocompleteInput: React.FC<AutocompleteInputProps> = ({
             className="w-full rounded-md border border-gray-300 px-4 py-2 text-center text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
             type="text"
             value={value}
-            placeholder="Box"
+            placeholder={placeholder}
             onChange={handleInputChange}
           />
         </div>

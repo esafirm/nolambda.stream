@@ -1,7 +1,10 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import mobilecomponents from '@/data/mobilecomponents/main.json'
 import AutocompleteInput from '@/components/mobilecomponents/AutoCompleteInput'
+
+import { MDXLayoutRenderer } from '@/components/MDXComponents'
+import { getAllFilesFrontMatter, getFileBySlug } from '@/lib/mdx'
 
 interface MobileComponent {
   compose: MobileComponentInfo
@@ -10,12 +13,6 @@ interface MobileComponent {
 
 interface MobileComponentInfo {
   name: string
-  links: InfoLink[]
-}
-
-interface InfoLink {
-  title: string
-  link: string
 }
 
 const flutterData = mobilecomponents.map((component) => component.flutter.name).sort()
@@ -32,6 +29,23 @@ const composeLookupMap = new Map(
 console.log('fluttedata', flutterData)
 console.log('composedata', composeData)
 
+/* Static Props */
+/* ------------------------------------------ */
+
+export async function getStaticProps() {
+  const posts = await getAllFilesFrontMatter('mobilecomponents/code')
+  const desc = {}
+
+  for (let post of posts) {
+    const fetched = await getFileBySlug('mobilecomponents/code', post.slug)
+    desc[post.slug] = fetched
+  }
+  return { props: { desc } }
+}
+
+/* Render */
+/* ------------------------------------------ */
+
 const PageLayout = ({ children }) => {
   return (
     <div className="flex w-full flex-col">
@@ -47,26 +61,20 @@ const PageLayout = ({ children }) => {
   )
 }
 
-const Links = ({ links }: { links: InfoLink[] }) => {
-  return (
-    <div className="flex flex-col p-4">
-      {links.map((link: InfoLink, index: number) => (
-        <div className="flex" key={link.title}>
-          <p className="text-sm font-semibold">{index + 1}.</p>
-          <a
-            className="px-2 text-sm font-semibold text-primary-500 hover:text-primary-600 dark:hover:text-primary-400"
-            href={link.link}
-          >
-            {link.title}
-          </a>
-        </div>
-      ))}
-    </div>
-  )
+const Description = ({ desc }) => {
+  const { mdxSource, frontMatter } = desc
+
+  return <MDXLayoutRenderer layout={'PostSimple'} mdxSource={mdxSource} frontMatter={frontMatter} />
 }
 
-const Page = () => {
+const Page = ({ desc }) => {
   const [selectedComponent, setSelectedComponent] = useState<MobileComponent>()
+
+  const selectedFlutter = selectedComponent?.flutter
+  const selectedCompose = selectedComponent?.compose
+
+  const flutterDesc = selectedComponent ? desc[`${selectedFlutter.name}.flutter`] : null
+  const composeDesc = selectedComponent ? desc[`${selectedCompose.name}.compose`] : null
 
   return (
     <div>
@@ -84,13 +92,14 @@ const Page = () => {
             src="https://storage.googleapis.com/cms-storage-bucket/ec64036b4eacc9f3fd73.svg"
           />
           <AutocompleteInput
+            placeholder="Container"
             options={flutterData}
-            selected={selectedComponent?.flutter?.name}
+            selected={selectedFlutter?.name}
             onValueChange={(selected) => {
               setSelectedComponent(flutterLookupMap.get(selected))
             }}
           />
-          {selectedComponent ? <Links links={selectedComponent.flutter.links} /> : null}
+          {flutterDesc ? <Description desc={flutterDesc} /> : null}
         </>
         <>
           <div className="flex items-center justify-center">
@@ -101,14 +110,14 @@ const Page = () => {
             <p className="text-xl">Compose</p>
           </div>
           <AutocompleteInput
+            placeholder="Box"
             options={composeData}
-            selected={selectedComponent?.compose?.name}
+            selected={selectedCompose?.name}
             onValueChange={(selected) => {
               setSelectedComponent(composeLookupMap.get(selected))
             }}
           />
-
-          {selectedComponent ? <Links links={selectedComponent.compose.links} /> : null}
+          {composeDesc ? <Description desc={composeDesc} /> : null}
         </>
       </PageLayout>
     </div>

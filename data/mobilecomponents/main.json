@@ -1,130 +1,50 @@
 [
   {
     "flutter": {
-      "name": "AppBar",
-      "links": [
-        {
-          "title": "AppBar class - Flutter Dev",
-          "link": "https://api.flutter.dev/flutter/material/AppBar-class.html"
-        }
-      ]
+      "name": "AppBar"
     },
     "compose": {
-      "name": "TopAppBar",
-      "links": [
-        {
-          "title": "TopAppBar class - Composables.com",
-          "link": "https://www.composables.com/components/androidx.compose.material:material/topappbar"
-        },
-        {
-          "title": "TopAppBar class - Android.com",
-          "link": "https://developer.android.com/reference/kotlin/androidx/compose/material/package-summary#TopAppBar(androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.ui.unit.Dp,androidx.compose.foundation.layout.PaddingValues,kotlin.Function1)"
-        }
-      ]
+      "name": "TopAppBar"
     }
   },
   {
     "flutter": {
-      "name": "Row",
-      "links": [
-        {
-          "title": "Row class - Flutter Dev",
-          "link": "https://api.flutter.dev/flutter/widgets/Row-class.html"
-        }
-      ]
+      "name": "Row"
     },
     "compose": {
-      "name": "Row",
-      "links": [
-        {
-          "title": "Row class - Foso",
-          "link": "https://foso.github.io/Jetpack-Compose-Playground/layout/row/"
-        }
-      ]
+      "name": "Row"
     }
   },
   {
     "flutter": {
-      "name": "Column",
-      "links": [
-        {
-          "title": "Column class - Flutter Dev",
-          "link": "https://api.flutter.dev/flutter/widgets/Column-class.html"
-        }
-      ]
+      "name": "Column"
     },
     "compose": {
-      "name": "Column",
-      "links": [
-        {
-          "title": "Column class - Foso",
-          "link": "https://foso.github.io/Jetpack-Compose-Playground/layout/column/"
-        }
-      ]
+      "name": "Column"
     }
   },
   {
     "flutter": {
-      "name": "Text",
-      "links": [
-        {
-          "title": "Text class - Flutter Dev",
-          "link": "https://api.flutter.dev/flutter/widgets/Text-class.html"
-        }
-      ]
+      "name": "Text"
     },
     "compose": {
-      "name": "Text",
-      "links": [
-        {
-          "title": "Text class - Foso",
-          "link": "https://foso.github.io/Jetpack-Compose-Playground/text/text/"
-        }
-      ]
+      "name": "Text"
     }
   },
   {
     "flutter": {
-      "name": "Scaffold",
-      "links": [
-        {
-          "title": "Scaffold class - Flutter Dev",
-          "link": "https://api.flutter.dev/flutter/material/Scaffold-class.html"
-        }
-      ]
+      "name": "Scaffold"
     },
     "compose": {
-      "name": "Scaffold",
-      "links": [
-        {
-          "title": "Scaffold class - Foso",
-          "link": "https://foso.github.io/Jetpack-Compose-Playground/material/scaffold/"
-        }
-      ]
+      "name": "Scaffold"
     }
   },
   {
     "flutter": {
-      "name": "Container",
-      "links": [
-        {
-          "title": "Container class - Flutter Dev",
-          "link": "https://api.flutter.dev/flutter/widgets/Container-class.html"
-        }
-      ]
+      "name": "Container"
     },
     "compose": {
-      "name": "Box",
-      "links": [
-        {
-          "title": "Box class - Foso",
-          "link": "https://foso.github.io/Jetpack-Compose-Playground/layout/box/"
-        },
-        {
-          "title": "For more complicated use case, you can use `BoxWithConstraint`",
-          "link": "https://foso.github.io/Jetpack-Compose-Playground/foundation/layout/boxwithconstraints/"
-        }
-      ]
+      "name": "Box"
     }
   }
 ]
