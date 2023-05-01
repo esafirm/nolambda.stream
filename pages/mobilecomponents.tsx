@@ -64,7 +64,11 @@ const PageLayout = ({ children }) => {
 const Description = ({ desc }) => {
   const { mdxSource, frontMatter } = desc
 
-  return <MDXLayoutRenderer layout={'PostSimple'} mdxSource={mdxSource} frontMatter={frontMatter} />
+  return (
+    <div className="w-full">
+      <MDXLayoutRenderer layout={'PostSimple'} mdxSource={mdxSource} frontMatter={frontMatter} />
+    </div>
+  )
 }
 
 const Page = ({ desc }) => {
