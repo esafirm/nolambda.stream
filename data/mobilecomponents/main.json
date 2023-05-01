@@ -1,0 +1,26 @@
+[
+  {
+    "flutter": {
+      "name": "AppBar",
+      "links": [
+        {
+          "title": "AppBar class - Flutter Dev",
+          "link": "https://api.flutter.dev/flutter/material/AppBar-class.html"
+        }
+      ]
+    },
+    "compose": {
+      "name": "TopAppBar",
+      "links": [
+        {
+          "title": "TopAppBar class - Composables.com",
+          "link": "https://www.composables.com/components/androidx.compose.material:material/topappbar"
+        },
+        {
+          "title": "TopAppBar class - Android.com",
+          "link": "https://developer.android.com/reference/kotlin/androidx/compose/material/package-summary#TopAppBar(androidx.compose.ui.Modifier,androidx.compose.ui.graphics.Color,androidx.compose.ui.graphics.Color,androidx.compose.ui.unit.Dp,androidx.compose.foundation.layout.PaddingValues,kotlin.Function1)"
+        }
+      ]
+    }
+  }
+]
