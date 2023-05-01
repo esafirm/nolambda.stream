@@ -18,8 +18,8 @@ interface InfoLink {
   link: string
 }
 
-const flutterData = mobilecomponents.map((component) => component.flutter.name)
-const composeData = mobilecomponents.map((component) => component.compose.name)
+const flutterData = mobilecomponents.map((component) => component.flutter.name).sort()
+const composeData = mobilecomponents.map((component) => component.compose.name).sort()
 
 const flutterLookupMap = new Map(
   mobilecomponents.map((component) => [component.flutter.name, component])
@@ -31,17 +31,6 @@ const composeLookupMap = new Map(
 
 console.log('fluttedata', flutterData)
 console.log('composedata', composeData)
-
-const CenterText = ({ text }) => <p className="p-4 text-center">{text}</p>
-
-const SectionContainer = ({ topText, children }) => {
-  return (
-    <>
-      <CenterText text={topText} />
-      {children}
-    </>
-  )
-}
 
 const PageLayout = ({ children }) => {
   return (
@@ -81,8 +70,19 @@ const Page = () => {
 
   return (
     <div>
+      <h1 className="mb-2 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
+        Mobile Components
+      </h1>
+      <p className="mb-10 text-xl">
+        Finds out the equivalent components across mobile app development frameworks
+      </p>
+
       <PageLayout>
-        <SectionContainer topText={'Flutter'}>
+        <>
+          <img
+            className="mx-auto h-24 w-24"
+            src="https://storage.googleapis.com/cms-storage-bucket/ec64036b4eacc9f3fd73.svg"
+          />
           <AutocompleteInput
             options={flutterData}
             selected={selectedComponent?.flutter?.name}
@@ -91,8 +91,15 @@ const Page = () => {
             }}
           />
           {selectedComponent ? <Links links={selectedComponent.flutter.links} /> : null}
-        </SectionContainer>
-        <SectionContainer topText={'Jetpack Compose'}>
+        </>
+        <>
+          <div className="flex items-center justify-center">
+            <img
+              className="mx-2 my-8 h-8 w-8"
+              src="data:image/svg+xml;base64,PHN2ZyB2aWV3Qm94PSIwIDAgNjcgNzQiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PHBhdGggZmlsbC1ydWxlPSJldmVub2RkIiBjbGlwLXJ1bGU9ImV2ZW5vZGQiIGQ9Ik0zNS45OTkgMi42NjNhNS4wMSA1LjAxIDAgMCAwLTQuOTk4IDBsLTI2LjUgMTUuMjUzYTQuOTk0IDQuOTk0IDAgMCAwLTEuMTk4Ljk2MmwxMS4xMDggNi4zNjZjLjI2OC0uMjkuNTgtLjU0LjkzMS0uNzQ0bDE2LjE1Ni05LjM0MmE0IDQgMCAwIDEgNC4wMDQgMEw1MS42NTcgMjQuNWMuMzUxLjIwMy42NjQuNDU1LjkzMi43NDRsMTEuMTA4LTYuMzY2YTQuOTkxIDQuOTkxIDAgMCAwLTEuMTk4LS45NjJsLTI2LjUtMTUuMjUzWm0yOC43MjMgMTcuOTMzLTExLjE4MyA2LjQwOGMuMDc2LjMxLjExNi42MzIuMTE2Ljk1OXYxNy43OTRhNCA0IDAgMCAxLTEuOTU4IDMuNDRsLTE2LjIzNSA5LjYzOGEzLjk5OCAzLjk5OCAwIDAgMS0uOTYyLjQxMnYxMi42M2E1LjAwNSA1LjAwNSAwIDAgMCAxLjQyOC0uNTY5bDI2LjYyLTE1LjczQTQuOTg2IDQuOTg2IDAgMCAwIDY1IDUxLjI4NFYyMi4yMzdjMC0uNTY3LS4wOTctMS4xMi0uMjc4LTEuNjRaTTIgMjIuMjM3YzAtLjU2Ny4wOTctMS4xMi4yNzgtMS42NGwxMS4xODMgNi40MDdjLS4wNzYuMzEtLjExNi42MzItLjExNi45NTl2MTguNjMzYTQgNCAwIDAgMCAyLjA4IDMuNTA5bDE2LjA3NCA4LjhjLjMyLjE3NC42NTYuMzAyIDEuMDAxLjM4NHYxMi42MzhhNS4wMDUgNS4wMDUgMCAwIDEtMS41MTctLjUzM0w0LjYwMyA1Ny4wMkE0Ljk4NyA0Ljk4NyAwIDAgMSAyIDUyLjY0MlYyMi4yMzdaTTMwLjAwMi45MzVhNy4wMTQgNy4wMTQgMCAwIDEgNi45OTYgMGwyNi41IDE1LjI1M0E2Ljk4IDYuOTggMCAwIDEgNjcgMjIuMjM4djI5LjA0N2E2Ljk4IDYuOTggMCAwIDEtMy40MzMgNi4wMDlsLTI2LjYyIDE1LjczMWE3LjAxNCA3LjAxNCAwIDAgMS02LjkyMy4xMkwzLjY0NCA1OC43NzFBNi45ODEgNi45ODEgMCAwIDEgMCA1Mi42NDFWMjIuMjM4YTYuOTggNi45OCAwIDAgMSAzLjUwMi02LjA1TDMwLjAwMi45MzZabS04LjYwNCAyNy41NTIgMTAuNTgyLTYuMTFjLjk0LS41NDIgMi4xLS41NDIgMy4wNCAwbDEwLjU4MiA2LjExYTIuOTk2IDIuOTk2IDAgMCAxIDEuNTAzIDIuNTkzdjExLjY1M2MwIDEuMDU2LS41NiAyLjAzNC0xLjQ3MyAyLjU3NmwtMTAuNjQzIDYuMzA4YTMuMDQ0IDMuMDQ0IDAgMCAxLTMuMDA5LjA1MmwtMTAuNTItNS43NWEyLjk5NiAyLjk5NiAwIDAgMS0xLjU2NS0yLjYyN1YzMS4wOGMwLTEuMDY4LjU3My0yLjA1NiAxLjUwMy0yLjU5M1oiIGZpbGw9IiNmZmYiLz48L3N2Zz4="
+            />
+            <p className="text-xl">Compose</p>
+          </div>
           <AutocompleteInput
             options={composeData}
             selected={selectedComponent?.compose?.name}
@@ -102,7 +109,7 @@ const Page = () => {
           />
 
           {selectedComponent ? <Links links={selectedComponent.compose.links} /> : null}
-        </SectionContainer>
+        </>
       </PageLayout>
     </div>
   )

@@ -22,5 +22,109 @@
         }
       ]
     }
+  },
+  {
+    "flutter": {
+      "name": "Row",
+      "links": [
+        {
+          "title": "Row class - Flutter Dev",
+          "link": "https://api.flutter.dev/flutter/widgets/Row-class.html"
+        }
+      ]
+    },
+    "compose": {
+      "name": "Row",
+      "links": [
+        {
+          "title": "Row class - Foso",
+          "link": "https://foso.github.io/Jetpack-Compose-Playground/layout/row/"
+        }
+      ]
+    }
+  },
+  {
+    "flutter": {
+      "name": "Column",
+      "links": [
+        {
+          "title": "Column class - Flutter Dev",
+          "link": "https://api.flutter.dev/flutter/widgets/Column-class.html"
+        }
+      ]
+    },
+    "compose": {
+      "name": "Column",
+      "links": [
+        {
+          "title": "Column class - Foso",
+          "link": "https://foso.github.io/Jetpack-Compose-Playground/layout/column/"
+        }
+      ]
+    }
+  },
+  {
+    "flutter": {
+      "name": "Text",
+      "links": [
+        {
+          "title": "Text class - Flutter Dev",
+          "link": "https://api.flutter.dev/flutter/widgets/Text-class.html"
+        }
+      ]
+    },
+    "compose": {
+      "name": "Text",
+      "links": [
+        {
+          "title": "Text class - Foso",
+          "link": "https://foso.github.io/Jetpack-Compose-Playground/text/text/"
+        }
+      ]
+    }
+  },
+  {
+    "flutter": {
+      "name": "Scaffold",
+      "links": [
+        {
+          "title": "Scaffold class - Flutter Dev",
+          "link": "https://api.flutter.dev/flutter/material/Scaffold-class.html"
+        }
+      ]
+    },
+    "compose": {
+      "name": "Scaffold",
+      "links": [
+        {
+          "title": "Scaffold class - Foso",
+          "link": "https://foso.github.io/Jetpack-Compose-Playground/material/scaffold/"
+        }
+      ]
+    }
+  },
+  {
+    "flutter": {
+      "name": "Container",
+      "links": [
+        {
+          "title": "Container class - Flutter Dev",
+          "link": "https://api.flutter.dev/flutter/widgets/Container-class.html"
+        }
+      ]
+    },
+    "compose": {
+      "name": "Box",
+      "links": [
+        {
+          "title": "Box class - Foso",
+          "link": "https://foso.github.io/Jetpack-Compose-Playground/layout/box/"
+        },
+        {
+          "title": "For more complicated use case, you can use `BoxWithConstraint`",
+          "link": "https://foso.github.io/Jetpack-Compose-Playground/foundation/layout/boxwithconstraints/"
+        }
+      ]
+    }
   }
 ]
