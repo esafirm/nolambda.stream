@@ -6,6 +6,8 @@ import AutocompleteInput from '@/components/mobilecomponents/AutoCompleteInput'
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { getAllFilesFrontMatter, getFileBySlug } from '@/lib/mdx'
 
+import { PageSEO } from '@/components/SEO'
+
 interface MobileComponent {
   compose: MobileComponentInfo
   flutter: MobileComponentInfo
@@ -82,6 +84,7 @@ const Page = ({ desc }) => {
 
   return (
     <div>
+      <PageSEO title="Mobile Components" description="Mobile Components" />
       <h1 className="mb-2 text-3xl font-extrabold leading-9 tracking-tight text-gray-900 dark:text-gray-100 sm:text-4xl sm:leading-10 md:text-6xl md:leading-14">
         Mobile Components
       </h1>
