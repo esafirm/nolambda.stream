@@ -8,15 +8,7 @@ import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { getAllFilesFrontMatter, getFileBySlug } from '@/lib/mdx'
 
 import { PageSEO } from '@/components/SEO'
-
-interface MobileComponent {
-  compose: MobileComponentInfo
-  flutter: MobileComponentInfo
-}
-
-interface MobileComponentInfo {
-  name: string
-}
+import { MobileComponent } from '@/lib/mobile-components'
 
 const flutterData = mobilecomponents.map((component) => component.flutter.name).sort()
 const composeData = mobilecomponents.map((component) => component.compose.name).sort()
@@ -56,14 +48,16 @@ export async function getStaticProps() {
 const PageLayout = ({ children }) => {
   return (
     <div className="flex w-full flex-col">
-      {children.map((child) => (
-        <div
-          key={child.props.topText}
-          className="mb-8 flex w-full flex-col justify-center rounded-md border border-gray-300 p-4"
-        >
-          {child}
-        </div>
-      ))}
+      {children
+        .filter((c) => c !== null)
+        .map((child) => (
+          <div
+            key={child.props.topText}
+            className="mb-8 flex w-full flex-col justify-center rounded-md border border-gray-300 p-4"
+          >
+            {child}
+          </div>
+        ))}
     </div>
   )
 }
@@ -97,7 +91,6 @@ const ComposeSection = ({ selectedCompose, setSelectedComponent, composeDesc }) 
         }}
       />
       {composeDesc ? <Description desc={composeDesc} /> : null}
-      <AskAiWrapper />
     </>
   )
 }
@@ -159,6 +152,10 @@ const Page = ({ desc }) => {
           setSelectedComponent={setSelectedComponent}
           composeDesc={composeDesc}
         />
+
+        {flutterDesc ? (
+          <AskAiWrapper selectedCompose={selectedCompose} selectedFlutter={selectedFlutter} />
+        ) : null}
       </PageLayout>
     </div>
   )
