@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 
 import mobilecomponents from '@/data/mobilecomponents/main.json'
 import AutocompleteInput from '@/components/mobilecomponents/AutoCompleteInput'
+import AskAiWrapper from '@/components/mobilecomponents/AskAi'
 
 import { MDXLayoutRenderer } from '@/components/MDXComponents'
 import { getAllFilesFrontMatter, getFileBySlug } from '@/lib/mdx'
@@ -45,7 +46,6 @@ export async function getStaticProps() {
   return {
     props: {
       desc,
-      openai_key: process.env.OPENAI_API_KEY,
     },
   }
 }
@@ -78,56 +78,6 @@ const Description = ({ desc }) => {
   )
 }
 
-async function requestCompletion(text: string) {
-  const openAiParameter = {
-    model: 'gpt-3.5-turbo',
-    temperature: 0.9,
-    stream: false,
-    messages: [
-      {
-        role: 'user',
-        content: text,
-      },
-    ],
-  }
-
-  return fetch('https://api.openai.com/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Content-Type': 'application/json',
-      Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
-    },
-    body: JSON.stringify(openAiParameter),
-  })
-    .then((res) => res.json())
-    .then((res) => {
-      console.log('API response', res.result)
-      return res.result
-    })
-}
-
-const AskAi = () => {
-  const [isLoaded, setIsLoaded] = useState(false)
-
-  return (
-    <div className="my-8 flex flex-col items-center justify-center">
-      {isLoaded ? (
-        <div>This is loaded</div>
-      ) : (
-        <button
-          className="flex flex-row items-center justify-center rounded-md border p-2 dark:hover:bg-gray-600"
-          onClick={() => {
-            requestCompletion("What's the equivalent of Jetpack compose Box in Flutter?")
-            setIsLoaded(true)
-          }}
-        >
-          Ask the AI for the equivalent
-        </button>
-      )}
-    </div>
-  )
-}
-
 const ComposeSection = ({ selectedCompose, setSelectedComponent, composeDesc }) => {
   return (
     <>
@@ -147,7 +97,7 @@ const ComposeSection = ({ selectedCompose, setSelectedComponent, composeDesc }) 
         }}
       />
       {composeDesc ? <Description desc={composeDesc} /> : null}
-      <AskAi />
+      <AskAiWrapper />
     </>
   )
 }
