@@ -3,6 +3,9 @@ import React, { useEffect, useState } from 'react'
 import { clearApiToken, getApiToken, requestCompletion, setApiToken } from '@/lib/ai/AiReqeust'
 import { MobileComponentInfo } from '@/lib/mobile-components'
 
+import ReactMarkdown from 'react-markdown'
+import CodeBlock from './CodeBlock'
+
 const AskAiWrapper = (props: {
   selectedCompose: MobileComponentInfo
   selectedFlutter: MobileComponentInfo
@@ -116,7 +119,24 @@ const Loading = () => {
 }
 
 const AiAnswer = (props: { answer: string }) => {
-  return <div className="my-8 flex flex-col items-center justify-center">{props.answer}</div>
+  return (
+    <ReactMarkdown
+      components={{
+        code({ node, inline, className, children, ...props }) {
+          const match = /language-(\w+)/.exec(className || '')
+          return !inline && match ? (
+            <CodeBlock language={match[1]} value={String(children).replace(/\n$/, '')} {...props} />
+          ) : (
+            <code className={className} {...props}>
+              {children}
+            </code>
+          )
+        },
+      }}
+    >
+      {props.answer}
+    </ReactMarkdown>
+  )
 }
 
 export default AskAiWrapper
