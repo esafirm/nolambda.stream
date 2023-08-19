@@ -1,6 +1,6 @@
 import React from 'react'
 import { Prism as SyntaxHighlighter } from 'react-syntax-highlighter'
-import { materialDark } from 'react-syntax-highlighter/dist/esm/styles/prism'
+import { materialDark } from 'react-syntax-highlighter/dist/cjs/styles/prism'
 
 const CodeBlock = (props: { value: string; language: string }) => {
   const { language, value } = props
