@@ -3,8 +3,7 @@ title: Things I Keep Forgetting - Behavior in PR from Forked Repository in Githu
 date: '2023-09-03'
 tags: ['Github', 'OSS', 'Git']
 draft: false
-summary: Getting a Pull Request (PR) from a Forked Repository in Github can be quite confusing. Here I put a note to self about the behavior that
-apparantly I keep forgetting.
+summary: Getting a Pull Request (PR) from a Forked Repository in Github can be quite confusing. Here I put a note to self about the behavior that apparantly I keep forgetting.
 ---
 
 Getting a Pull Request (PR) from a Forked Repository in Github can be quite confusing. Here I put a note to self about the behavior that
