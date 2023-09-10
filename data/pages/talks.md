@@ -3,6 +3,8 @@ title: 'Talks & Workshops'
 layout: 'PostSimple'
 ---
 
+- <strong>BDD 2023</strong>, 18 Mar 2023 - Taming a Large Android Project ( <a href="https://www.youtube.com/watch?v=aLCc9XG-Uqk&t=6366s">Video</a> | <a href="https://docs.google.com/presentation/d/1tj50g71v5Wt0n_dTFx01qq_YZC73t1cwsf9c7RYVCto/edit?usp=sharing">Slide</a> )
+
 - <strong>Ajaib x ADB</strong>, 22 June 2022 - Faster Mobile App Iteration ( <a href="https://www.youtube.com/watch?v=6JRhkHioLbE">Video</a> | <a href="https://docs.google.com/presentation/d/1ateOmK3XR9t50OEBdX1bTIHrjmvxA1KTZpVO6Wg0nqU/edit?usp=sharing">Slide</a> )
 
 - <strong>Blibli x tiket.com Talk</strong>, 26 Sept 2021 - Scaling The Navigation System in tiket | <a href="https://docs.google.com/presentation/d/1ibsju-2A7TvXarqYJFQCN5dn1ZiM7nNx7FlZPHXNvH4/edit?usp=sharing">Slide</a>
