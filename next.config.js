@@ -87,4 +87,20 @@ module.exports = withBundleAnalyzer({
 
     return config
   },
+  async redirects() {
+    return [
+      {
+        source: '/linkedin',
+        destination: 'https://www.linkedin.com/in/esa-firman-01b8096b/',
+        permanent: false,
+        basePath: false,
+      },
+      {
+        source: '/github',
+        destination: 'https://www.github.com/esafirm',
+        permanent: false,
+        basePath: false,
+      },
+    ]
+  },
 })
