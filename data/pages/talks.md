@@ -3,6 +3,12 @@ title: 'Talks & Workshops'
 layout: 'PostSimple'
 ---
 
+- <strong>Techbinar II, Binus Bandung</strong>, 25 Nov 2023 - <a href="https://docs.google.com/presentation/d/1tlcVrrQSW8Y8aXS-TV0433RBXvnQSYAEugfK5OXfYjk/edit?usp=sharing">Adventures in Android Engineering: A Glimpse into the Future</a>
+
+- <strong>GDSC Tech Talk, Widyatama</strong>, 18 Nov 2023 - <a href="https://docs.google.com/presentation/d/16YQAdLZzQUZKSSApE6rgi5TYhEsXN7LhbxBm-z_4sYQ/edit?usp=sharing">Introduction to Tech Trends in 2023/2024</a>
+
+- <strong>Juara Android 2023</strong>, 28 Oct 2023 - Jetpack Compose Architecture and State ( <a href="https://github.com/esafirm/kotlin-compose-playground/blob/main/src/main/kotlin/exp_architecture_component.kt">Demo</a> )
+
 - <strong>Droidjam 2023</strong>, 7 Oct 2023 - <a href="https://docs.google.com/presentation/d/1WcVAN2X7nt0uz_WqwfCjBs1e-Ah0rWK7evlKxb4HNzU/edit?usp=sharing">Save Development Time with Minimalism</a>
 
 - <strong>BDD 2023</strong>, 18 Mar 2023 - Taming a Large Android Project ( <a href="https://www.youtube.com/watch?v=aLCc9XG-Uqk&t=6366s">Video</a> | <a href="https://docs.google.com/presentation/d/1tj50g71v5Wt0n_dTFx01qq_YZC73t1cwsf9c7RYVCto/edit?usp=sharing">Slide</a> )
