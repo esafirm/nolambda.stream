@@ -3,6 +3,7 @@ const headerNavLinks = [
   { href: '/tags', title: 'Tags' },
   { href: '/talks', title: 'Talks & Workshop' },
   { href: '/mobilecomponents', title: 'Mobile Components' },
+  { href: '/wanderlist', title: 'WanderList' },
   { href: '/about', title: 'About' },
 ]
 

@@ -5,6 +5,14 @@ module.exports = {
   experimental: {
     optimizeUniversalDefaults: true,
   },
+  safelist: [
+    'text-indigo-500',
+    'text-green-500',
+    'text-pink-500',
+    'ring-indigo-500',
+    'ring-green-500',
+    'ring-pink-500',
+  ],
   content: [
     './pages/**/*.js',
     './pages/**/*.tsx',

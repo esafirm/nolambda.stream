@@ -1,0 +1,74 @@
+- name: United States
+  code: US
+- name: Canada
+  code: CA
+- name: Japan
+  code: JP
+- name: Germany
+  code: DE
+- name: France
+  code: FR
+- name: United Kingdom
+  code: UK
+- name: Australia
+  code: AU
+- name: Brazil
+  code: BR
+- name: India
+  code: IN
+- name: China
+  code: CN
+- name: Russia
+  code: RU
+- name: Italy
+  code: IT
+- name: Spain
+  code: ES
+- name: Mexico
+  code: MX
+- name: South Korea
+  code: KR
+- name: Argentina
+  code: AR
+- name: South Africa
+  code: ZA
+- name: Egypt
+  code: EG
+- name: New Zealand
+  code: NZ
+- name: Sweden
+  code: SE
+- name: Norway
+  code: NO
+- name: Finland
+  code: FI
+- name: Denmark
+  code: DK
+- name: Netherlands
+  code: NL
+- name: Belgium
+  code: BE
+- name: Switzerland
+  code: CH
+- name: Austria
+  code: AT
+- name: Greece
+  code: GR
+- name: Turkey
+  code: TR
+- name: Saudi Arabia
+  code: SA
+- name: United Arab Emirates
+  code: AE
+- name: Singapore
+  code: SG
+- name: Malaysia
+  code: MY
+- name: Thailand
+  code: TH
+- name: Vietnam
+  code: VN
+- name: Philippines
+  code: PH
+- name: Indonesia
+  code: ID
