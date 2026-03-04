@@ -13,7 +13,7 @@ export default function Pagination({ totalPages, currentPage }) {
           </button>
         )}
         {prevPage && (
-          <Link href={currentPage - 1 === 1 ? `/posts/` : `/posts/page/${currentPage - 1}`}>
+          <Link href={currentPage - 1 === 1 ? `/posts/` : `/posts/page/${currentPage - 1}`} legacyBehavior>
             <button rel="previous">Previous</button>
           </Link>
         )}
@@ -26,7 +26,7 @@ export default function Pagination({ totalPages, currentPage }) {
           </button>
         )}
         {nextPage && (
-          <Link href={`/posts/page/${currentPage + 1}`}>
+          <Link href={`/posts/page/${currentPage + 1}`} legacyBehavior>
             <button rel="next">Next</button>
           </Link>
         )}
