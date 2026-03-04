@@ -13,7 +13,10 @@ export default function Pagination({ totalPages, currentPage }) {
           </button>
         )}
         {prevPage && (
-          <Link href={currentPage - 1 === 1 ? `/posts/` : `/posts/page/${currentPage - 1}`} legacyBehavior>
+          <Link
+            href={currentPage - 1 === 1 ? `/posts/` : `/posts/page/${currentPage - 1}`}
+            legacyBehavior
+          >
             <button rel="previous">Previous</button>
           </Link>
         )}
