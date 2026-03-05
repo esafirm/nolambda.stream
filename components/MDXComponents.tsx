@@ -1,4 +1,4 @@
-import React, { useMemo } from 'react'
+import React, { useMemo, JSX } from 'react'
 import { getMDXComponent } from 'mdx-bundler/client'
 import Image from './Image'
 import CustomLink from './Link'
@@ -21,7 +21,12 @@ const layoutRegistry = {
   PostSimple,
   AuthorLayout,
   ListLayout,
-} as Record<string, React.ComponentType<any>>
+} as Record<string, React.FC>
+
+type MDXWrapperProps = {
+  layout?: LayoutName
+  components?: Record<string, React.FC>
+}
 
 export const MDXComponents = {
   Image,
@@ -29,7 +34,7 @@ export const MDXComponents = {
   a: CustomLink,
   pre: Pre,
   BlogNewsletterForm: BlogNewsletterForm,
-  wrapper: ({ components, layout, ...rest }: any) => {
+  wrapper: ({ components, layout, ...rest }: MDXWrapperProps) => {
     const Layout = useMemo(() => {
       if (!layout) return null
 
@@ -50,7 +55,6 @@ export const MDXLayoutRenderer = ({
 }: {
   layout?: string
   mdxSource: string
-  [key: string]: any
 }) => {
   const MDXLayout = useMemo(() => getMDXComponent(mdxSource), [mdxSource])
 

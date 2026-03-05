@@ -1,3 +1,4 @@
+import React from 'react'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
@@ -7,12 +8,13 @@ import Tag from '@/components/Tag'
 import siteMetadata from '@/data/siteMetadata'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
+import { Author, FrontMatter } from '@/layouts/types'
 
 interface PostLayoutProps {
-  frontMatter: any
-  authorDetails?: any[]
-  next?: any
-  prev?: any
+  frontMatter: FrontMatter
+  authorDetails?: Author[]
+  next?: { slug: string; title: string }
+  prev?: { slug: string; title: string }
   children: React.ReactNode
 }
 

@@ -1,3 +1,4 @@
+import { ReactNode } from 'react'
 import Link from '@/components/Link'
 import PageTitle from '@/components/PageTitle'
 import SectionContainer from '@/components/SectionContainer'
@@ -14,7 +15,7 @@ interface PostSimpleProps {
   authorDetails?: Author[]
   next?: PostNav
   prev?: PostNav
-  children: React.ReactNode
+  children: ReactNode
 }
 
 const editUrl = (fileName: string) => `${siteMetadata.siteRepo}/blob/master/data/posts/${fileName}`

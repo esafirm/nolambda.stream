@@ -11,7 +11,6 @@ export interface FrontMatter {
   images?: string[]
   draft?: boolean
   layout?: LayoutName
-  [key: string]: any
 }
 
 export interface Author {

@@ -18,6 +18,14 @@ const Giscus = () => {
   const LoadComments = useCallback(() => {
     setEnabledLoadComments(false)
 
+    // FIX: Use optional chaining for safe access, but validate before use
+    const giscusConfig = siteMetadata?.comment?.giscusConfig
+
+    if (!giscusConfig) {
+      console.warn('Giscus: giscusConfig is undefined, skipping comment loading')
+      return
+    }
+
     const {
       repo,
       repositoryId,
@@ -28,7 +36,7 @@ const Giscus = () => {
       metadata,
       inputPosition,
       lang,
-    } = siteMetadata?.comment?.giscusConfig
+    } = giscusConfig
 
     const script = document.createElement('script')
     script.src = 'https://giscus.app/client.js'
