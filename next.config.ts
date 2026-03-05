@@ -1,4 +1,6 @@
-const withBundleAnalyzer = require('@next/bundle-analyzer')({
+import createBundleAnalyzer from '@next/bundle-analyzer'
+
+const withBundleAnalyzer = createBundleAnalyzer({
   enabled: process.env.ANALYZE === 'true',
 })
 
@@ -52,7 +54,7 @@ const securityHeaders = [
   },
 ]
 
-module.exports = withBundleAnalyzer({
+export default withBundleAnalyzer({
   reactStrictMode: true,
   pageExtensions: ['js', 'jsx', 'md', 'mdx', 'ts', 'tsx'],
   async headers() {
@@ -88,6 +90,25 @@ module.exports = withBundleAnalyzer({
     }
 
     return config
+  },
+  turbopack: {
+    rules: {
+      '*.svg': {
+        loaders: ['@svgr/webpack'],
+        // Required so Turbopack knows the loader outputs JavaScript, not an image asset
+        as: '*.js',
+      },
+    },
+    // Dynamically apply Preact aliases in production
+    resolveAlias:
+      process.env.NODE_ENV === 'production'
+        ? {
+            'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
+            react: 'preact/compat',
+            'react-dom/test-utils': 'preact/test-utils',
+            'react-dom': 'preact/compat',
+          }
+        : {},
   },
   async redirects() {
     return [
