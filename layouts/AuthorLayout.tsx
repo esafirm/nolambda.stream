@@ -1,8 +1,14 @@
 import SocialIcon from '@/components/social-icons'
 import Image from '@/components/Image'
 import { PageSEO } from '@/components/SEO'
+import type { AuthorFrontMatter } from './types'
 
-export default function AuthorLayout({ children, frontMatter }) {
+interface AuthorLayoutProps {
+  children: React.ReactNode
+  frontMatter: AuthorFrontMatter
+}
+
+export default function AuthorLayout({ children, frontMatter }: AuthorLayoutProps) {
   const { name, avatar, occupation, company, email, twitter, linkedin, github } = frontMatter
 
   return (

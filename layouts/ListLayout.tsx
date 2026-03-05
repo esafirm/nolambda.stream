@@ -4,9 +4,22 @@ import siteMetadata from '@/data/siteMetadata'
 import { useState } from 'react'
 import Pagination from '@/components/Pagination'
 import formatDate from '@/lib/utils/formatDate'
+import type { FrontMatter, Pagination as PaginationType } from './types'
 
-export default function ListLayout({ posts, title, initialDisplayPosts = [], pagination }) {
-  const [searchValue, setSearchValue] = useState('')
+interface ListLayoutProps {
+  posts: FrontMatter[]
+  title: string
+  initialDisplayPosts?: FrontMatter[]
+  pagination?: PaginationType
+}
+
+export default function ListLayout({
+  posts,
+  title,
+  initialDisplayPosts = [],
+  pagination,
+}: ListLayoutProps) {
+  const [searchValue, setSearchValue] = useState<string>('')
   const filteredBlogPosts = posts.filter((frontMatter) => {
     const searchContent = frontMatter.title + frontMatter.summary + frontMatter.tags.join(' ')
     return searchContent.toLowerCase().includes(searchValue.toLowerCase())
@@ -27,7 +40,7 @@ export default function ListLayout({ posts, title, initialDisplayPosts = [], pag
             <input
               aria-label="Search articles"
               type="text"
-              onChange={(e) => setSearchValue(e.target.value)}
+              onChange={(e: React.ChangeEvent<HTMLInputElement>) => setSearchValue(e.target.value)}
               placeholder="Search articles"
               className="block w-full rounded-md border border-gray-300 bg-white px-4 py-2 text-gray-900 focus:border-primary-500 focus:ring-primary-500 dark:border-gray-900 dark:bg-gray-800 dark:text-gray-100"
             />

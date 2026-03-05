@@ -122,9 +122,9 @@ const AiAnswer = (props: { answer: string }) => {
   return (
     <ReactMarkdown
       components={{
-        code({ node, inline, className, children, ...props }) {
+        code({ node, className, children, ...props }) {
           const match = /language-(\w+)/.exec(className || '')
-          return !inline && match ? (
+          return match ? (
             <CodeBlock language={match[1]} value={String(children).replace(/\n$/, '')} {...props} />
           ) : (
             <code className={className} {...props}>

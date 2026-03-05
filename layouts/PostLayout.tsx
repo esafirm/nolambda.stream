@@ -8,23 +8,46 @@ import siteMetadata from '@/data/siteMetadata'
 import Comments from '@/components/comments'
 import ScrollTopAndComment from '@/components/ScrollTopAndComment'
 
-const editUrl = (fileName) => `${siteMetadata.siteRepo}/blob/master/data/posts/${fileName}`
-const discussUrl = (slug) =>
+interface PostLayoutProps {
+  frontMatter: any
+  authorDetails?: any[]
+  next?: any
+  prev?: any
+  children: React.ReactNode
+}
+
+const editUrl = (fileName: string) => `${siteMetadata.siteRepo}/blob/master/data/posts/${fileName}`
+const discussUrl = (slug: string) =>
   `https://mobile.twitter.com/search?q=${encodeURIComponent(
     `${siteMetadata.siteUrl}/posts/${slug}`
   )}`
 
-const postDateTemplate = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }
+const postDateTemplate: Intl.DateTimeFormatOptions = {
+  weekday: 'long',
+  year: 'numeric',
+  month: 'long',
+  day: 'numeric',
+}
 
-export default function PostLayout({ frontMatter, authorDetails, next, prev, children }) {
+export default function PostLayout({
+  frontMatter,
+  authorDetails = [],
+  next,
+  prev,
+  children,
+}: PostLayoutProps) {
   const { slug, fileName, date, title, images, tags } = frontMatter
 
   return (
     <SectionContainer>
       <BlogSEO
         url={`${siteMetadata.siteUrl}/posts/${slug}`}
+        title={title}
+        summary={frontMatter.summary || ''}
+        date={date}
+        lastmod={date}
+        canonicalUrl={`${siteMetadata.siteUrl}/posts/${slug}`}
         authorDetails={authorDetails}
-        {...frontMatter}
       />
       <ScrollTopAndComment />
       <article>

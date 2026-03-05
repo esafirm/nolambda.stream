@@ -34,7 +34,8 @@ program
   .parse(process.argv)
 
 const shell = process.env.SHELL
-const app = next({ dev: true, dir: program.root || process.cwd() })
+const useTurbopack = process.env.TURBOPACK === 'true'
+const app = next({ dev: true, turbo: useTurbopack, dir: program.root || process.cwd() })
 const port = parseInt(process.env.PORT, 10) || 3000
 const handle = app.getRequestHandler()
 
@@ -46,7 +47,13 @@ app.prepare().then(() => {
       .on(program.event, async (filePathContext, eventContext = defaultWatchEvent) => {
         // Emit changes via socketio
         io.sockets.emit('reload', filePathContext)
-        app.server.hotReloader.send('building')
+        try {
+          if (app.server.hotReloader) {
+            app.server.hotReloader.send('building')
+          }
+        } catch (error) {
+          console.warn('Hot reloader API not available:', error.message)
+        }
 
         if (program.command) {
           // Use spawn here so that we can pipe stdio from the command without buffering
@@ -81,7 +88,13 @@ app.prepare().then(() => {
           }
         }
 
-        app.server.hotReloader.send('reloadPage')
+        try {
+          if (app.server.hotReloader) {
+            app.server.hotReloader.send('reloadPage')
+          }
+        } catch (error) {
+          console.warn('Hot reloader API not available:', error.message)
+        }
       })
   }
 
@@ -102,8 +115,14 @@ app.prepare().then(() => {
     msg && console.log(color ? chalk[color](msg) : msg)
 
     // reload the nextjs app
-    app.server.hotReloader.send('building')
-    app.server.hotReloader.send('reloadPage')
+    try {
+      if (app.server.hotReloader) {
+        app.server.hotReloader.send('building')
+        app.server.hotReloader.send('reloadPage')
+      }
+    } catch (error) {
+      console.warn('Hot reloader API not available:', error.message)
+    }
     res.end('Reload initiated')
   })
 
