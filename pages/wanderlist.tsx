@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import fs from 'fs'
 import path from 'path'
-import yaml from 'js-yaml'
+import { load } from 'js-yaml'
 
 interface Place {
   name: string
@@ -32,12 +32,12 @@ export async function getStaticProps() {
   // Read nations data
   const nationsFilePath = path.join(dataDirectory, 'world_nations.yaml')
   const nationsYaml = fs.readFileSync(nationsFilePath, 'utf8')
-  const nations: Place[] = yaml.load(nationsYaml) as Place[]
+  const nations: Place[] = load(nationsYaml) as Place[]
 
   // Read provinces data
   const provincesFilePath = path.join(dataDirectory, 'indonesia_provinces.yaml')
   const provincesYaml = fs.readFileSync(provincesFilePath, 'utf8')
-  const provinces: Place[] = yaml.load(provincesYaml) as Place[]
+  const provinces: Place[] = load(provincesYaml) as Place[]
 
   // Read members data
   const membersDirectory = path.join(dataDirectory, 'members')
@@ -46,7 +46,7 @@ export async function getStaticProps() {
   const members: Member[] = memberFiles.map((file) => {
     const memberFilePath = path.join(membersDirectory, file)
     const memberYaml = fs.readFileSync(memberFilePath, 'utf8')
-    return yaml.load(memberYaml) as Member
+    return load(memberYaml) as Member
   })
 
   return {
@@ -96,6 +96,13 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
     })
   }
 
+  const handleMemberKeyPress = (event: React.KeyboardEvent, member: Member) => {
+    if (event.key === 'Enter' || event.key === ' ') {
+      event.preventDefault()
+      toggleMemberSelection(member)
+    }
+  }
+
   const getVisitingMember = (placeCode: string, category: 'world' | 'indonesia') => {
     if (selectedMembers.length === 0) return null
     return selectedMembers.find((member) => member.visited[category].includes(placeCode))
@@ -113,6 +120,8 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
         {members.map((member) => (
           <div
             key={member.name}
+            role="button"
+            tabIndex={0}
             className={`relative h-16 w-16 cursor-pointer overflow-hidden rounded-full transition-all duration-200 ease-in-out
               ${
                 selectedMembers.some((m) => m.name === member.name)
@@ -120,6 +129,7 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
                   : 'ring-2 ring-gray-300 hover:ring-indigo-400 dark:ring-gray-700'
               }`}
             onClick={() => toggleMemberSelection(member)}
+            onKeyDown={(e) => handleMemberKeyPress(e, member)}
             title={member.name}
           >
             {member.avatar ? (

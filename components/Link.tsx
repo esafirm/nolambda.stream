@@ -5,6 +5,9 @@ import type { LinkProps as NextLinkProps } from 'next/link'
 type CustomLinkProps = NextLinkProps & {
   href?: string
   children: React.ReactNode
+  className?: string
+  rel?: string
+  target?: string
 }
 
 const CustomLink = ({ href, children, ...rest }: CustomLinkProps) => {
