@@ -32,12 +32,12 @@ export async function getStaticProps() {
   // Read nations data
   const nationsFilePath = path.join(dataDirectory, 'world_nations.yaml')
   const nationsYaml = fs.readFileSync(nationsFilePath, 'utf8')
-  const nations: Place[] = load(nationsYaml) as Place[]
+  const nations: Place[] = (load(nationsYaml) as Place[]) || []
 
   // Read provinces data
   const provincesFilePath = path.join(dataDirectory, 'indonesia_provinces.yaml')
   const provincesYaml = fs.readFileSync(provincesFilePath, 'utf8')
-  const provinces: Place[] = load(provincesYaml) as Place[]
+  const provinces: Place[] = (load(provincesYaml) as Place[]) || []
 
   // Read members data
   const membersDirectory = path.join(dataDirectory, 'members')
@@ -70,14 +70,11 @@ const getFlagEmoji = (countryCode: string) => {
 }
 
 const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }) => {
-  const [selectedMembers, setSelectedMembers] = useState<Member[]>([])
-
-  // Initialize selectedMembers with the first member if available
-  React.useEffect(() => {
-    if (members.length > 0 && selectedMembers.length === 0) {
-      setSelectedMembers([members[0]])
-    }
-  }, [members, selectedMembers])
+  // Initialize selectedMembers with the first member if available.
+  // Using a state initializer function ensures it's set correctly on the first render (SSR and Client).
+  const [selectedMembers, setSelectedMembers] = useState<Member[]>(() => {
+    return members && members.length > 0 ? [members[0]] : []
+  })
 
   const toggleMemberSelection = (memberToToggle: Member) => {
     setSelectedMembers((prevSelected) => {
@@ -105,7 +102,7 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
 
   const getVisitingMember = (placeCode: string, category: 'world' | 'indonesia') => {
     if (selectedMembers.length === 0) return null
-    return selectedMembers.find((member) => member.visited[category].includes(placeCode))
+    return selectedMembers.find((member) => member.visited?.[category]?.includes(placeCode)) || null
   }
 
   const isVisited = (placeCode: string, category: 'world' | 'indonesia') => {
@@ -125,7 +122,7 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
             className={`relative h-16 w-16 cursor-pointer overflow-hidden rounded-full transition-all duration-200 ease-in-out
               ${
                 selectedMembers.some((m) => m.name === member.name)
-                  ? `ring-4 ring-${member.color}`
+                  ? `ring-4 ring-${member.color || 'indigo-500'}`
                   : 'ring-2 ring-gray-300 hover:ring-indigo-400 dark:ring-gray-700'
               }`}
             onClick={() => toggleMemberSelection(member)}
@@ -156,7 +153,7 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
           <div>
             <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-gray-100">
               World Nations (
-              {new Set(selectedMembers.flatMap((member) => member.visited.world)).size}/
+              {new Set(selectedMembers.flatMap((member) => member.visited?.world || [])).size}/
               {nations.length})
             </h2>
             <ul className="space-y-2">
@@ -169,7 +166,9 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
                       checked={isVisited(nation.code, 'world')}
                       readOnly
                       className={`form-checkbox h-5 w-5 rounded ${
-                        visitingMember ? `text-${visitingMember.color}` : 'text-gray-400'
+                        visitingMember
+                          ? `text-${visitingMember.color || 'indigo-500'}`
+                          : 'text-gray-400'
                       }`}
                     />
                     <span className="ml-2 text-lg">
@@ -184,7 +183,7 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
           <div>
             <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-gray-100">
               Indonesian Provinces (
-              {new Set(selectedMembers.flatMap((member) => member.visited.indonesia)).size}/
+              {new Set(selectedMembers.flatMap((member) => member.visited?.indonesia || [])).size}/
               {provinces.length})
             </h2>
             <ul className="space-y-2">
@@ -197,7 +196,9 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
                       checked={isVisited(province.code, 'indonesia')}
                       readOnly
                       className={`form-checkbox h-5 w-5 rounded ${
-                        visitingMember ? `text-${visitingMember.color}` : 'text-gray-400'
+                        visitingMember
+                          ? `text-${visitingMember.color || 'indigo-500'}`
+                          : 'text-gray-400'
                       }`}
                     />
                     <span className="ml-2 text-lg text-gray-900 dark:text-gray-100">
