@@ -18,6 +18,7 @@ interface Member {
   avatar?: string
   color?: string
   visited: VisitedData
+  planned?: VisitedData
 }
 
 interface WorldChecksProps {
@@ -105,15 +106,31 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
     return selectedMembers.find((member) => member.visited?.[category]?.includes(placeCode)) || null
   }
 
-  const isVisited = (placeCode: string, category: 'world' | 'indonesia') => {
-    return getVisitingMember(placeCode, category) !== null
+  const getPlanningMember = (placeCode: string, category: 'world' | 'indonesia') => {
+    if (selectedMembers.length === 0) return null
+    return selectedMembers.find((member) => member.planned?.[category]?.includes(placeCode)) || null
   }
 
   return (
     <div className="container mx-auto p-4">
-      <h1 className="mb-6 text-3xl font-bold">Visited Places Checklist</h1>
+      <style>{`
+        @keyframes jumpy {
+          0%,
+          100% {
+            transform: translateY(0);
+          }
+          50% {
+            transform: translateY(-4px);
+          }
+        }
+        .animate-jumpy {
+          display: inline-block;
+          animation: jumpy 1.5s infinite ease-in-out;
+        }
+      `}</style>
+      <h1 className="mb-6 text-3xl font-bold text-gray-900 dark:text-gray-100">Travel Tracker</h1>
 
-      <div className="mb-6 flex space-x-4">
+      <div className="mb-8 flex space-x-4">
         {members.map((member) => (
           <div
             key={member.name}
@@ -148,32 +165,59 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
         ))}
       </div>
 
+      <div className="mb-8 flex items-center space-x-6 rounded-lg bg-gray-100 p-4 dark:bg-gray-800">
+        <div className="flex items-center space-x-2">
+          <span className="animate-jumpy rounded bg-gray-500 px-2 py-0.5 text-[10px] font-bold text-white">
+            Visited
+          </span>
+          <span className="text-sm font-medium">Been there!</span>
+        </div>
+        <div className="flex items-center space-x-2">
+          <span className="animate-jumpy rounded border border-dashed border-gray-500 px-2 py-0.5 text-[10px] font-bold text-gray-500">
+            Planned
+          </span>
+          <span className="text-sm font-medium">Next stop!</span>
+        </div>
+      </div>
+
       {selectedMembers.length > 0 && (
-        <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="grid grid-cols-1 gap-12 md:grid-cols-2">
           <div>
             <h2 className="mb-4 text-2xl font-semibold text-gray-900 dark:text-gray-100">
               World Nations (
               {new Set(selectedMembers.flatMap((member) => member.visited?.world || [])).size}/
               {nations.length})
             </h2>
-            <ul className="space-y-2">
+            <ul className="space-y-4">
               {nations.map((nation) => {
                 const visitingMember = getVisitingMember(nation.code, 'world')
+                const planningMember = getPlanningMember(nation.code, 'world')
+                const visited = !!visitingMember
+                const planned = !!planningMember && !visited
+
                 return (
-                  <li key={nation.code} className="flex items-center">
-                    <input
-                      type="checkbox"
-                      checked={isVisited(nation.code, 'world')}
-                      readOnly
-                      className={`form-checkbox h-5 w-5 rounded ${
-                        visitingMember
-                          ? `text-${visitingMember.color || 'indigo-500'}`
-                          : 'text-gray-400'
-                      }`}
-                    />
-                    <span className="ml-2 text-lg">
+                  <li key={nation.code} className="flex flex-wrap items-center gap-2">
+                    <span className="text-lg">
                       {getFlagEmoji(nation.code)} {nation.name}
                     </span>
+                    {visited && (
+                      <span
+                        className={`animate-jumpy rounded px-2 py-0.5 text-[10px] font-bold text-white bg-${
+                          visitingMember?.color || 'indigo-500'
+                        }`}
+                      >
+                        Visited
+                      </span>
+                    )}
+                    {planned && (
+                      <span
+                        className={`animate-jumpy rounded border border-dashed px-2 py-0.5 text-[10px] font-bold border-${
+                          planningMember?.color || 'indigo-500'
+                        } text-${planningMember?.color || 'indigo-500'}`}
+                      >
+                        Planned
+                      </span>
+                    )}
                   </li>
                 )
               })}
@@ -186,24 +230,36 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
               {new Set(selectedMembers.flatMap((member) => member.visited?.indonesia || [])).size}/
               {provinces.length})
             </h2>
-            <ul className="space-y-2">
+            <ul className="space-y-4">
               {provinces.map((province) => {
                 const visitingMember = getVisitingMember(province.code, 'indonesia')
+                const planningMember = getPlanningMember(province.code, 'indonesia')
+                const visited = !!visitingMember
+                const planned = !!planningMember && !visited
+
                 return (
-                  <li key={province.code} className="flex items-center">
-                    <input
-                      type="checkbox"
-                      checked={isVisited(province.code, 'indonesia')}
-                      readOnly
-                      className={`form-checkbox h-5 w-5 rounded ${
-                        visitingMember
-                          ? `text-${visitingMember.color || 'indigo-500'}`
-                          : 'text-gray-400'
-                      }`}
-                    />
-                    <span className="ml-2 text-lg text-gray-900 dark:text-gray-100">
+                  <li key={province.code} className="flex flex-wrap items-center gap-2">
+                    <span className="text-lg text-gray-900 dark:text-gray-100">
                       {province.name}
                     </span>
+                    {visited && (
+                      <span
+                        className={`animate-jumpy rounded px-2 py-0.5 text-[10px] font-bold text-white bg-${
+                          visitingMember?.color || 'indigo-500'
+                        }`}
+                      >
+                        Visited
+                      </span>
+                    )}
+                    {planned && (
+                      <span
+                        className={`animate-jumpy rounded border border-dashed px-2 py-0.5 text-[10px] font-bold border-${
+                          planningMember?.color || 'indigo-500'
+                        } text-${planningMember?.color || 'indigo-500'}`}
+                      >
+                        Planned
+                      </span>
+                    )}
                   </li>
                 )
               })}

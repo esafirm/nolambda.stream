@@ -12,6 +12,12 @@ module.exports = {
     'ring-indigo-500',
     'ring-green-500',
     'ring-pink-500',
+    'bg-indigo-500',
+    'bg-green-500',
+    'bg-pink-500',
+    'border-indigo-500',
+    'border-green-500',
+    'border-pink-500',
   ],
   content: [
     './pages/**/*.js',
