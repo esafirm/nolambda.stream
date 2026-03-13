@@ -79,16 +79,6 @@ export default withBundleAnalyzer({
       use: ['@svgr/webpack'],
     })
 
-    if (!dev && !isServer) {
-      // Replace React with Preact only in client production build
-      Object.assign(config.resolve.alias, {
-        'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
-        react: 'preact/compat',
-        'react-dom/test-utils': 'preact/test-utils',
-        'react-dom': 'preact/compat',
-      })
-    }
-
     return config
   },
   turbopack: {
@@ -99,16 +89,6 @@ export default withBundleAnalyzer({
         as: '*.js',
       },
     },
-    // Dynamically apply Preact aliases in production
-    resolveAlias:
-      process.env.NODE_ENV === 'production'
-        ? {
-            'react/jsx-runtime.js': 'preact/compat/jsx-runtime',
-            react: 'preact/compat',
-            'react-dom/test-utils': 'preact/test-utils',
-            'react-dom': 'preact/compat',
-          }
-        : {},
   },
   async redirects() {
     return [
