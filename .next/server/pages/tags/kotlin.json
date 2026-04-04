@@ -1,0 +1,118 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Things I Keep Forgetting - ABI Jar is Classpath Snapshot in Kotlin",
+        "date": "2023-02-26T00:00:00.000Z",
+        "tags": ["Kotlin", "Tooling", "Compile"],
+        "draft": false,
+        "summary": "I repeteadly googling about the ABI Jar implementation in Gradle when in fact, Kotlin has the feature built-in with different name",
+        "images": [],
+        "layout": "PostSimple",
+        "canonicalUrl": null,
+        "slug": "things-i-keep-forgetting-abi-jar-is-classpath-snapshot-in-kotlin"
+      },
+      {
+        "title": "Android Arch's Room - Introduction",
+        "date": "2018-01-06T15:44:34.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Kotlin", "Room"],
+        "summary": "My first reaction when Android Architecture Component is out is just **meh..** I mean come on, the ViewModel is heavily tied to Activity and Fragment and basically i don't need it because i use Conductor… ",
+        "slug": "android-arch-room-introduction"
+      },
+      {
+        "title": "Redux-Like State Management with Sealed Class in Kotlin",
+        "date": "2017-12-25T15:56:46.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin", "Redux", "Front End"],
+        "summary": "On the previous post, we already discussed how your view should have its own model. We also have discussed how you can make a simple redux-like state machine in Kotlin.",
+        "slug": "redux-like-state-management-with-sealed-class-kotlin"
+      },
+      {
+        "title": "A Model for Your View",
+        "date": "2017-12-12T16:04:35.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Front End", "Kotlin"],
+        "summary": "Not so long ago, on my Android's MVP architecture, my view layer does not have a model. The view only renders what the presenter tell them to do which is good because then, we have a passive view. But, there's no representation of the view itself.",
+        "slug": "a-model-for-your-view"
+      },
+      {
+        "title": "FizzBuzz with Pattern Matching in Kotlin",
+        "date": "2017-08-29T15:27:10.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin", "Interview"],
+        "summary": "Seeing FizzBuzz implementation in Clojure with clojure.core.match makes me wondering if Kotlin has the same pattern matching capabilities or at least some resemblance in the way of doing matching.",
+        "slug": "fizzbuzz-pattern-matching-kotlin"
+      },
+      {
+        "title": "Running Kotlin Code in VSCode",
+        "date": "2017-08-06T12:46:41.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin", "VSCode"],
+        "summary": "Suppose you want to test some Kotlin code, but it is too simple for you so you don't want to create a project in your IDE and it also too complex to put it in your REPL",
+        "slug": "running-kotlin-vscode"
+      },
+      {
+        "title": "Kotlin 101 - Constructors",
+        "date": "2017-08-02T12:37:17.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin"],
+        "summary": "If you're familiar with OOP then you must be familiar with constructors. A constructors is a special method of a `class` that initialize an object of that type. Simply put, a constructors is a function that return your object.",
+        "slug": "kotlin-101-constructor"
+      },
+      {
+        "title": "Kotlin 101 - Extension Function",
+        "date": "2017-08-02T12:34:59.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin"],
+        "summary": "There is some code that we write everywhere. It doesn't have **state** and usually small enough to become a `class`. We often call it a helper function and in Java we used to save it in some `*Utils` class.",
+        "slug": "kotlin-101-extension-func"
+      },
+      {
+        "title": "Lambda and SAM Conversion in Kotlin - Part 2",
+        "date": "2017-07-11T12:17:40.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin"],
+        "summary": "So we already create `Interface` in Java and convert it to lambda with in Kotlin through SAM conversion. How about `interface` in Kotlin? As the previous part suggest, currently there's no SAM conversion in Kotlin interface.",
+        "slug": "kotlin-sam-conversion-part2"
+      },
+      {
+        "title": "Experimenting Kotlin without Editor",
+        "date": "2017-07-10T12:16:00.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin"],
+        "summary": "What will you do if you want to test some Kotlin syntax?  Chance you are opening your favorite IDE or text editor (not mentioning `vim` or `emacs` user in here) are very likely.",
+        "slug": "experimenting-kotlin-without-editor"
+      },
+      {
+        "title": "Lambda and SAM Conversion in Kotlin - Part 1",
+        "date": "2017-07-04T11:28:43.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin"],
+        "summary": "I love lambda expression. Whether it's in Java, Kotlin, or Javascript (arrow function). It helps me remove verbosity from my code",
+        "slug": "kotlin-sam-conversion-part1"
+      },
+      {
+        "title": "Kotlin Coroutines - Introduction",
+        "date": "2017-07-04T11:09:01.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin"],
+        "summary": "Just like async/await in Javascript and C#, Kotlin Couroutines is trying to make asyncrhronous programming easier by enabling you to write async code with imperative style",
+        "slug": "kotlin-coroutines-introduction"
+      }
+    ],
+    "tag": "kotlin"
+  },
+  "__N_SSG": true
+}

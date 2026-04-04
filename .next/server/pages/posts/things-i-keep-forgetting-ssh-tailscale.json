@@ -1,0 +1,58 @@
+{
+  "pageProps": {
+    "post": {
+      "mdxSource": "var Component=(()=>{var r=Object.create;var t=Object.defineProperty;var h=Object.getOwnPropertyDescriptor;var d=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var c=a=>t(a,\"__esModule\",{value:!0});var g=(a,i)=>()=>(i||a((i={exports:{}}).exports,i),i.exports),m=(a,i)=>{c(a);for(var s in i)t(a,s,{get:i[s],enumerable:!0})},f=(a,i,s)=>{if(i&&typeof i==\"object\"||typeof i==\"function\")for(let n of d(i))!u.call(a,n)&&n!==\"default\"&&t(a,n,{get:()=>i[n],enumerable:!(s=h(i,n))||s.enumerable});return a},y=a=>f(c(t(a!=null?r(p(a)):{},\"default\",a&&a.__esModule&&\"default\"in a?{get:()=>a.default,enumerable:!0}:{value:a,enumerable:!0})),a);var o=g((I,l)=>{l.exports=_jsx_runtime});var w={};m(w,{default:()=>b,frontmatter:()=>k});var e=y(o()),k={title:\"Things I Keep Forgetting - SSHing into Mac via Tailscale\",date:\"2026-03-03\",tags:[\"macOS\",\"SSH\",\"Tailscale\",\"Networking\"],draft:!1,summary:`You're using Tailscale on your Android and Laptop, but Termius keeps hanging on the Auth phase. Here\\u2019s how to fix the silent \"DenyList\" block.`};function N(a={}){let{wrapper:i}=a.components||{};return i?(0,e.jsx)(i,Object.assign({},a,{children:(0,e.jsx)(s,{})})):s();function s(){let n=Object.assign({p:\"p\",strong:\"strong\",code:\"code\",h2:\"h2\",a:\"a\",span:\"span\",h3:\"h3\",pre:\"pre\",hr:\"hr\"},a.components);return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(n.p,{children:\"Here's the problem: You\\u2019re trying to SSH from your Android phone (using Termius) to your Mac laptop. Both are on your Tailscale network, you can ping the laptop, but the SSH connection just hangs or fails at the authentication phase without a proper error message.\"}),(0,e.jsxs)(n.p,{children:[(0,e.jsx)(n.strong,{children:\"You're thinking:\"}),\" Is it the SSH key? Is Termius bugged? Is Tailscale down?\"]}),(0,e.jsxs)(n.p,{children:[\"After digging into the macOS system logs, you notice the culprit: your Tailscale IP is being caught in a \",(0,e.jsx)(n.code,{children:\"DenyList\"}),\" rule in your SSH configuration.\"]}),(0,e.jsxs)(n.h2,{id:\"the-solution\",children:[(0,e.jsx)(n.a,{\"aria-hidden\":\"true\",href:\"#the-solution\",tabIndex:\"-1\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"The Solution\"]}),(0,e.jsx)(n.p,{children:`On macOS, SSH access is often restricted to local network IPs to prevent brute-force attacks from the open internet. If you have a \"Match Address\" block in your config, it likely doesn't recognize Tailscale's specific IP range.`}),(0,e.jsxs)(n.p,{children:['To fix this, we need to explicitly \"trust\" the Tailscale network range in your ',(0,e.jsx)(n.code,{children:\"/etc/ssh/sshd_config\"}),\".\"]}),(0,e.jsxs)(n.h3,{id:\"1-identify-the-tailscale-range\",children:[(0,e.jsx)(n.a,{\"aria-hidden\":\"true\",href:\"#1-identify-the-tailscale-range\",tabIndex:\"-1\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"1. Identify the Tailscale Range\"]}),(0,e.jsxs)(n.p,{children:[\"Tailscale uses the \",(0,e.jsx)(n.strong,{children:\"100.64.0.0/10\"}),\" range. We need to add this to our whitelist.\"]}),(0,e.jsxs)(n.h3,{id:\"2-update-the-config\",children:[(0,e.jsx)(n.a,{\"aria-hidden\":\"true\",href:\"#2-update-the-config\",tabIndex:\"-1\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"2. Update the Config\"]}),(0,e.jsx)(n.p,{children:\"Open your SSH config:\"}),(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsxs)(n.code,{className:\"language-bash code-highlight\",children:[(0,e.jsxs)(n.span,{className:\"code-line\",children:[(0,e.jsx)(n.span,{className:\"token function\",children:\"sudo\"}),\" \",(0,e.jsx)(n.span,{className:\"token function\",children:\"vim\"}),` /etc/ssh/sshd_config\n`]}),(0,e.jsx)(n.span,{className:\"code-line\",children:`\n`})]})}),(0,e.jsxs)(n.p,{children:[\"You'll likely see a block at the bottom that denies everything except local IPs. You need to insert \",(0,e.jsx)(n.code,{children:\"!100.64.0.0/10\"}),\" (the \",(0,e.jsx)(n.code,{children:\"!\"}),' means \"NOT\", so it excludes this range from the denial rule). On my case, this was added by me before, but I forgot about it and it caused the same issue again when I reinstalled macOS. (duh!)']}),(0,e.jsx)(n.p,{children:\"Your config should look like this:\"}),(0,e.jsx)(n.pre,{className:\"language-text\",children:(0,e.jsxs)(n.code,{className:\"code-highlight language-text\",children:[(0,e.jsx)(n.span,{className:\"code-line\",children:`# Block everyone EXCEPT local IPs and Tailscale\n`}),(0,e.jsx)(n.span,{className:\"code-line\",children:`Match Address *,!100.64.0.0/10,!192.168.0.0/16,!172.16.0.0/12,!10.0.0.0/8,!127.0.0.1,!::1\n`}),(0,e.jsx)(n.span,{className:\"code-line\",children:`    DenyUsers *\n`}),(0,e.jsx)(n.span,{className:\"code-line\",children:`\n`})]})}),(0,e.jsxs)(n.h3,{id:\"3-apply-and-test\",children:[(0,e.jsx)(n.a,{\"aria-hidden\":\"true\",href:\"#3-apply-and-test\",tabIndex:\"-1\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"3. Apply and Test\"]}),(0,e.jsx)(n.p,{children:\"Before restarting, always check if you made a typo:\"}),(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsxs)(n.code,{className:\"language-bash code-highlight\",children:[(0,e.jsxs)(n.span,{className:\"code-line\",children:[(0,e.jsx)(n.span,{className:\"token function\",children:\"sudo\"}),\" sshd \",(0,e.jsx)(n.span,{className:\"token parameter variable\",children:\"-t\"}),`\n`]}),(0,e.jsx)(n.span,{className:\"code-line\",children:`\n`})]})}),(0,e.jsx)(n.p,{children:\"If it returns nothing, restart the SSH daemon:\"}),(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsxs)(n.code,{className:\"language-bash code-highlight\",children:[(0,e.jsxs)(n.span,{className:\"code-line\",children:[(0,e.jsx)(n.span,{className:\"token function\",children:\"sudo\"}),\" launchctl kickstart \",(0,e.jsx)(n.span,{className:\"token parameter variable\",children:\"-k\"}),` system/com.openssh.sshd\n`]}),(0,e.jsx)(n.span,{className:\"code-line\",children:`\n`})]})}),(0,e.jsxs)(n.h2,{id:\"but-how-do-i-know-if-its-actually-working\",children:[(0,e.jsx)(n.a,{\"aria-hidden\":\"true\",href:\"#but-how-do-i-know-if-its-actually-working\",tabIndex:\"-1\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"But, how do I know if it's actually working?\"]}),(0,e.jsx)(n.p,{children:`If you want to see the \"live\" drama of your phone trying to connect (and whether it's being accepted or rejected), you can stream the system logs:`}),(0,e.jsx)(n.pre,{className:\"language-bash\",children:(0,e.jsxs)(n.code,{className:\"language-bash code-highlight\",children:[(0,e.jsxs)(n.span,{className:\"code-line\",children:[\"log stream \",(0,e.jsx)(n.span,{className:\"token parameter variable\",children:\"--predicate\"}),\" \",(0,e.jsx)(n.span,{className:\"token string\",children:`'process == \"sshd\"'`}),\" \",(0,e.jsx)(n.span,{className:\"token parameter variable\",children:\"--level\"}),` info\n`]}),(0,e.jsx)(n.span,{className:\"code-line\",children:`\n`})]})}),(0,e.jsx)(n.p,{children:'Now, when you try to connect from Termius, you\\u2019ll see the logs instantly transition from \"Failed\" to \"Accepted.\"'}),(0,e.jsx)(n.hr,{}),(0,e.jsx)(n.p,{children:\"FYI: This logic also applies if you use a specific VPN or a static IP at the office\\u2014just add that range to the exclusion list.\"}),(0,e.jsx)(n.p,{children:\"Until next time ~\"})]})}}var b=N;return w;})();\n;return Component;",
+      "toc": [
+        { "value": "The Solution", "url": "#the-solution", "depth": 2 },
+        {
+          "value": "1. Identify the Tailscale Range",
+          "url": "#1-identify-the-tailscale-range",
+          "depth": 3
+        },
+        { "value": "2. Update the Config", "url": "#2-update-the-config", "depth": 3 },
+        { "value": "3. Apply and Test", "url": "#3-apply-and-test", "depth": 3 },
+        {
+          "value": "But, how do I know if it's actually working?",
+          "url": "#but-how-do-i-know-if-its-actually-working",
+          "depth": 2
+        }
+      ],
+      "frontMatter": {
+        "readingTime": { "text": "3 min read", "minutes": 2.17, "time": 130200, "words": 434 },
+        "slug": "things-i-keep-forgetting-ssh-tailscale",
+        "fileName": "things-i-keep-forgetting-ssh-tailscale.md",
+        "title": "Things I Keep Forgetting - SSHing into Mac via Tailscale",
+        "date": "2026-03-03T00:00:00.000Z",
+        "tags": ["macOS", "SSH", "Tailscale", "Networking"],
+        "draft": false,
+        "summary": "You're using Tailscale on your Android and Laptop, but Termius keeps hanging on the Auth phase. Here’s how to fix the silent \"DenyList\" block."
+      }
+    },
+    "authorDetails": [
+      {
+        "readingTime": { "text": "2 min read", "minutes": 1.345, "time": 80700, "words": 269 },
+        "slug": ["default"],
+        "fileName": "default.md",
+        "name": "Esa Firman",
+        "avatar": "/static/images/avatar.png",
+        "occupation": "Software Engineer",
+        "email": "esafirm21@gmail.com",
+        "twitter": "https://twitter.com/esafirm",
+        "linkedin": "https://www.linkedin.com/esa-firman-3",
+        "github": "https://github.com/esafirm",
+        "date": null
+      }
+    ],
+    "prev": {
+      "title": "Configuration Cache and the False Economy of Gradle Helper Tasks",
+      "date": "2025-10-26T03:16:41.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Gradle", "Android", "Productivity"],
+      "summary": "Creating a new helper task in Gradle is not always a good thing, especially if you're using the configuration cache.",
+      "slug": "configuration-cache-and-install-task"
+    },
+    "next": null
+  },
+  "__N_SSG": true
+}

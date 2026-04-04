@@ -1,0 +1,53 @@
+{
+  "pageProps": {
+    "post": {
+      "mdxSource": "var Component=(()=>{var r=Object.create;var c=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var p=Object.getOwnPropertyNames;var h=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var o=a=>c(a,\"__esModule\",{value:!0});var m=(a,s)=>()=>(s||a((s={exports:{}}).exports,s),s.exports),N=(a,s)=>{o(a);for(var t in s)c(a,t,{get:s[t],enumerable:!0})},k=(a,s,t)=>{if(s&&typeof s==\"object\"||typeof s==\"function\")for(let e of p(s))!u.call(a,e)&&e!==\"default\"&&c(a,e,{get:()=>s[e],enumerable:!(t=d(s,e))||t.enumerable});return a},g=a=>k(o(c(a!=null?r(h(a)):{},\"default\",a&&a.__esModule&&\"default\"in a?{get:()=>a.default,enumerable:!0}:{value:a,enumerable:!0})),a);var i=m((w,l)=>{l.exports=_jsx_runtime});var v={};N(v,{default:()=>b,frontmatter:()=>f});var n=g(i()),f={title:\"Don't Mock Your Test Data\",date:\"2017-09-21T15:25:08.0Z\",draft:!1,category:\"Tech\",tags:[\"Test\"],summary:\"I found some strange condition when creating a test for a code with RxJava\\u2026\"};function y(a={}){let{wrapper:s}=a.components||{};return s?(0,n.jsx)(s,Object.assign({},a,{children:(0,n.jsx)(t,{})})):t();function t(){let e=Object.assign({p:\"p\",pre:\"pre\",code:\"code\",span:\"span\",strong:\"strong\",ol:\"ol\",li:\"li\",a:\"a\"},a.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(e.p,{children:\"I found some strange condition when creating a test for a code with RxJava.\"}),(0,n.jsx)(e.pre,{className:\"language-kotlin\",children:(0,n.jsxs)(e.code,{className:\"code-highlight language-kotlin\",children:[(0,n.jsxs)(e.span,{className:\"code-line\",children:[(0,n.jsx)(e.span,{className:\"token singleline string-literal\",children:(0,n.jsx)(e.span,{className:\"token string\",children:'\"Verify movie not empty and error\"'})}),\" \",(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"{\"}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line\",children:[\"        Mockito\",(0,n.jsx)(e.span,{className:\"token punctuation\",children:\".\"}),(0,n.jsx)(e.span,{className:\"token function\",children:\"`when`\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"(\"}),\"networkSource\",(0,n.jsx)(e.span,{className:\"token punctuation\",children:\".\"}),(0,n.jsx)(e.span,{className:\"token function\",children:\"getMovies\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"(\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\")\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\")\"}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line\",children:[\"                \",(0,n.jsx)(e.span,{className:\"token punctuation\",children:\".\"}),(0,n.jsx)(e.span,{className:\"token function\",children:\"then\"}),\" \",(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"{\"}),\" mock\",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"Single\",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"List\",(0,n.jsx)(e.span,{className:\"token operator\",children:\"<\"}),\"Movie\",(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),(0,n.jsx)(e.span,{className:\"token operator\",children:\">\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"(\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\")\"}),\" \",(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"}\"}),`\n`]}),(0,n.jsx)(e.span,{className:\"code-line\",children:`\n`}),(0,n.jsxs)(e.span,{className:\"code-line\",children:[\"        tested\",(0,n.jsx)(e.span,{className:\"token punctuation\",children:\".\"}),(0,n.jsx)(e.span,{className:\"token function\",children:\"getMovies\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"(\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\")\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\".\"}),(0,n.jsx)(e.span,{className:\"token function\",children:\"test\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"(\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\")\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\".\"}),(0,n.jsx)(e.span,{className:\"token function\",children:\"also\"}),\" \",(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"{\"}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line\",children:[\"            it\",(0,n.jsx)(e.span,{className:\"token punctuation\",children:\".\"}),(0,n.jsx)(e.span,{className:\"token function\",children:\"assertNoErrors\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"(\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\")\"}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line\",children:[\"            it\",(0,n.jsx)(e.span,{className:\"token punctuation\",children:\".\"}),(0,n.jsx)(e.span,{className:\"token function\",children:\"assertComplete\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"(\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\")\"}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line\",children:[\"            it\",(0,n.jsx)(e.span,{className:\"token punctuation\",children:\".\"}),(0,n.jsx)(e.span,{className:\"token function\",children:\"assertValueCount\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"(\"}),(0,n.jsx)(e.span,{className:\"token number\",children:\"1\"}),(0,n.jsx)(e.span,{className:\"token punctuation\",children:\")\"}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line\",children:[\"        \",(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"}\"}),`\n`]}),(0,n.jsxs)(e.span,{className:\"code-line\",children:[\"    \",(0,n.jsx)(e.span,{className:\"token punctuation\",children:\"}\"}),`\n`]})]})}),(0,n.jsxs)(e.p,{children:[\"The test is simply asserting my \",(0,n.jsx)(e.code,{children:\"Single\"}),\" is running completely without error and exactly return one value. The problem is, my \",(0,n.jsx)(e.code,{children:\"Single\"}),\" is neither completed or having an error. It also not returning any value.\"]}),(0,n.jsx)(e.pre,{children:(0,n.jsx)(e.code,{className:\"code-highlight\",children:(0,n.jsx)(e.span,{className:\"code-line\",children:`java.lang.AssertionError: Not completed (latch = 1, values = 0, errors = 0, completions = 0)\n`})})}),(0,n.jsx)(\"center\",{children:(0,n.jsx)(\"small\",{children:\"The error message\"})}),(0,n.jsxs)(e.p,{children:[\"After scratching my head for the rest of the day, it turns out my test code that was wrong. I stub one of my \",(0,n.jsx)(e.code,{children:\"Single\"}),\" to return a \",(0,n.jsx)(e.strong,{children:\"mocked\"}),\" \",(0,n.jsx)(e.code,{children:\"Single\"}),\" that doesn't have behavior like the real \",(0,n.jsx)(e.code,{children:\"Single\"}),\" at all.\"]}),(0,n.jsx)(e.p,{children:\"So lesson learnt here:\"}),(0,n.jsxs)(e.ol,{children:[(0,n.jsx)(e.li,{children:\"The root of error in your test, maybe lies in your test, stub, mock logic, not your real code\"}),(0,n.jsx)(e.li,{children:\"Don't mock your test data, use a real one. Then verify it.\"})]}),(0,n.jsxs)(e.p,{children:[\"You can find the full sample on my \",(0,n.jsx)(e.a,{href:\"https://github.com/esafirm/kotlin-playground/blob/master/src/test/kotlin/nolambda.playground/TestObservableSpec.kt\",children:\"Github\"})]}),(0,n.jsx)(e.p,{children:\"Until next time. Cao ~ \\u{1F44B}\"})]})}}var b=y;return v;})();\n;return Component;",
+      "toc": [],
+      "frontMatter": {
+        "readingTime": { "text": "2 min read", "minutes": 1.37, "time": 82200, "words": 274 },
+        "slug": "dont-mock-your-test-data",
+        "fileName": "dont-mock-your-test-data.md",
+        "title": "Don't Mock Your Test Data",
+        "date": "2017-09-21T15:25:08.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Test"],
+        "summary": "I found some strange condition when creating a test for a code with RxJava…"
+      }
+    },
+    "authorDetails": [
+      {
+        "readingTime": { "text": "2 min read", "minutes": 1.345, "time": 80700, "words": 269 },
+        "slug": ["default"],
+        "fileName": "default.md",
+        "name": "Esa Firman",
+        "avatar": "/static/images/avatar.png",
+        "occupation": "Software Engineer",
+        "email": "esafirm21@gmail.com",
+        "twitter": "https://twitter.com/esafirm",
+        "linkedin": "https://www.linkedin.com/esa-firman-3",
+        "github": "https://github.com/esafirm",
+        "date": null
+      }
+    ],
+    "prev": {
+      "title": "FizzBuzz with Pattern Matching in Kotlin",
+      "date": "2017-08-29T15:27:10.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Kotlin", "Interview"],
+      "summary": "Seeing FizzBuzz implementation in Clojure with clojure.core.match makes me wondering if Kotlin has the same pattern matching capabilities or at least some resemblance in the way of doing matching.",
+      "slug": "fizzbuzz-pattern-matching-kotlin"
+    },
+    "next": {
+      "title": "Glide v4 Integration for Library",
+      "date": "2017-11-14T15:32:17.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Android", "Library"],
+      "summary": "Started from the issue on my image picker library which stated that we should use the new version of Glide, I'm starting to explore this new Glide v4 library and integrate it to the library",
+      "slug": "glide4-integration-library"
+    }
+  },
+  "__N_SSG": true
+}

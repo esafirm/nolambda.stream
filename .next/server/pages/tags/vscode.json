@@ -1,0 +1,17 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Running Kotlin Code in VSCode",
+        "date": "2017-08-06T12:46:41.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin", "VSCode"],
+        "summary": "Suppose you want to test some Kotlin code, but it is too simple for you so you don't want to create a project in your IDE and it also too complex to put it in your REPL",
+        "slug": "running-kotlin-vscode"
+      }
+    ],
+    "tag": "vscode"
+  },
+  "__N_SSG": true
+}

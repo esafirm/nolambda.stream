@@ -1,0 +1,53 @@
+{
+  "pageProps": {
+    "post": {
+      "mdxSource": "var Component=(()=>{var c=Object.create;var i=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var u=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,h=Object.prototype.hasOwnProperty;var s=t=>i(t,\"__esModule\",{value:!0});var m=(t,o)=>()=>(o||t((o={exports:{}}).exports,o),o.exports),g=(t,o)=>{s(t);for(var a in o)i(t,a,{get:o[a],enumerable:!0})},f=(t,o,a)=>{if(o&&typeof o==\"object\"||typeof o==\"function\")for(let n of u(o))!h.call(t,n)&&n!==\"default\"&&i(t,n,{get:()=>o[n],enumerable:!(a=d(o,n))||a.enumerable});return t},k=t=>f(s(i(t!=null?c(p(t)):{},\"default\",t&&t.__esModule&&\"default\"in t?{get:()=>t.default,enumerable:!0}:{value:t,enumerable:!0})),t);var r=m((C,l)=>{l.exports=_jsx_runtime});var x={};g(x,{default:()=>j,frontmatter:()=>y});var e=k(r()),y={title:\"Running Kotlin Code in VSCode\",date:\"2017-08-06T12:46:41.0Z\",draft:!1,category:\"Tech\",tags:[\"Kotlin\",\"VSCode\"],summary:\"Suppose you want to test some Kotlin code, but it is too simple for you so you don't want to create a project in your IDE and it also too complex to put it in your REPL\"};function N(t={}){let{wrapper:o}=t.components||{};return o?(0,e.jsx)(o,Object.assign({},t,{children:(0,e.jsx)(a,{})})):a();function a(){let n=Object.assign({p:\"p\",a:\"a\",ol:\"ol\",li:\"li\",code:\"code\",strong:\"strong\",pre:\"pre\",span:\"span\"},t.components);return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsxs)(n.p,{children:[\"Suppose you want to test some Kotlin code, but it is too simple for you so you don't want to create a project in your IDE and it also too complex to put it in your \",(0,e.jsx)(n.a,{href:\"https://nolambda.stream/experimenting-kotlin-without-editor/\",children:\"REPL\"})]}),(0,e.jsx)(n.p,{children:\"For me, the solution would be:\"}),(0,e.jsxs)(n.ol,{children:[(0,e.jsx)(n.li,{children:(0,e.jsx)(n.code,{children:\"code ~/Desktop/test.kt\"})}),(0,e.jsx)(n.li,{children:\"Write some Kotlin function\"}),(0,e.jsxs)(n.li,{children:[\"Run it with \",(0,e.jsx)(n.a,{href:\"https://marketplace.visualstudio.com/items?itemName=formulahendry.code-runner\",children:\"Code Runner\"})]})]}),(0,e.jsxs)(n.p,{children:[\"That's it, simple 3 steps to get your hands wet in Kotlin code. The only limitation with \",(0,e.jsx)(n.strong,{children:\"Code Runner\"}),\" in Kotlin is you have to call your function from \",(0,e.jsx)(n.code,{children:\"main\"}),\" function and you have to install the \",(0,e.jsx)(n.a,{href:\"https://kotlinlang.org/docs/tutorials/command-line.html\",children:\"command line compiler\"}),\" first.\"]}),(0,e.jsx)(n.p,{children:\"Example:\"}),(0,e.jsx)(n.pre,{className:\"language-kotlin\",children:(0,e.jsxs)(n.code,{className:\"code-highlight language-kotlin\",children:[(0,e.jsxs)(n.span,{className:\"code-line\",children:[(0,e.jsx)(n.span,{className:\"token keyword\",children:\"fun\"}),\" \",(0,e.jsx)(n.span,{className:\"token function\",children:\"main\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),\"args\",(0,e.jsx)(n.span,{className:\"token operator\",children:\":\"}),\" Array\",(0,e.jsx)(n.span,{className:\"token operator\",children:\"<\"}),\"String\",(0,e.jsx)(n.span,{className:\"token operator\",children:\">\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"{\"}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line\",children:[\"    \",(0,e.jsx)(n.span,{className:\"token function\",children:\"println\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),'\\\\\"test\\\\\"',(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"}\"}),`\n`]})]})}),(0,e.jsx)(n.p,{children:\"Because what Code Runner does is just:\"}),(0,e.jsx)(n.pre,{children:(0,e.jsx)(n.code,{className:\"code-highlight\",children:(0,e.jsx)(n.span,{className:\"code-line\",children:`cd \\\\\"/Users/esa/Desktop/\\\\\" && kotlinc test.kt -include-runtime -d test.jar && java -jar test.jar\n`})})}),(0,e.jsx)(n.p,{children:\"Still a lot faster than if you have to do it yourself, aight? Cao ~ \\\\ud83d\\\\udc4b\"})]})}}var j=N;return x;})();\n;return Component;",
+      "toc": [],
+      "frontMatter": {
+        "readingTime": { "text": "2 min read", "minutes": 1.055, "time": 63300, "words": 211 },
+        "slug": "running-kotlin-vscode",
+        "fileName": "running-kotlin-vscode.md",
+        "title": "Running Kotlin Code in VSCode",
+        "date": "2017-08-06T12:46:41.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin", "VSCode"],
+        "summary": "Suppose you want to test some Kotlin code, but it is too simple for you so you don't want to create a project in your IDE and it also too complex to put it in your REPL"
+      }
+    },
+    "authorDetails": [
+      {
+        "readingTime": { "text": "2 min read", "minutes": 1.345, "time": 80700, "words": 269 },
+        "slug": ["default"],
+        "fileName": "default.md",
+        "name": "Esa Firman",
+        "avatar": "/static/images/avatar.png",
+        "occupation": "Software Engineer",
+        "email": "esafirm21@gmail.com",
+        "twitter": "https://twitter.com/esafirm",
+        "linkedin": "https://www.linkedin.com/esa-firman-3",
+        "github": "https://github.com/esafirm",
+        "date": null
+      }
+    ],
+    "prev": {
+      "title": "Domain Name Resolution with /etc/hosts",
+      "date": "2017-08-03T12:41:45.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Ops", "UNIX", "OS", "DNS"],
+      "summary": "I think we already know that the domain that we use to access some website is just a masking to IP(s). All that fancy name like this blog will be translated to IP by the DNS. But how we can override it?",
+      "slug": "domain-resolution-etc-hosts"
+    },
+    "next": {
+      "title": "Freakin' bind() Function",
+      "date": "2017-08-12T12:48:06.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Javascript", "React", "React Native"],
+      "summary": "When i started React Native app development, it started just fine. I love how composition is used rather than inheritance. I prefer…",
+      "slug": "freakin-bind-function"
+    }
+  },
+  "__N_SSG": true
+}

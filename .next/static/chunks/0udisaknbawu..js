@@ -1,0 +1,6 @@
+__turbopack_load_page_chunks__('/wanderlist', [
+  'static/chunks/0f~qb424hkwpj.js',
+  'static/chunks/0~s_5ofwzy9s9.js',
+  'static/chunks/02cclndffrf-t.js',
+  'static/chunks/turbopack-017ktdjpy3laa.js',
+])

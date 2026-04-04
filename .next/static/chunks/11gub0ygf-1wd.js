@@ -1,0 +1,6 @@
+__turbopack_load_page_chunks__('/wfc-reviews', [
+  'static/chunks/0jlvv2~pn2uox.js',
+  'static/chunks/0~s_5ofwzy9s9.js',
+  'static/chunks/02cclndffrf-t.js',
+  'static/chunks/turbopack-0dvci73aydqwu.js',
+])

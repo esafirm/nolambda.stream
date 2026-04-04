@@ -6,65 +6,118 @@
  * Workflow: Collect metrics → Analyze online reviews → User input → Generate markdown → Create badge
  */
 
-const fs = require('fs');
-const path = require('path');
+const fs = require('fs')
+const path = require('path')
 
 const reviewTemplates = {
   excellent: {
-    atmosphere: ['Vibrant and welcoming', 'Cozy and comfortable', 'Modern and stylish', 'Warm and inviting'],
-    service: ['Exceptionally friendly staff', 'Quick and efficient service', 'Attentive and helpful', 'Outstanding customer service'],
-    food: ['Delicious and fresh', 'High-quality ingredients', 'Perfectly prepared', 'Amazing flavor combinations'],
-    recommendation: ['Highly recommended', 'A must-try', 'Definitely worth visiting', 'One of my favorites']
+    atmosphere: [
+      'Vibrant and welcoming',
+      'Cozy and comfortable',
+      'Modern and stylish',
+      'Warm and inviting',
+    ],
+    service: [
+      'Exceptionally friendly staff',
+      'Quick and efficient service',
+      'Attentive and helpful',
+      'Outstanding customer service',
+    ],
+    food: [
+      'Delicious and fresh',
+      'High-quality ingredients',
+      'Perfectly prepared',
+      'Amazing flavor combinations',
+    ],
+    recommendation: [
+      'Highly recommended',
+      'A must-try',
+      'Definitely worth visiting',
+      'One of my favorites',
+    ],
   },
   good: {
-    atmosphere: ['Pleasant environment', 'Nice ambiance', 'Comfortable seating', 'Good overall vibe'],
+    atmosphere: [
+      'Pleasant environment',
+      'Nice ambiance',
+      'Comfortable seating',
+      'Good overall vibe',
+    ],
     service: ['Friendly staff', 'Helpful team', 'Quick service', 'Professional service'],
     food: ['Tasty options', 'Good quality', 'Satisfying meals', 'Solid choices'],
-    recommendation: ['Worth a visit', 'Good option for quick meal', 'Would recommend', 'Solid choice']
+    recommendation: [
+      'Worth a visit',
+      'Good option for quick meal',
+      'Would recommend',
+      'Solid choice',
+    ],
   },
   average: {
-    atmosphere: ['Standard food court setting', 'Typical WFC environment', 'Basic seating', 'Functional space'],
+    atmosphere: [
+      'Standard food court setting',
+      'Typical WFC environment',
+      'Basic seating',
+      'Functional space',
+    ],
     service: ['Standard service', 'Average speed', 'Helpful when needed', 'Routine experience'],
     food: ['Okay quality', 'Standard offerings', 'Decent options', 'Acceptable meals'],
-    recommendation: ['Fine for quick bite', 'Standard WFC experience', 'Basic but reliable', 'Nothing special but functional']
-  }
-};
+    recommendation: [
+      'Fine for quick bite',
+      'Standard WFC experience',
+      'Basic but reliable',
+      'Nothing special but functional',
+    ],
+  },
+}
 
 function getRandom(array) {
-  return array[Math.floor(Math.random() * array.length)];
+  return array[Math.floor(Math.random() * array.length)]
 }
 
 function getTemplate(rating) {
-  if (rating >= 4.5) return 'excellent';
-  if (rating >= 3.5) return 'good';
-  return 'average';
+  if (rating >= 4.5) return 'excellent'
+  if (rating >= 3.5) return 'good'
+  return 'average'
 }
 
-const { execSync } = require('child_process');
+const { execSync } = require('child_process')
 
 function detectCurrentLocation() {
   try {
-    const output = execSync('curl -s ipinfo.io', { encoding: 'utf8' });
-    const data = JSON.parse(output);
+    const output = execSync('curl -s ipinfo.io', { encoding: 'utf8' })
+    const data = JSON.parse(output)
     if (data.city && data.region && data.country) {
-      return `${data.city}, ${data.region}, ${data.country}`;
+      return `${data.city}, ${data.region}, ${data.country}`
     }
-    throw new Error('Incomplete location data from ipinfo.io');
+    throw new Error('Incomplete location data from ipinfo.io')
   } catch (error) {
-    throw new Error(`Failed to detect current location: ${error.message}. Location is mandatory for WFC reviews.`);
+    throw new Error(
+      `Failed to detect current location: ${error.message}. Location is mandatory for WFC reviews.`,
+      { cause: error }
+    )
   }
 }
 
-function generateBadgeHtml(name, wifiSpeed, temperature, rating, wfcSuitability, currentLocation, powerOutlets, cappuccino) {
-  const stars = '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '');
-  const suitabilityColor = wfcSuitability === 'Excellent' ? '#22c55e' : wfcSuitability === 'Good' ? '#3b82f6' : '#f97316';
-  
+function generateBadgeHtml(
+  name,
+  wifiSpeed,
+  temperature,
+  rating,
+  wfcSuitability,
+  currentLocation,
+  powerOutlets,
+  cappuccino
+) {
+  const stars = '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '')
+  const suitabilityColor =
+    wfcSuitability === 'Excellent' ? '#22c55e' : wfcSuitability === 'Good' ? '#3b82f6' : '#f97316'
+
   // Format location: Try to split "City, Region, Country"
-  let locationDisplay = currentLocation.toUpperCase();
+  let locationDisplay = currentLocation.toUpperCase()
   if (currentLocation.includes(',')) {
-    const parts = currentLocation.split(',').map(p => p.trim().toUpperCase());
+    const parts = currentLocation.split(',').map((p) => p.trim().toUpperCase())
     if (parts.length >= 3) {
-      locationDisplay = `${parts[0]}, ${parts[1]}, ${parts[2]}`;
+      locationDisplay = `${parts[0]}, ${parts[1]}, ${parts[2]}`
     }
   }
 
@@ -263,12 +316,28 @@ function generateBadgeHtml(name, wifiSpeed, temperature, rating, wfcSuitability,
         </div>
     </div>
 </body>
-</html>`;
+</html>`
 }
 
-function generateMarkdownReview(name, location, rating, wifiSpeed, temperature, onlineReviews, userExperience, atmosphere, service, food, highlights, verdict, currentLocation, powerOutlets, cappuccino) {
-  const stars = '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '');
-  const wfcSuitability = rating >= 4.5 ? 'Excellent' : rating >= 3.5 ? 'Good' : 'Average';
+function generateMarkdownReview(
+  name,
+  location,
+  rating,
+  wifiSpeed,
+  temperature,
+  onlineReviews,
+  userExperience,
+  atmosphere,
+  service,
+  food,
+  highlights,
+  verdict,
+  currentLocation,
+  powerOutlets,
+  cappuccino
+) {
+  const stars = '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '')
+  const wfcSuitability = rating >= 4.5 ? 'Excellent' : rating >= 3.5 ? 'Good' : 'Average'
 
   return `# ${name} @ ${location}
 
@@ -299,8 +368,15 @@ ${service}
 ## 🍽️ Food & Drink
 ${food}
 
-${highlights ? `## ✨ Highlights
-${highlights.split(',').map(h => `- ${h.trim()}`).join('\n')}` : ''}
+${
+  highlights
+    ? `## ✨ Highlights
+${highlights
+  .split(',')
+  .map((h) => `- ${h.trim()}`)
+  .join('\n')}`
+    : ''
+}
 
 ## 📝 Final Verdict
 ${verdict}
@@ -309,12 +385,28 @@ ${verdict}
 **${wfcSuitability}** - This location is ${wfcSuitability.toLowerCase()} for working from cafe.
 
 ---
-*Generated on ${new Date().toLocaleDateString()} • WFC Review Generator*`;
+*Generated on ${new Date().toLocaleDateString()} • WFC Review Generator*`
 }
 
-function generateNotionMarkdown(name, location, rating, wifiSpeed, temperature, onlineReviews, userExperience, atmosphere, service, food, highlights, verdict, currentLocation, powerOutlets, cappuccino) {
-  const stars = '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '');
-  const wfcSuitability = rating >= 4.5 ? 'Excellent' : rating >= 3.5 ? 'Good' : 'Average';
+function generateNotionMarkdown(
+  name,
+  location,
+  rating,
+  wifiSpeed,
+  temperature,
+  onlineReviews,
+  userExperience,
+  atmosphere,
+  service,
+  food,
+  highlights,
+  verdict,
+  currentLocation,
+  powerOutlets,
+  cappuccino
+) {
+  const stars = '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '')
+  const wfcSuitability = rating >= 4.5 ? 'Excellent' : rating >= 3.5 ? 'Good' : 'Average'
 
   return `# ${name} @ ${location}
 
@@ -334,7 +426,14 @@ function generateNotionMarkdown(name, location, rating, wifiSpeed, temperature, 
 | **Date** | ${new Date().toLocaleDateString()} |
 
 ## ✨ Highlights
-${highlights ? highlights.split(',').map(h => `- ${h.trim()}`).join('\n') : '- No specific highlights noted.'}
+${
+  highlights
+    ? highlights
+        .split(',')
+        .map((h) => `- ${h.trim()}`)
+        .join('\n')
+    : '- No specific highlights noted.'
+}
 
 ## 👤 My Experience
 ${userExperience}
@@ -352,68 +451,106 @@ ${onlineReviews}
 </details>
 
 ---
-*Generated by WFC Reviewer Skill*`;
+*Generated by WFC Reviewer Skill*`
 }
 
-function generateJSONData(name, location, rating, wifiSpeed, temperature, onlineReviews, userExperience, atmosphere, service, food, highlights, verdict, currentLocation, powerOutlets, cappuccino) {
-  return JSON.stringify({
-    name,
-    location,
-    rating,
-    wifiSpeed,
-    temperature,
-    powerOutlets,
-    cappuccino,
-    onlineReviews,
-    userExperience,
-    atmosphere,
-    service,
-    food,
-    highlights,
-    verdict,
-    currentLocation,
-    date: new Date().toISOString(),
-    wfcSuitability: rating >= 4.5 ? 'Excellent' : rating >= 3.5 ? 'Good' : 'Average'
-  }, null, 2);
+function generateJSONData(
+  name,
+  location,
+  rating,
+  wifiSpeed,
+  temperature,
+  onlineReviews,
+  userExperience,
+  atmosphere,
+  service,
+  food,
+  highlights,
+  verdict,
+  currentLocation,
+  powerOutlets,
+  cappuccino
+) {
+  return JSON.stringify(
+    {
+      name,
+      location,
+      rating,
+      wifiSpeed,
+      temperature,
+      powerOutlets,
+      cappuccino,
+      onlineReviews,
+      userExperience,
+      atmosphere,
+      service,
+      food,
+      highlights,
+      verdict,
+      currentLocation,
+      date: new Date().toISOString(),
+      wfcSuitability: rating >= 4.5 ? 'Excellent' : rating >= 3.5 ? 'Good' : 'Average',
+    },
+    null,
+    2
+  )
 }
 
 function saveReviewPackage(name, outputs) {
-  const safeName = name.toLowerCase().replace(/[^a-z0-9]/g, '-');
-  const dir = path.join(process.cwd(), 'reviews', safeName);
+  const safeName = name.toLowerCase().replace(/[^a-z0-9]/g, '-')
+  const dir = path.join(process.cwd(), 'reviews', safeName)
 
   if (!fs.existsSync(dir)) {
-    fs.mkdirSync(dir, { recursive: true });
+    fs.mkdirSync(dir, { recursive: true })
   }
 
-  fs.writeFileSync(path.join(dir, 'notion.md'), outputs.notionMarkdown);
-  fs.writeFileSync(path.join(dir, 'google-maps.txt'), outputs.googleMapsReview);
-  fs.writeFileSync(path.join(dir, 'review.md'), outputs.markdownReview);
-  fs.writeFileSync(path.join(dir, 'badge.html'), outputs.badgeHtml);
-  fs.writeFileSync(path.join(dir, 'data.json'), outputs.jsonData);
+  fs.writeFileSync(path.join(dir, 'notion.md'), outputs.notionMarkdown)
+  fs.writeFileSync(path.join(dir, 'google-maps.txt'), outputs.googleMapsReview)
+  fs.writeFileSync(path.join(dir, 'review.md'), outputs.markdownReview)
+  fs.writeFileSync(path.join(dir, 'badge.html'), outputs.badgeHtml)
+  fs.writeFileSync(path.join(dir, 'data.json'), outputs.jsonData)
 
   // Generate badge image using npx pageres-cli
-  const badgeHtmlPath = path.join(dir, 'badge.html');
-  const badgeImagePath = path.join(dir, 'badge.png');
+  const badgeHtmlPath = path.join(dir, 'badge.html')
+  const badgeImagePath = path.join(dir, 'badge.png')
 
   try {
-    console.log('\n📸 Generating badge image...');
+    console.log('\n📸 Generating badge image...')
     execSync(`npx pageres-cli "file://${badgeHtmlPath}" "${badgeImagePath}" --crop --delay=2`, {
       stdio: 'inherit',
-      timeout: 30000
-    });
-    console.log('✅ Badge image generated successfully!');
+      timeout: 30000,
+    })
+    console.log('✅ Badge image generated successfully!')
   } catch (error) {
-    console.warn('⚠️  Failed to generate badge image:', error.message);
-    console.warn('   You can manually generate it later with:');
-    console.warn(`   npx pageres-cli "file://${badgeHtmlPath}" "${badgeImagePath}" --crop --delay=2`);
+    console.warn('⚠️  Failed to generate badge image:', error.message)
+    console.warn('   You can manually generate it later with:')
+    console.warn(
+      `   npx pageres-cli "file://${badgeHtmlPath}" "${badgeImagePath}" --crop --delay=2`
+    )
   }
 
-  return dir;
+  return dir
 }
 
-function generateReviewOutputs(name, location, rating, wifiSpeed, temperature, onlineReviews, userExperience, atmosphere, service, food, highlights, verdict, currentLocation, powerOutlets, cappuccino = 'N/A') {
-  const stars = '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '');
-  const wfcSuitability = rating >= 4.5 ? 'Excellent' : rating >= 3.5 ? 'Good' : 'Average';
+function generateReviewOutputs(
+  name,
+  location,
+  rating,
+  wifiSpeed,
+  temperature,
+  onlineReviews,
+  userExperience,
+  atmosphere,
+  service,
+  food,
+  highlights,
+  verdict,
+  currentLocation,
+  powerOutlets,
+  cappuccino = 'N/A'
+) {
+  const stars = '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '')
+  const wfcSuitability = rating >= 4.5 ? 'Excellent' : rating >= 3.5 ? 'Good' : 'Average'
 
   // Google Maps Review Format
   const googleMapsReview = `
@@ -429,39 +566,98 @@ Service: ${service}
 Food: ${food}
 
 ${highlights ? `Highlights: ${highlights}` : ''}
-  `.trim();
+  `.trim()
 
   // Markdown Formats
-  const markdownReview = generateMarkdownReview(name, location, rating, wifiSpeed, temperature, onlineReviews, userExperience, atmosphere, service, food, highlights, verdict, currentLocation, powerOutlets, cappuccino);
-  const notionMarkdown = generateNotionMarkdown(name, location, rating, wifiSpeed, temperature, onlineReviews, userExperience, atmosphere, service, food, highlights, verdict, currentLocation, powerOutlets, cappuccino);
+  const markdownReview = generateMarkdownReview(
+    name,
+    location,
+    rating,
+    wifiSpeed,
+    temperature,
+    onlineReviews,
+    userExperience,
+    atmosphere,
+    service,
+    food,
+    highlights,
+    verdict,
+    currentLocation,
+    powerOutlets,
+    cappuccino
+  )
+  const notionMarkdown = generateNotionMarkdown(
+    name,
+    location,
+    rating,
+    wifiSpeed,
+    temperature,
+    onlineReviews,
+    userExperience,
+    atmosphere,
+    service,
+    food,
+    highlights,
+    verdict,
+    currentLocation,
+    powerOutlets,
+    cappuccino
+  )
 
   // Data Formats
-  const badgeHtml = generateBadgeHtml(name, wifiSpeed, temperature, rating, wfcSuitability, currentLocation, powerOutlets, cappuccino);
-  const jsonData = generateJSONData(name, location, rating, wifiSpeed, temperature, onlineReviews, userExperience, atmosphere, service, food, highlights, verdict, currentLocation, powerOutlets, cappuccino);
+  const badgeHtml = generateBadgeHtml(
+    name,
+    wifiSpeed,
+    temperature,
+    rating,
+    wfcSuitability,
+    currentLocation,
+    powerOutlets,
+    cappuccino
+  )
+  const jsonData = generateJSONData(
+    name,
+    location,
+    rating,
+    wifiSpeed,
+    temperature,
+    onlineReviews,
+    userExperience,
+    atmosphere,
+    service,
+    food,
+    highlights,
+    verdict,
+    currentLocation,
+    powerOutlets,
+    cappuccino
+  )
 
-  return { googleMapsReview, markdownReview, notionMarkdown, badgeHtml, jsonData, wfcSuitability };
+  return { googleMapsReview, markdownReview, notionMarkdown, badgeHtml, jsonData, wfcSuitability }
 }
 
 function displayOutputs(name, outputs) {
-  const dir = saveReviewPackage(name, outputs);
-  const data = JSON.parse(outputs.jsonData);
+  const dir = saveReviewPackage(name, outputs)
+  const data = JSON.parse(outputs.jsonData)
 
-  console.log('\n' + '✨'.repeat(25));
-  console.log('🏁 WFC REVIEW COMPLETE');
-  console.log('✨'.repeat(25));
+  console.log('\n' + '✨'.repeat(25))
+  console.log('🏁 WFC REVIEW COMPLETE')
+  console.log('✨'.repeat(25))
 
-  console.log(`\n📍 Place: ${name}`);
-  console.log(`⭐ Rating: ${outputs.wfcSuitability} (${data.rating || 'N/A'}/5)`);
+  console.log(`\n📍 Place: ${name}`)
+  console.log(`⭐ Rating: ${outputs.wfcSuitability} (${data.rating || 'N/A'}/5)`)
 
-  console.log('\n📦 REVIEW PACKAGE GENERATED:');
-  console.log(`📁 Path: ${dir}`);
-  console.log('  📄 notion.md        <- Best for Notion paste');
-  console.log('  📄 badge.html       <- Open & screenshot for social');
-  console.log('  📄 badge.png        <- Generated image for sharing');
-  console.log('  📄 google-maps.txt  <- Quick copy for Google');
-  console.log('  📄 data.json        <- Structured data for your database');
+  console.log('\n📦 REVIEW PACKAGE GENERATED:')
+  console.log(`📁 Path: ${dir}`)
+  console.log('  📄 notion.md        <- Best for Notion paste')
+  console.log('  📄 badge.html       <- Open & screenshot for social')
+  console.log('  📄 badge.png        <- Generated image for sharing')
+  console.log('  📄 google-maps.txt  <- Quick copy for Google')
+  console.log('  📄 data.json        <- Structured data for your database')
 
-  console.log('\n💡 PRO TIP: Paste the content of notion.md into a Notion page for a beautiful layout!');
+  console.log(
+    '\n💡 PRO TIP: Paste the content of notion.md into a Notion page for a beautiful layout!'
+  )
 }
 
 // Export for Claude Code usage
@@ -476,66 +672,86 @@ module.exports = {
   generateNotionMarkdown,
   generateJSONData,
   saveReviewPackage,
-  displayOutputs
-};
+  displayOutputs,
+}
 
 // If run with arguments, use command line mode (uses placeholder metrics)
-const args = process.argv.slice(2);
+const args = process.argv.slice(2)
 if (args.length > 0) {
-  const name = args[0];
-  const location = args[1] || 'WFC';
-  const rating = args[2] || '4.0';
+  const name = args[0]
+  const location = args[1] || 'WFC'
+  const rating = args[2] || '4.0'
 
-  const currentLocation = detectCurrentLocation();
+  const currentLocation = detectCurrentLocation()
 
-  const templateKey = getTemplate(parseFloat(rating));
-  const template = reviewTemplates[templateKey];
+  const templateKey = getTemplate(parseFloat(rating))
+  const template = reviewTemplates[templateKey]
 
-  const atmosphere = getRandom(template.atmosphere);
-  const service = getRandom(template.service);
-  const food = getRandom(template.food);
-  const verdict = getRandom(template.recommendation);
+  const atmosphere = getRandom(template.atmosphere)
+  const service = getRandom(template.service)
+  const food = getRandom(template.food)
+  const verdict = getRandom(template.recommendation)
 
-  const nameLower = name.toLowerCase();
-  let onlineReviews = 'Multiple positive reviews highlighting good atmosphere and reliable service.';
-  let userExperience = 'Pleasant working environment with adequate amenities for remote work.';
+  const nameLower = name.toLowerCase()
+  let onlineReviews = 'Multiple positive reviews highlighting good atmosphere and reliable service.'
+  let userExperience = 'Pleasant working environment with adequate amenities for remote work.'
 
   if (nameLower.includes('coffee') || nameLower.includes('cafe')) {
-    onlineReviews = 'Customers consistently praise the coffee quality and cozy atmosphere. Many mention it as a great spot for working or studying.';
-  } else if (nameLower.includes('tea') || nameLower.includes('bubble') || nameLower.includes('chatime')) {
-    onlineReviews = 'Reviewers highlight the wide variety of tea options and consistent quality. Popular among students and remote workers.';
+    onlineReviews =
+      'Customers consistently praise the coffee quality and cozy atmosphere. Many mention it as a great spot for working or studying.'
+  } else if (
+    nameLower.includes('tea') ||
+    nameLower.includes('bubble') ||
+    nameLower.includes('chatime')
+  ) {
+    onlineReviews =
+      'Reviewers highlight the wide variety of tea options and consistent quality. Popular among students and remote workers.'
   }
 
   // Use placeholder metrics (interactive mode collects real data)
-  const wifiSpeed = '50 Mbps';
-  const temperature = '22°C';
-  const powerOutlets = 'Available';
-  const cappuccino = 'Excellent';
+  const wifiSpeed = '50 Mbps'
+  const temperature = '22°C'
+  const powerOutlets = 'Available'
+  const cappuccino = 'Excellent'
 
   const outputs = generateReviewOutputs(
-    name, location, rating, wifiSpeed, temperature, onlineReviews, userExperience,
-    atmosphere, service, food, '', verdict, currentLocation, powerOutlets, cappuccino
-  );
+    name,
+    location,
+    rating,
+    wifiSpeed,
+    temperature,
+    onlineReviews,
+    userExperience,
+    atmosphere,
+    service,
+    food,
+    '',
+    verdict,
+    currentLocation,
+    powerOutlets,
+    cappuccino
+  )
 
-  displayOutputs(name, outputs);
+  displayOutputs(name, outputs)
 
-  console.log('\n💡 Tip: Use the badge HTML to create a visual badge image for sharing!');
-  console.log('💡 Tip: The markdown review is comprehensive and ready for documentation!');
-  console.log('💡 Note: Command line mode uses placeholder metrics. Use /wfc-review for real data collection.');
+  console.log('\n💡 Tip: Use the badge HTML to create a visual badge image for sharing!')
+  console.log('💡 Tip: The markdown review is comprehensive and ready for documentation!')
+  console.log(
+    '💡 Note: Command line mode uses placeholder metrics. Use /wfc-review for real data collection.'
+  )
 } else {
-  console.log('🍽️  WFC Review Generator - Interactive Mode');
-  console.log('\nWorkflow when invoked via /wfc-review:');
-  console.log('1. Automatically detect your current location');
-  console.log('2. Ask for place information (name, location)');
-  console.log('3. Automatically collect technical metrics (WiFi speed, temperature)');
-  console.log('4. Analyze online reviews for WFC suitability');
-  console.log('5. Gather user experience and preferences');
-  console.log('6. Generate formatted markdown review');
-  console.log('7. Create visual badge with key metrics');
-  console.log('\nCommand Line Usage (placeholder metrics):');
-  console.log('  node scripts/wfc_review.cjs "Name" [Location] [Rating]');
-  console.log('\nExamples:');
-  console.log('  node scripts/wfc_review.cjs "Starbucks"');
-  console.log('  node scripts/wfc_review.cjs "Chatime" "Chatswood" 4.5');
+  console.log('🍽️  WFC Review Generator - Interactive Mode')
+  console.log('\nWorkflow when invoked via /wfc-review:')
+  console.log('1. Automatically detect your current location')
+  console.log('2. Ask for place information (name, location)')
+  console.log('3. Automatically collect technical metrics (WiFi speed, temperature)')
+  console.log('4. Analyze online reviews for WFC suitability')
+  console.log('5. Gather user experience and preferences')
+  console.log('6. Generate formatted markdown review')
+  console.log('7. Create visual badge with key metrics')
+  console.log('\nCommand Line Usage (placeholder metrics):')
+  console.log('  node scripts/wfc_review.cjs "Name" [Location] [Rating]')
+  console.log('\nExamples:')
+  console.log('  node scripts/wfc_review.cjs "Starbucks"')
+  console.log('  node scripts/wfc_review.cjs "Chatime" "Chatswood" 4.5')
 }
-

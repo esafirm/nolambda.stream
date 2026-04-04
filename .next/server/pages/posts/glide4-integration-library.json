@@ -1,0 +1,53 @@
+{
+  "pageProps": {
+    "post": {
+      "mdxSource": "var Component=(()=>{var d=Object.create;var r=Object.defineProperty;var l=Object.getOwnPropertyDescriptor;var h=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var o=t=>r(t,\"__esModule\",{value:!0});var u=(t,a)=>()=>(a||t((a={exports:{}}).exports,a),a.exports),g=(t,a)=>{o(t);for(var n in a)r(t,n,{get:a[n],enumerable:!0})},b=(t,a,n)=>{if(a&&typeof a==\"object\"||typeof a==\"function\")for(let i of h(a))!p.call(t,i)&&i!==\"default\"&&r(t,i,{get:()=>a[i],enumerable:!(n=l(a,i))||n.enumerable});return t},f=t=>b(o(r(t!=null?d(m(t)):{},\"default\",t&&t.__esModule&&\"default\"in t?{get:()=>t.default,enumerable:!0}:{value:t,enumerable:!0})),t);var c=u((G,s)=>{s.exports=_jsx_runtime});var x={};g(x,{default:()=>w,frontmatter:()=>k});var e=f(c()),k={title:\"Glide v4 Integration for Library\",date:\"2017-11-14T15:32:17.0Z\",draft:!1,category:\"Tech\",tags:[\"Android\",\"Library\"],summary:\"Started from the issue on my image picker library which stated that we should use the new version of Glide, I'm starting to explore this new Glide v4 library and integrate it to the library\"};function y(t={}){let{wrapper:a}=t.components||{};return a?(0,e.jsx)(a,Object.assign({},t,{children:(0,e.jsx)(n,{})})):n();function n(){let i=Object.assign({p:\"p\",a:\"a\",code:\"code\",pre:\"pre\",span:\"span\"},t.components);return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsxs)(i.p,{children:[\"Started from the \",(0,e.jsx)(i.a,{href:\"https://github.com/esafirm/android-image-picker/issues/68\",children:\"issue\"}),\" on my \",(0,e.jsx)(i.a,{href:\"https://github.com/esafirm/android-image-picker\",children:\"image picker library\"}),\" which stated that we should use the new version of \",(0,e.jsx)(i.a,{href:\"https://github.com/bumptech/glide/\",children:\"Glide\"}),\", I'm starting to explore this new Glide v4 library and \",(0,e.jsx)(i.a,{href:\"https://github.com/esafirm/android-image-picker/commit/d5969807e5bccdbb5d2798a150a7ef39073a44e5\",children:\"integrate it to the library\"})]}),(0,e.jsxs)(i.p,{children:[\"If I'm read the semver correctly, this version is bringing breaking changes to Glide. One of this changes is that we have to define a \",(0,e.jsx)(i.code,{children:\"GlideModule\"}),\" in our app or library.\"]}),(0,e.jsxs)(i.p,{children:[\"This can be done by extending \",(0,e.jsx)(i.code,{children:\"AppGlideModule\"}),\" or \",(0,e.jsx)(i.code,{children:\"LibraryGlideModule\"}),\" and annotate it with \",(0,e.jsx)(i.code,{children:\"@GlideModule\"}),\" annotation like this:\"]}),(0,e.jsx)(i.pre,{className:\"language-kotlin\",children:(0,e.jsxs)(i.code,{className:\"language-kotlin code-highlight\",children:[(0,e.jsxs)(i.span,{className:\"code-line\",children:[(0,e.jsx)(i.span,{className:\"token label symbol\",children:\"@com\"}),(0,e.jsx)(i.span,{className:\"token punctuation\",children:\".\"}),\"bumptech\",(0,e.jsx)(i.span,{className:\"token punctuation\",children:\".\"}),\"glide\",(0,e.jsx)(i.span,{className:\"token punctuation\",children:\".\"}),\"annotation\",(0,e.jsx)(i.span,{className:\"token punctuation\",children:\".\"}),`GlideModule\n`]}),(0,e.jsxs)(i.span,{className:\"code-line\",children:[(0,e.jsx)(i.span,{className:\"token keyword\",children:\"public\"}),\" \",(0,e.jsx)(i.span,{className:\"token keyword\",children:\"class\"}),\" ImagePickerGlideModule extends LibraryGlideModule \",(0,e.jsx)(i.span,{className:\"token punctuation\",children:\"{\"}),`\n`]}),(0,e.jsxs)(i.span,{className:\"code-line\",children:[(0,e.jsx)(i.span,{className:\"token punctuation\",children:\"}\"}),`\n`]})]})}),(0,e.jsxs)(i.p,{children:[\"Little did I know, we have to follow that library and app configuration if we want to avoid strange cases like \",(0,e.jsx)(i.a,{href:\"https://github.com/esafirm/android-image-picker/issues/75\",children:\"this one\"}),\" In fact, there is already an official \",(0,e.jsx)(i.a,{href:\"http://bumptech.github.io/glide/doc/configuration.html\",children:\"documentation\"}),\" about this (but I couldn't find it the first time)\"]}),(0,e.jsx)(i.p,{children:\"Well, I hope you don't repeat the same mistake. Ciao \\\\ud83d\\\\udc4b\"})]})}}var w=y;return x;})();\n;return Component;",
+      "toc": [],
+      "frontMatter": {
+        "readingTime": { "text": "2 min read", "minutes": 1.085, "time": 65100, "words": 217 },
+        "slug": "glide4-integration-library",
+        "fileName": "glide4-integration-library.md",
+        "title": "Glide v4 Integration for Library",
+        "date": "2017-11-14T15:32:17.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Library"],
+        "summary": "Started from the issue on my image picker library which stated that we should use the new version of Glide, I'm starting to explore this new Glide v4 library and integrate it to the library"
+      }
+    },
+    "authorDetails": [
+      {
+        "readingTime": { "text": "2 min read", "minutes": 1.345, "time": 80700, "words": 269 },
+        "slug": ["default"],
+        "fileName": "default.md",
+        "name": "Esa Firman",
+        "avatar": "/static/images/avatar.png",
+        "occupation": "Software Engineer",
+        "email": "esafirm21@gmail.com",
+        "twitter": "https://twitter.com/esafirm",
+        "linkedin": "https://www.linkedin.com/esa-firman-3",
+        "github": "https://github.com/esafirm",
+        "date": null
+      }
+    ],
+    "prev": {
+      "title": "Don't Mock Your Test Data",
+      "date": "2017-09-21T15:25:08.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Test"],
+      "summary": "I found some strange condition when creating a test for a code with RxJava…",
+      "slug": "dont-mock-your-test-data"
+    },
+    "next": {
+      "title": "Multiple Dex Files Defined in Build Config",
+      "date": "2017-12-03T15:49:58.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Android"],
+      "summary": "Have you ever encounter an error like this? ",
+      "slug": "mutliple-dex-files-buildconfig"
+    }
+  },
+  "__N_SSG": true
+}

@@ -1,0 +1,17 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "FizzBuzz with Pattern Matching in Kotlin",
+        "date": "2017-08-29T15:27:10.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin", "Interview"],
+        "summary": "Seeing FizzBuzz implementation in Clojure with clojure.core.match makes me wondering if Kotlin has the same pattern matching capabilities or at least some resemblance in the way of doing matching.",
+        "slug": "fizzbuzz-pattern-matching-kotlin"
+      }
+    ],
+    "tag": "interview"
+  },
+  "__N_SSG": true
+}

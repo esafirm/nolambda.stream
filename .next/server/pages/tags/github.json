@@ -1,0 +1,24 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Deploying Compose Multiplatform Project in Netlify",
+        "date": "2024-03-01T00:00:00.000Z",
+        "tags": ["Github", "CI/CD", "Compose MPP"],
+        "draft": false,
+        "summary": "A brief note on how to deploy Compose Multiplatform project in Netlify",
+        "slug": "deploying-compose-mpp-in-netlify"
+      },
+      {
+        "title": "Things I Keep Forgetting - Behavior in PR from Forked Repository in Github",
+        "date": "2023-09-03T00:00:00.000Z",
+        "tags": ["Github", "OSS", "Git"],
+        "draft": false,
+        "summary": "Getting a Pull Request (PR) from a Forked Repository in Github can be quite confusing. Here I put a note to self about the behavior that apparantly I keep forgetting.",
+        "slug": "things-i-keep-forgetting-github-forked"
+      }
+    ],
+    "tag": "github"
+  },
+  "__N_SSG": true
+}

@@ -1,0 +1,16 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Deploying Compose Multiplatform Project in Netlify",
+        "date": "2024-03-01T00:00:00.000Z",
+        "tags": ["Github", "CI/CD", "Compose MPP"],
+        "draft": false,
+        "summary": "A brief note on how to deploy Compose Multiplatform project in Netlify",
+        "slug": "deploying-compose-mpp-in-netlify"
+      }
+    ],
+    "tag": "compose-mpp"
+  },
+  "__N_SSG": true
+}

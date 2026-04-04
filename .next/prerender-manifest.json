@@ -1,0 +1,1487 @@
+{
+  "version": 4,
+  "routes": {
+    "/": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/index.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/about": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/about.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/a-model-for-your-view": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/a-model-for-your-view.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/android-arch-room-getting-started": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/android-arch-room-getting-started.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/android-arch-room-introduction": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/android-arch-room-introduction.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/android-arch-room-relation": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/android-arch-room-relation.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/android-arch-room-transaction": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/android-arch-room-transaction.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/configuration-cache-and-install-task": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/configuration-cache-and-install-task.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/deploying-compose-mpp-in-netlify": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/deploying-compose-mpp-in-netlify.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/disable-direct-access-to-ip": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/disable-direct-access-to-ip.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/docker-startup-script": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/docker-startup-script.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/domain-resolution-etc-hosts": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/domain-resolution-etc-hosts.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/dont-mock-your-test-data": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/dont-mock-your-test-data.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/experimenting-kotlin-without-editor": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/experimenting-kotlin-without-editor.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/fizzbuzz-pattern-matching-kotlin": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/fizzbuzz-pattern-matching-kotlin.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/freakin-bind-function": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/freakin-bind-function.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/free-https-lets-encrypt": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/free-https-lets-encrypt.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/glide4-integration-library": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/glide4-integration-library.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/gradle-tips-and-trick-1": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/gradle-tips-and-trick-1.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/jacoco-setup-for-multi-module-project": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/jacoco-setup-for-multi-module-project.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/kotlin-101-constructor": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/kotlin-101-constructor.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/kotlin-101-extension-func": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/kotlin-101-extension-func.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/kotlin-coroutines-introduction": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/kotlin-coroutines-introduction.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/kotlin-sam-conversion-part1": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/kotlin-sam-conversion-part1.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/kotlin-sam-conversion-part2": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/kotlin-sam-conversion-part2.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/mutliple-dex-files-buildconfig": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/mutliple-dex-files-buildconfig.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/my-git-alias": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/my-git-alias.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/mysql-with-docker": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/mysql-with-docker.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/new-blog": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/new-blog.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/page/1": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/page/[page]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/page/1.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/page/2": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/page/[page]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/page/2.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/page/3": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/page/[page]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/page/3.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/page/4": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/page/[page]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/page/4.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/page/5": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/page/[page]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/page/5.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/page/6": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/page/[page]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/page/6.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/page/7": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/page/[page]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/page/7.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/page/8": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/page/[page]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/page/8.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/parsing-html-jsoup": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/parsing-html-jsoup.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/personal-life-log-2022": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/personal-life-log-2022.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/redux-like-state-management-with-sealed-class-kotlin": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/redux-like-state-management-with-sealed-class-kotlin.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/running-kotlin-vscode": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/running-kotlin-vscode.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/setup-wordpress-behind-reverse-proxy": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/setup-wordpress-behind-reverse-proxy.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/simple-rest-api-with-adonisjs": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/simple-rest-api-with-adonisjs.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/simple-state-machine": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/simple-state-machine.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/things-i-keep-forgetting-abi-jar-is-classpath-snapshot-in-kotlin": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/things-i-keep-forgetting-abi-jar-is-classpath-snapshot-in-kotlin.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/things-i-keep-forgetting-assemble-vs-bundle": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/things-i-keep-forgetting-assemble-vs-bundle.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/things-i-keep-forgetting-debugging-apt": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/things-i-keep-forgetting-debugging-apt.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/things-i-keep-forgetting-github-forked": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/things-i-keep-forgetting-github-forked.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/things-i-keep-forgetting-softbrick-3ds": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/things-i-keep-forgetting-softbrick-3ds.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/things-i-keep-forgetting-ssh-tailscale": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/posts/[...slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/things-i-keep-forgetting-ssh-tailscale.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/3ds": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/3ds.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/android": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/android.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/android-development": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/android-development.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/apt": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/apt.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/blog": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/blog.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/bytesize": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/bytesize.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/cicd": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/cicd.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/cli": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/cli.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/code-coverage": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/code-coverage.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/compile": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/compile.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/compose-mpp": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/compose-mpp.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/devops": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/devops.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/dns": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/dns.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/docker": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/docker.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/front-end": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/front-end.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/gastby": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/gastby.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/ghost": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/ghost.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/git": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/git.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/github": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/github.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/gradle": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/gradle.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/hardwarde": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/hardwarde.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/https": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/https.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/intellij": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/intellij.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/interview": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/interview.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/jacoco": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/jacoco.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/javascript": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/javascript.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/jvm": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/jvm.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/kotlin": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/kotlin.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/library": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/library.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/life-log": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/life-log.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/macos": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/macos.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/mysql": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/mysql.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/netlify": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/netlify.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/networking": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/networking.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/nginx": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/nginx.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/ops": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/ops.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/os": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/os.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/oss": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/oss.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/productivity": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/productivity.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/react": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/react.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/react-native": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/react-native.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/redux": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/redux.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/room": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/room.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/ssh": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/ssh.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/ssl": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/ssl.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/tailscale": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/tailscale.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/tech": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/tech.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/test": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/test.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/tooling": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/tooling.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/unix": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/unix.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/vps": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/vps.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/vscode": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/vscode.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/web": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/web.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/wordpress": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": "/tags/[tag]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/wordpress.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/talks": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/talks.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/wanderlist": {
+      "initialRevalidateSeconds": false,
+      "srcRoute": null,
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/wanderlist.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/wfc-reviews/moore-coffee-and-pastry--bandar-lampung": {
+      "initialRevalidateSeconds": 60,
+      "initialExpireSeconds": 31536000,
+      "srcRoute": "/wfc-reviews/[slug]",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/wfc-reviews/moore-coffee-and-pastry--bandar-lampung.json",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    }
+  },
+  "dynamicRoutes": {
+    "/posts/page/[page]": {
+      "routeRegex": "^/posts/page/([^/]+?)(?:/)?$",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/page/[page].json",
+      "fallback": false,
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/posts/page/([^/]+?)\\.json$",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/posts/[...slug]": {
+      "routeRegex": "^/posts/(.+?)(?:/)?$",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/posts/[...slug].json",
+      "fallback": false,
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/posts/(.+?)\\.json$",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/tags/[tag]": {
+      "routeRegex": "^/tags/([^/]+?)(?:/)?$",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/tags/[tag].json",
+      "fallback": false,
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/tags/([^/]+?)\\.json$",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    },
+    "/wfc-reviews/[slug]": {
+      "routeRegex": "^/wfc\\-reviews/([^/]+?)(?:/)?$",
+      "dataRoute": "/_next/data/hz1EDesxKjwJERIb2Xnne/wfc-reviews/[slug].json",
+      "fallback": false,
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/wfc\\-reviews/([^/]+?)\\.json$",
+      "allowHeader": [
+        "host",
+        "x-matched-path",
+        "x-prerender-revalidate",
+        "x-prerender-revalidate-if-generated",
+        "x-next-revalidated-tags",
+        "x-next-revalidate-tag-token"
+      ]
+    }
+  },
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "f5158d28112daa1ce0b6d3d214c9f2a1",
+    "previewModeSigningKey": "f16a6c5d0193ca25f627dc77b8248288f22a8b3e5f87d048893dcd3a4b8eba34",
+    "previewModeEncryptionKey": "5c94a83714732d5cd735329cab3045b1a2644950bab21d7cb1a366b4229f9044"
+  }
+}

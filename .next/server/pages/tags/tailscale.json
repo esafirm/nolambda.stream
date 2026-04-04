@@ -1,0 +1,16 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Things I Keep Forgetting - SSHing into Mac via Tailscale",
+        "date": "2026-03-03T00:00:00.000Z",
+        "tags": ["macOS", "SSH", "Tailscale", "Networking"],
+        "draft": false,
+        "summary": "You're using Tailscale on your Android and Laptop, but Termius keeps hanging on the Auth phase. Here’s how to fix the silent \"DenyList\" block.",
+        "slug": "things-i-keep-forgetting-ssh-tailscale"
+      }
+    ],
+    "tag": "tailscale"
+  },
+  "__N_SSG": true
+}

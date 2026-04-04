@@ -1,0 +1,56 @@
+{
+  "pageProps": {
+    "post": {
+      "mdxSource": "var Component=(()=>{var l=Object.create;var s=Object.defineProperty;var d=Object.getOwnPropertyDescriptor;var h=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,p=Object.prototype.hasOwnProperty;var i=a=>s(a,\"__esModule\",{value:!0});var u=(a,t)=>()=>(t||a((t={exports:{}}).exports,t),t.exports),k=(a,t)=>{i(a);for(var o in t)s(a,o,{get:t[o],enumerable:!0})},N=(a,t,o)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let n of h(t))!p.call(a,n)&&n!==\"default\"&&s(a,n,{get:()=>t[n],enumerable:!(o=d(t,n))||o.enumerable});return a},g=a=>N(i(s(a!=null?l(m(a)):{},\"default\",a&&a.__esModule&&\"default\"in a?{get:()=>a.default,enumerable:!0}:{value:a,enumerable:!0})),a);var r=u((j,c)=>{c.exports=_jsx_runtime});var w={};k(w,{default:()=>y,frontmatter:()=>f});var e=g(r()),f={title:\"Android Arch's Room - Introduction\",date:\"2018-01-06T15:44:34.0Z\",draft:!1,category:\"Tech\",tags:[\"Android\",\"Kotlin\",\"Room\"],summary:\"My first reaction when Android Architecture Component is out is just **meh..** I mean come on, the ViewModel is heavily tied to Activity and Fragment and basically i don't need it because i use Conductor\\u2026 \"};function b(a={}){let{wrapper:t}=a.components||{};return t?(0,e.jsx)(t,Object.assign({},a,{children:(0,e.jsx)(o,{})})):o();function o(){let n=Object.assign({p:\"p\",strong:\"strong\",code:\"code\",h3:\"h3\",a:\"a\",span:\"span\",blockquote:\"blockquote\",ol:\"ol\",li:\"li\",pre:\"pre\"},a.components);return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsxs)(n.p,{children:[\"My first reaction when Android Architecture Component is out is just \",(0,e.jsx)(n.strong,{children:\"meh..\"})]}),(0,e.jsxs)(n.p,{children:[\"I mean come on, the \",(0,e.jsx)(n.code,{children:\"ViewModel\"}),\" is heavily tied to \",(0,e.jsx)(n.code,{children:\"Activity\"}),\" and \",(0,e.jsx)(n.code,{children:\"Fragment\"}),\" and basically i don't need it because i use Conductor.\"]}),(0,e.jsxs)(n.p,{children:[\"The Lifecycle part is better than something like \",(0,e.jsx)(n.code,{children:\"RxLifecycle\"}),\" but it's not a new thing. Also with Conductor you can have a listener to your lifecycle event. So no big deal in this part too.\"]}),(0,e.jsxs)(n.p,{children:[(0,e.jsx)(n.code,{children:\"LiveData\"}),\" is just a subset from Rx's \",(0,e.jsx)(n.code,{children:\"Subject\"}),\" no? I get it, it can make the development process much painless, but being late released than others community \",(0,e.jsx)(n.strong,{children:\"solutions\"}),\" make me more skeptical about it.\"]}),(0,e.jsxs)(n.p,{children:[\"But there's one thing that caught my interest. And that is \",(0,e.jsx)(n.strong,{children:\"Room!\"}),\" Being tired from object database like \",(0,e.jsx)(n.strong,{children:\"Realm\"}),\", I'm searching for SQL solution again but sadly the options is not so much change from 2+ years ago when i left SQL for object database.\"]}),(0,e.jsxs)(n.h3,{id:\"what-is-room\",children:[(0,e.jsx)(n.a,{href:\"#what-is-room\",\"aria-hidden\":\"true\",tabIndex:\"-1\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"What is Room?\"]}),(0,e.jsx)(n.p,{children:\"Taken from the official Android site:\"}),(0,e.jsx)(n.blockquote,{children:(0,e.jsx)(n.p,{children:\"The Room persistence library provides an abstraction layer over SQLite to allow fluent database access while harnessing the full power of SQLite.\"})}),(0,e.jsxs)(n.h3,{id:\"room-components\",children:[(0,e.jsx)(n.a,{href:\"#room-components\",\"aria-hidden\":\"true\",tabIndex:\"-1\",children:(0,e.jsx)(n.span,{className:\"icon icon-link\"})}),\"Room components\"]}),(0,e.jsx)(n.p,{children:\"There are 3 major components in Room\"}),(0,e.jsxs)(n.ol,{children:[(0,e.jsxs)(n.li,{children:[(0,e.jsx)(n.strong,{children:\"Database\"}),\" As the name imply, this is your database representation\"]}),(0,e.jsxs)(n.li,{children:[(0,e.jsx)(n.strong,{children:\"Entity\"}),\" This represent your table.\"]}),(0,e.jsxs)(n.li,{children:[(0,e.jsx)(n.strong,{children:\"DAO (Data Access Object)\"}),\" This represent your query or function to manipulate your database\"]})]}),(0,e.jsx)(n.p,{children:\"OK, OK, show me some code!\"}),(0,e.jsx)(n.pre,{className:\"language-kotlin\",children:(0,e.jsxs)(n.code,{className:\"language-kotlin code-highlight\",children:[(0,e.jsxs)(n.span,{className:\"code-line\",children:[(0,e.jsx)(n.span,{className:\"token annotation builtin\",children:\"@Dao\"}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line\",children:[(0,e.jsx)(n.span,{className:\"token keyword\",children:\"interface\"}),\" UserDao \",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"{\"}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line\",children:[\"    \",(0,e.jsx)(n.span,{className:\"token annotation builtin\",children:\"@Query\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),(0,e.jsx)(n.span,{className:\"token singleline string-literal\",children:(0,e.jsx)(n.span,{className:\"token string\",children:'\"SELECT * FROM user\"'})}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line\",children:[\"    \",(0,e.jsx)(n.span,{className:\"token keyword\",children:\"fun\"}),\" \",(0,e.jsx)(n.span,{className:\"token function\",children:\"getUsers\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),(0,e.jsx)(n.span,{className:\"token operator\",children:\":\"}),\" List\",(0,e.jsx)(n.span,{className:\"token operator\",children:\"<\"}),\"User\",(0,e.jsx)(n.span,{className:\"token operator\",children:\">\"}),`\n`]}),(0,e.jsx)(n.span,{className:\"code-line\",children:`\n`}),(0,e.jsxs)(n.span,{className:\"code-line\",children:[\"    \",(0,e.jsx)(n.span,{className:\"token annotation builtin\",children:\"@Delete\"}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line\",children:[\"    \",(0,e.jsx)(n.span,{className:\"token keyword\",children:\"fun\"}),\" \",(0,e.jsx)(n.span,{className:\"token function\",children:\"deleteUsers\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),(0,e.jsx)(n.span,{className:\"token keyword\",children:\"vararg\"}),\" users\",(0,e.jsx)(n.span,{className:\"token operator\",children:\":\"}),\" User\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),`\n`]}),(0,e.jsx)(n.span,{className:\"code-line\",children:`\n`}),(0,e.jsxs)(n.span,{className:\"code-line\",children:[\"    \",(0,e.jsx)(n.span,{className:\"token annotation builtin\",children:\"@Insert\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),\"onConflict \",(0,e.jsx)(n.span,{className:\"token operator\",children:\"=\"}),\" OnConflictStrategy\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\".\"}),\"REPLACE\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line\",children:[\"    \",(0,e.jsx)(n.span,{className:\"token keyword\",children:\"fun\"}),\" \",(0,e.jsx)(n.span,{className:\"token function\",children:\"insertUser\"}),(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"(\"}),\"user\",(0,e.jsx)(n.span,{className:\"token operator\",children:\":\"}),\" User\",(0,e.jsx)(n.span,{className:\"token punctuation\",children:\")\"}),`\n`]}),(0,e.jsxs)(n.span,{className:\"code-line\",children:[(0,e.jsx)(n.span,{className:\"token punctuation\",children:\"}\"}),`\n`]})]})}),(0,e.jsxs)(n.p,{children:[\"Here's the code for Room data access object (DAO). Well, this remind me to \",(0,e.jsx)(n.code,{children:\"Retrofit\"}),\" interface and i really love it!\"]}),(0,e.jsxs)(n.p,{children:[\"Next, we will getting our hands dirty with \",(0,e.jsx)(n.strong,{children:\"Room\"}),\". Stay tuned! \\\\ud83d\\\\udc4b\"]}),(0,e.jsxs)(n.p,{children:[\"Also, check out the official \",(0,e.jsx)(n.a,{href:\"https://developer.android.com/training/data-storage/room/index.html\",children:\"Android training article\"}),\" for more info about Room!\"]})]})}}var y=b;return w;})();\n;return Component;",
+      "toc": [
+        { "value": "What is Room?", "url": "#what-is-room", "depth": 3 },
+        { "value": "Room components", "url": "#room-components", "depth": 3 }
+      ],
+      "frontMatter": {
+        "readingTime": { "text": "2 min read", "minutes": 1.97, "time": 118200, "words": 394 },
+        "slug": "android-arch-room-introduction",
+        "fileName": "android-arch-room-introduction.md",
+        "title": "Android Arch's Room - Introduction",
+        "date": "2018-01-06T15:44:34.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Kotlin", "Room"],
+        "summary": "My first reaction when Android Architecture Component is out is just **meh..** I mean come on, the ViewModel is heavily tied to Activity and Fragment and basically i don't need it because i use Conductor… "
+      }
+    },
+    "authorDetails": [
+      {
+        "readingTime": { "text": "2 min read", "minutes": 1.345, "time": 80700, "words": 269 },
+        "slug": ["default"],
+        "fileName": "default.md",
+        "name": "Esa Firman",
+        "avatar": "/static/images/avatar.png",
+        "occupation": "Software Engineer",
+        "email": "esafirm21@gmail.com",
+        "twitter": "https://twitter.com/esafirm",
+        "linkedin": "https://www.linkedin.com/esa-firman-3",
+        "github": "https://github.com/esafirm",
+        "date": null
+      }
+    ],
+    "prev": {
+      "title": "Redux-Like State Management with Sealed Class in Kotlin",
+      "date": "2017-12-25T15:56:46.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Kotlin", "Redux", "Front End"],
+      "summary": "On the previous post, we already discussed how your view should have its own model. We also have discussed how you can make a simple redux-like state machine in Kotlin.",
+      "slug": "redux-like-state-management-with-sealed-class-kotlin"
+    },
+    "next": {
+      "title": "Android Arch's Room - Getting Started",
+      "date": "2018-01-07T19:15:57.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Android", "Room"],
+      "summary": "So, on the first post we already have an introduction or more like a sneak peek to Room data access object code. Let's get our hands dirty now!",
+      "slug": "android-arch-room-getting-started"
+    }
+  },
+  "__N_SSG": true
+}

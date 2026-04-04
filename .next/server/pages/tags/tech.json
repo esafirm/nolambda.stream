@@ -1,0 +1,26 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Simple REST API with Adonis JS",
+        "date": "2017-12-18T16:20:22.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Tech"],
+        "summary": "On the last ADB meetup, we have a conversation about what framework we usually use in creating a REST API. Then, Adonis.Js is being mentioned. I know Adonis but haven't got a chance to test it, so let's test it now!",
+        "slug": "simple-rest-api-with-adonisjs"
+      },
+      {
+        "title": "Parsing HTML with jsoup",
+        "date": "2017-07-09T11:44:14.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Tech"],
+        "summary": "Although a lot of my friends and colleagues use jsoup, i never had a chance to use it. It's my brain default to not choose Java as the language for parsing HTML.",
+        "slug": "parsing-html-jsoup"
+      }
+    ],
+    "tag": "tech"
+  },
+  "__N_SSG": true
+}

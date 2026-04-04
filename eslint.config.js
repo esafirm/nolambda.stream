@@ -1,25 +1,25 @@
-import js from "@eslint/js";
-import globals from "globals";
-import reactPlugin from "eslint-plugin-react";
-import importPlugin from "eslint-plugin-import";
-import tsPlugin from "@typescript-eslint/eslint-plugin";
-import tsParser from "@typescript-eslint/parser";
-import jsxA11yPlugin from "eslint-plugin-jsx-a11y";
-import prettierPlugin from "eslint-plugin-prettier";
+import js from '@eslint/js'
+import globals from 'globals'
+import reactPlugin from 'eslint-plugin-react'
+import importPlugin from 'eslint-plugin-import'
+import tsPlugin from '@typescript-eslint/eslint-plugin'
+import tsParser from '@typescript-eslint/parser'
+import jsxA11yPlugin from 'eslint-plugin-jsx-a11y'
+import prettierPlugin from 'eslint-plugin-prettier'
 
 const eslintConfig = [
   // Base recommended rules
   js.configs.recommended,
   // Ignore patterns
   {
-    ignores: ["node_modules/**"],
+    ignores: ['node_modules/**', '.next/**'],
   },
   // JavaScript/JSX files
   {
-    files: ["**/*.{js,jsx}"],
+    files: ['**/*.{js,jsx,cjs,mjs}'],
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       globals: {
         ...globals.browser,
         ...globals.node,
@@ -33,26 +33,26 @@ const eslintConfig = [
     plugins: {
       react: reactPlugin,
       import: importPlugin,
-      "jsx-a11y": jsxA11yPlugin,
+      'jsx-a11y': jsxA11yPlugin,
       prettier: prettierPlugin,
     },
     rules: {
       ...reactPlugin.configs.recommended.rules,
       ...importPlugin.configs.recommended.rules,
       ...jsxA11yPlugin.configs.recommended.rules,
-      "prettier/prettier": "error",
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": 0,
-      "no-unused-vars": 0,
-      "react/no-unescaped-entities": 0,
+      'prettier/prettier': 'error',
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 0,
+      'no-unused-vars': 0,
+      'react/no-unescaped-entities': 0,
     },
     settings: {
       react: {
-        version: "detect",
+        version: 'detect',
       },
-      "import/resolver": {
+      'import/resolver': {
         node: {
-          extensions: [".js", ".jsx", ".ts", ".tsx"],
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
         },
         typescript: {},
       },
@@ -60,29 +60,29 @@ const eslintConfig = [
   },
   // TypeScript/TSX files
   {
-    files: ["**/*.{ts,tsx}"],
+    files: ['**/*.{ts,tsx}'],
     languageOptions: {
-      ecmaVersion: "latest",
-      sourceType: "module",
+      ecmaVersion: 'latest',
+      sourceType: 'module',
       globals: {
         ...globals.browser,
         ...globals.node,
       },
       parser: tsParser,
       parserOptions: {
-        ecmaVersion: "latest",
-        sourceType: "module",
+        ecmaVersion: 'latest',
+        sourceType: 'module',
         ecmaFeatures: {
           jsx: true,
         },
-        project: "./tsconfig.json",
+        project: './tsconfig.json',
       },
     },
     plugins: {
       react: reactPlugin,
       import: importPlugin,
-      "@typescript-eslint": tsPlugin,
-      "jsx-a11y": jsxA11yPlugin,
+      '@typescript-eslint': tsPlugin,
+      'jsx-a11y': jsxA11yPlugin,
       prettier: prettierPlugin,
     },
     rules: {
@@ -91,25 +91,25 @@ const eslintConfig = [
       ...importPlugin.configs.recommended.rules,
       ...importPlugin.configs.typescript.rules,
       ...jsxA11yPlugin.configs.recommended.rules,
-      "prettier/prettier": "error",
-      "react/react-in-jsx-scope": "off",
-      "react/prop-types": 0,
-      "no-unused-vars": "off",
-      "@typescript-eslint/no-unused-vars": 0,
-      "react/no-unescaped-entities": 0,
+      'prettier/prettier': 'error',
+      'react/react-in-jsx-scope': 'off',
+      'react/prop-types': 0,
+      'no-unused-vars': 'off',
+      '@typescript-eslint/no-unused-vars': 0,
+      'react/no-unescaped-entities': 0,
     },
     settings: {
       react: {
-        version: "detect",
+        version: 'detect',
       },
-      "import/resolver": {
+      'import/resolver': {
         typescript: {},
         node: {
-          extensions: [".js", ".jsx", ".ts", ".tsx"],
+          extensions: ['.js', '.jsx', '.ts', '.tsx'],
         },
       },
     },
   },
-];
+]
 
-export default eslintConfig;
+export default eslintConfig

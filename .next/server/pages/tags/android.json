@@ -1,0 +1,98 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Configuration Cache and the False Economy of Gradle Helper Tasks",
+        "date": "2025-10-26T03:16:41.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Gradle", "Android", "Productivity"],
+        "summary": "Creating a new helper task in Gradle is not always a good thing, especially if you're using the configuration cache.",
+        "slug": "configuration-cache-and-install-task"
+      },
+      {
+        "title": "Gradle Tips and Trick #1",
+        "date": "2020-01-05T08:26:05.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Gradle", "Android", "ByteSize"],
+        "summary": "The first series of Gradle tips and tricks that might be helpful for you",
+        "slug": "gradle-tips-and-trick-1"
+      },
+      {
+        "title": "Android Arch's Room - Transaction",
+        "date": "2018-07-24T19:24:42.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Room"],
+        "summary": "Sometimes, we need more than one query to execute in one operation. Let's say you have to replace an item.",
+        "slug": "android-arch-room-transaction"
+      },
+      {
+        "title": "Android Arch's Room - Relation",
+        "date": "2018-07-15T19:19:20.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Room"],
+        "summary": "On the previous post, we already discussed the basic Room from AAC (Android Architecture Component). In this post, we're gonna explore the how to create a relationship between tables",
+        "slug": "android-arch-room-relation"
+      },
+      {
+        "title": "Android Arch's Room - Getting Started",
+        "date": "2018-01-07T19:15:57.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Room"],
+        "summary": "So, on the first post we already have an introduction or more like a sneak peek to Room data access object code. Let's get our hands dirty now!",
+        "slug": "android-arch-room-getting-started"
+      },
+      {
+        "title": "Android Arch's Room - Introduction",
+        "date": "2018-01-06T15:44:34.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Kotlin", "Room"],
+        "summary": "My first reaction when Android Architecture Component is out is just **meh..** I mean come on, the ViewModel is heavily tied to Activity and Fragment and basically i don't need it because i use Conductor… ",
+        "slug": "android-arch-room-introduction"
+      },
+      {
+        "title": "Simple State Machine",
+        "date": "2017-12-17T16:08:13.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Front End", "Android"],
+        "summary": "After reading a bunch of unidirectional data flow, Cycle.js's MVI and this article about implementing MVI in Android by Hannes, I'm convinced that this is how I should write my code from now on.",
+        "slug": "simple-state-machine"
+      },
+      {
+        "title": "A Model for Your View",
+        "date": "2017-12-12T16:04:35.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Front End", "Kotlin"],
+        "summary": "Not so long ago, on my Android's MVP architecture, my view layer does not have a model. The view only renders what the presenter tell them to do which is good because then, we have a passive view. But, there's no representation of the view itself.",
+        "slug": "a-model-for-your-view"
+      },
+      {
+        "title": "Multiple Dex Files Defined in Build Config",
+        "date": "2017-12-03T15:49:58.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android"],
+        "summary": "Have you ever encounter an error like this? ",
+        "slug": "mutliple-dex-files-buildconfig"
+      },
+      {
+        "title": "Glide v4 Integration for Library",
+        "date": "2017-11-14T15:32:17.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Library"],
+        "summary": "Started from the issue on my image picker library which stated that we should use the new version of Glide, I'm starting to explore this new Glide v4 library and integrate it to the library",
+        "slug": "glide4-integration-library"
+      }
+    ],
+    "tag": "android"
+  },
+  "__N_SSG": true
+}

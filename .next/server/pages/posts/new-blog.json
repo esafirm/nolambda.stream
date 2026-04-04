@@ -1,0 +1,53 @@
+{
+  "pageProps": {
+    "post": {
+      "mdxSource": "var Component=(()=>{var l=Object.create;var s=Object.defineProperty;var c=Object.getOwnPropertyDescriptor;var d=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var a=o=>s(o,\"__esModule\",{value:!0});var g=(o,i)=>()=>(i||o((i={exports:{}}).exports,i),i.exports),p=(o,i)=>{a(o);for(var n in i)s(o,n,{get:i[n],enumerable:!0})},f=(o,i,n)=>{if(i&&typeof i==\"object\"||typeof i==\"function\")for(let t of d(i))!u.call(o,t)&&t!==\"default\"&&s(o,t,{get:()=>i[t],enumerable:!(n=c(i,t))||n.enumerable});return o},b=o=>f(a(s(o!=null?l(m(o)):{},\"default\",o&&o.__esModule&&\"default\"in o?{get:()=>o.default,enumerable:!0}:{value:o,enumerable:!0})),o);var h=g((x,r)=>{r.exports=_jsx_runtime});var I={};p(I,{default:()=>v,frontmatter:()=>y});var e=b(h()),y={title:\"New Blog\",date:\"2018-12-01T11:07:05.0Z\",draft:!1,category:\"Blog\",tags:[\"Gastby\",\"Blog\",\"Ghost\",\"Netlify\"],summary:\"So this is my new blog, it is a bit different from the previous one. Well technically this is a lot different from the previous one\"};function w(o={}){let{wrapper:i}=o.components||{};return i?(0,e.jsx)(i,Object.assign({},o,{children:(0,e.jsx)(n,{})})):n();function n(){let t=Object.assign({p:\"p\",a:\"a\",ol:\"ol\",li:\"li\",code:\"code\",strong:\"strong\"},o.components);return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsxs)(t.p,{children:[\"So this is my new blog, it is a bit different from the previous one. Well, technically this is a lot different from the previous one, except for the previous content. It's because \",(0,e.jsx)(t.a,{href:\"https://github.com/esafirm/nolambda.stream\",children:\"this blog\"}),\" is built on top \",(0,e.jsx)(t.a,{href:\"https://www.gatsbyjs.org/\",children:\"GastbyJS\"}),\" a React-based site generator. While my previous \",(0,e.jsx)(t.a,{href:\"https://github.com/esafirm/esafirm.github.io/tree/ghost-do\",children:\"blog\"}),\" is \",(0,e.jsx)(t.a,{href:\"https://ghost.org/\",children:\"Ghost\"})]}),(0,e.jsx)(t.p,{children:\"So why the changes? Here's the story, at first I want to have (or already have, I can't remember) a blog on Github pages. It has several pros:\"}),(0,e.jsxs)(t.ol,{children:[(0,e.jsx)(t.li,{children:\"It's Free\"}),(0,e.jsx)(t.li,{children:\"Painless deployment (You just have to commit and push to publish)\"}),(0,e.jsx)(t.li,{children:\"Markdown support\"})]}),(0,e.jsxs)(t.p,{children:[\"But the thing that always bothers is the tooling, I have to install \",(0,e.jsx)(t.code,{children:\"bundle\"}),\" and other Ruby's stuff that I don't use from day to day.\"]}),(0,e.jsxs)(t.p,{children:[\"So because of that, I'm searching for an alternative. People said it is much much more convenient to have a CMS for a blog. You know, Wordpress stuff. But I don't want to use Wordpress, it feels not techie enough for me. So I found \",(0,e.jsx)(t.a,{href:\"https://ghost.org/\",children:\"Ghost\"}),\".\"]}),(0,e.jsx)(t.p,{children:\"Not like Wordpress which can be installed in almost every hosting site (maybe every hosting site), Ghost is a little bit limited. It uses Node.js which currently is not ubiquitous. At the time, I already have a VPS in Digital Ocean (a lot of trying things out in that VPS) so my choice is naturally to host the blog on that virtual server.\"}),(0,e.jsx)(t.p,{children:\"It really does suit me because:\"}),(0,e.jsxs)(t.ol,{children:[(0,e.jsx)(t.li,{children:\"Familiar tooling (NPM & Node.js)\"}),(0,e.jsx)(t.li,{children:\"Great Markdown support, it has a great editor in it\"}),(0,e.jsx)(t.li,{children:\"CMS, I don't have to code for anything.\"})]}),(0,e.jsxs)(t.p,{children:[\"But the problems start to be noticeable. We lost painless deployment. I'm syncing the git repo between my local machine and the VPS. Sure I don't use it very much because we don't have to change the code if we want to publish something. But still, there's a thing that have to be done. Attaching image in the post is also painful. But the most painful point from it all is \",(0,e.jsx)(t.strong,{children:\"I have to pay 5$ a month for the VPS\"}),\".\"]}),(0,e.jsx)(t.p,{children:\"So here we are with GastbyJS and Netlify to host my blog. In the end, we got:\"}),(0,e.jsxs)(t.ol,{children:[(0,e.jsx)(t.li,{children:\"Free of charge (except the domain)\"}),(0,e.jsx)(t.li,{children:\"Familiar tooling (NPM, Node, React)\"}),(0,e.jsx)(t.li,{children:\"Markdown support\"}),(0,e.jsx)(t.li,{children:\"Continuous deployment (Netlify)\"})]}),(0,e.jsx)(t.p,{children:\"The only missing part is the built-in editor, be we have VSCode, so I got that going for me which is nice. For now, what it lacks I can cover with my own tooling. Until next time and welcome to my new blog. Cao \\u{1F44B} ~\"})]})}}var v=w;return I;})();\n;return Component;",
+      "toc": [],
+      "frontMatter": {
+        "readingTime": { "text": "3 min read", "minutes": 2.27, "time": 136200, "words": 454 },
+        "slug": "new-blog",
+        "fileName": "new-blog.md",
+        "title": "New Blog",
+        "date": "2018-12-01T11:07:05.000Z",
+        "draft": false,
+        "category": "Blog",
+        "tags": ["Gastby", "Blog", "Ghost", "Netlify"],
+        "summary": "So this is my new blog, it is a bit different from the previous one. Well technically this is a lot different from the previous one"
+      }
+    },
+    "authorDetails": [
+      {
+        "readingTime": { "text": "2 min read", "minutes": 1.345, "time": 80700, "words": 269 },
+        "slug": ["default"],
+        "fileName": "default.md",
+        "name": "Esa Firman",
+        "avatar": "/static/images/avatar.png",
+        "occupation": "Software Engineer",
+        "email": "esafirm21@gmail.com",
+        "twitter": "https://twitter.com/esafirm",
+        "linkedin": "https://www.linkedin.com/esa-firman-3",
+        "github": "https://github.com/esafirm",
+        "date": null
+      }
+    ],
+    "prev": {
+      "title": "Android Arch's Room - Transaction",
+      "date": "2018-07-24T19:24:42.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Android", "Room"],
+      "summary": "Sometimes, we need more than one query to execute in one operation. Let's say you have to replace an item.",
+      "slug": "android-arch-room-transaction"
+    },
+    "next": {
+      "title": "Docker Startup Script - Stay Interactive",
+      "date": "2019-12-31T01:09:24.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Docker", "DevOps"],
+      "summary": "You've got options when you want to run something inside Dockerfile, but what if you want to run something when the container  is started?",
+      "slug": "docker-startup-script"
+    }
+  },
+  "__N_SSG": true
+}

@@ -1,0 +1,16 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Things I Keep Forgetting - Debugging Annotation Processor in Android Build",
+        "date": "2023-09-10T00:00:00.000Z",
+        "tags": ["IntelliJ", "JVM", "Gradle", "APT"],
+        "draft": false,
+        "summary": "There's an error in your Android build and it points to your annotation processing code. But, you can't debug it. Here's how to do it.",
+        "slug": "things-i-keep-forgetting-debugging-apt"
+      }
+    ],
+    "tag": "intellij"
+  },
+  "__N_SSG": true
+}

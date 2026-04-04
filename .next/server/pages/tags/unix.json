@@ -1,0 +1,17 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Domain Name Resolution with /etc/hosts",
+        "date": "2017-08-03T12:41:45.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Ops", "UNIX", "OS", "DNS"],
+        "summary": "I think we already know that the domain that we use to access some website is just a masking to IP(s). All that fancy name like this blog will be translated to IP by the DNS. But how we can override it?",
+        "slug": "domain-resolution-etc-hosts"
+      }
+    ],
+    "tag": "unix"
+  },
+  "__N_SSG": true
+}

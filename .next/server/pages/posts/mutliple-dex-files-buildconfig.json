@@ -1,0 +1,53 @@
+{
+  "pageProps": {
+    "post": {
+      "mdxSource": "var Component=(()=>{var d=Object.create;var r=Object.defineProperty;var c=Object.getOwnPropertyDescriptor;var h=Object.getOwnPropertyNames;var m=Object.getPrototypeOf,u=Object.prototype.hasOwnProperty;var o=i=>r(i,\"__esModule\",{value:!0});var p=(i,t)=>()=>(t||i((t={exports:{}}).exports,t),t.exports),f=(i,t)=>{o(i);for(var a in t)r(i,a,{get:t[a],enumerable:!0})},g=(i,t,a)=>{if(t&&typeof t==\"object\"||typeof t==\"function\")for(let n of h(t))!u.call(i,n)&&n!==\"default\"&&r(i,n,{get:()=>t[n],enumerable:!(a=c(t,n))||a.enumerable});return i},x=i=>g(o(r(i!=null?d(m(i)):{},\"default\",i&&i.__esModule&&\"default\"in i?{get:()=>i.default,enumerable:!0}:{value:i,enumerable:!0})),i);var s=p((w,l)=>{l.exports=_jsx_runtime});var j={};f(j,{default:()=>v,frontmatter:()=>y});var e=x(s()),y={title:\"Multiple Dex Files Defined in Build Config\",date:\"2017-12-03T15:49:58.0Z\",draft:!1,category:\"Tech\",tags:[\"Android\"],summary:\"Have you ever encounter an error like this? \"};function b(i={}){let{wrapper:t}=i.components||{};return t?(0,e.jsx)(t,Object.assign({},i,{children:(0,e.jsx)(a,{})})):a();function a(){let n=Object.assign({p:\"p\",pre:\"pre\",code:\"code\",span:\"span\",a:\"a\",em:\"em\",ol:\"ol\",li:\"li\"},i.components);return(0,e.jsxs)(e.Fragment,{children:[(0,e.jsx)(n.p,{children:\"Have you ever encounter an error like this?\"}),(0,e.jsx)(n.pre,{children:(0,e.jsxs)(n.code,{className:\"code-highlight\",children:[(0,e.jsx)(n.span,{className:\"code-line\",children:`Error:Error converting bytecode to dex:\n`}),(0,e.jsx)(n.span,{className:\"code-line\",children:`Cause: com.android.dex.DexException: Multiple dex files define Lnolambda.test/BuildConfig;\n`})]})}),(0,e.jsx)(n.p,{children:\"Seems like a multi dex issue right? But wait, this is a green field project. I haven't add any dependencies except for Android support library! But i have multiple module though, hmmm maybe it have something to do with it.\"}),(0,e.jsxs)(n.p,{children:['After some googling and and \"SO searching\" i finally stumbled upon ',(0,e.jsx)(n.a,{href:\"https://stackoverflow.com/questions/25103288/multiple-dex-files-define-my-package-buildconfig-cant-find-the-cause\",children:\"this\"}),\". It turns out the root cause is because i have the same package name in \",(0,e.jsx)(n.code,{children:\"AndroidManifest.xml\"}),\"(s). The SO answer is not \",(0,e.jsx)(n.em,{children:\"marked as answer\"}),\" but it definitely solve my problem.\"]}),(0,e.jsx)(n.p,{children:\"So based on that and other searching too, this problem can be happen if:\"}),(0,e.jsxs)(n.ol,{children:[(0,e.jsxs)(n.li,{children:[\"Conflict in package naming in \",(0,e.jsx)(n.code,{children:\"AndroidManifest.xml\"}),\" that resulted a conflicted \",(0,e.jsx)(n.code,{children:\"BuildConfig.java\"})]}),(0,e.jsx)(n.li,{children:\"Include the same library twice in your classpath\"}),(0,e.jsxs)(n.li,{children:[\"And there also some issue regarding \",(0,e.jsx)(n.code,{children:\"Google Play Service\"}),\" dependency too.\"]})]}),(0,e.jsx)(n.p,{children:\"Hope this can help anyone with the same issue. That's all from me. Cao \\u{1F44B}\"})]})}}var v=b;return j;})();\n;return Component;",
+      "toc": [],
+      "frontMatter": {
+        "readingTime": { "text": "1 min read", "minutes": 0.985, "time": 59100, "words": 197 },
+        "slug": "mutliple-dex-files-buildconfig",
+        "fileName": "mutliple-dex-files-buildconfig.md",
+        "title": "Multiple Dex Files Defined in Build Config",
+        "date": "2017-12-03T15:49:58.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android"],
+        "summary": "Have you ever encounter an error like this? "
+      }
+    },
+    "authorDetails": [
+      {
+        "readingTime": { "text": "2 min read", "minutes": 1.345, "time": 80700, "words": 269 },
+        "slug": ["default"],
+        "fileName": "default.md",
+        "name": "Esa Firman",
+        "avatar": "/static/images/avatar.png",
+        "occupation": "Software Engineer",
+        "email": "esafirm21@gmail.com",
+        "twitter": "https://twitter.com/esafirm",
+        "linkedin": "https://www.linkedin.com/esa-firman-3",
+        "github": "https://github.com/esafirm",
+        "date": null
+      }
+    ],
+    "prev": {
+      "title": "Glide v4 Integration for Library",
+      "date": "2017-11-14T15:32:17.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Android", "Library"],
+      "summary": "Started from the issue on my image picker library which stated that we should use the new version of Glide, I'm starting to explore this new Glide v4 library and integrate it to the library",
+      "slug": "glide4-integration-library"
+    },
+    "next": {
+      "title": "Using MySQL Database with Docker",
+      "date": "2017-12-03T15:53:02.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Docker", "MySQL", "Ops"],
+      "summary": "Last Saturday I was attending a workshop for Spring Boot in Makers Institute Bandung. The prerequisite for the workshop is we have the tools installed on our private machine. Besides the obvious Java, we also have to install MySQL.",
+      "slug": "mysql-with-docker"
+    }
+  },
+  "__N_SSG": true
+}

@@ -1,0 +1,44 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Android Arch's Room - Transaction",
+        "date": "2018-07-24T19:24:42.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Room"],
+        "summary": "Sometimes, we need more than one query to execute in one operation. Let's say you have to replace an item.",
+        "slug": "android-arch-room-transaction"
+      },
+      {
+        "title": "Android Arch's Room - Relation",
+        "date": "2018-07-15T19:19:20.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Room"],
+        "summary": "On the previous post, we already discussed the basic Room from AAC (Android Architecture Component). In this post, we're gonna explore the how to create a relationship between tables",
+        "slug": "android-arch-room-relation"
+      },
+      {
+        "title": "Android Arch's Room - Getting Started",
+        "date": "2018-01-07T19:15:57.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Room"],
+        "summary": "So, on the first post we already have an introduction or more like a sneak peek to Room data access object code. Let's get our hands dirty now!",
+        "slug": "android-arch-room-getting-started"
+      },
+      {
+        "title": "Android Arch's Room - Introduction",
+        "date": "2018-01-06T15:44:34.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Kotlin", "Room"],
+        "summary": "My first reaction when Android Architecture Component is out is just **meh..** I mean come on, the ViewModel is heavily tied to Activity and Fragment and basically i don't need it because i use Conductor… ",
+        "slug": "android-arch-room-introduction"
+      }
+    ],
+    "tag": "room"
+  },
+  "__N_SSG": true
+}

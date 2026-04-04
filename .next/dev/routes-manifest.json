@@ -1,0 +1,48 @@
+{
+  "version": 3,
+  "caseSensitive": false,
+  "basePath": "",
+  "rewrites": { "beforeFiles": [], "afterFiles": [], "fallback": [] },
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "permanent": true,
+      "internal": true,
+      "priority": true,
+      "regex": "^(?:\\/((?:[^\\/]+?)(?:\\/(?:[^\\/]+?))*))\\/$"
+    },
+    {
+      "source": "/linkedin",
+      "destination": "https://www.linkedin.com/in/esa-firman-01b8096b/",
+      "permanent": false,
+      "basePath": false,
+      "regex": "^(?!\\/_next)\\/linkedin(?:\\/)?$"
+    },
+    {
+      "source": "/github",
+      "destination": "https://www.github.com/esafirm",
+      "permanent": false,
+      "basePath": false,
+      "regex": "^(?!\\/_next)\\/github(?:\\/)?$"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "  default-src 'self';  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;  style-src 'self' 'unsafe-inline';  img-src * blob: data:;  media-src 'none';  connect-src *;  font-src 'self';  frame-src giscus.app"
+        },
+        { "key": "Referrer-Policy", "value": "strict-origin-when-cross-origin" },
+        { "key": "X-Frame-Options", "value": "DENY" },
+        { "key": "X-Content-Type-Options", "value": "nosniff" },
+        { "key": "X-DNS-Prefetch-Control", "value": "on" },
+        { "key": "Strict-Transport-Security", "value": "max-age=31536000; includeSubDomains" },
+        { "key": "Permissions-Policy", "value": "camera=(), microphone=(), geolocation=()" }
+      ],
+      "regex": "^(?:\\/(.*))(?:\\/)?$"
+    }
+  ]
+}

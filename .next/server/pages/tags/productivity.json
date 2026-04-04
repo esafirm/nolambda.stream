@@ -1,0 +1,17 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Configuration Cache and the False Economy of Gradle Helper Tasks",
+        "date": "2025-10-26T03:16:41.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Gradle", "Android", "Productivity"],
+        "summary": "Creating a new helper task in Gradle is not always a good thing, especially if you're using the configuration cache.",
+        "slug": "configuration-cache-and-install-task"
+      }
+    ],
+    "tag": "productivity"
+  },
+  "__N_SSG": true
+}

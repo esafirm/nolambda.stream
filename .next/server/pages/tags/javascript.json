@@ -1,0 +1,17 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Freakin' bind() Function",
+        "date": "2017-08-12T12:48:06.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Javascript", "React", "React Native"],
+        "summary": "When i started React Native app development, it started just fine. I love how composition is used rather than inheritance. I prefer…",
+        "slug": "freakin-bind-function"
+      }
+    ],
+    "tag": "javascript"
+  },
+  "__N_SSG": true
+}

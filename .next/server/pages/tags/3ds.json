@@ -1,0 +1,16 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Things I Keep Forgetting - Softbrick in 3DS",
+        "date": "2025-10-20T00:00:00.000Z",
+        "tags": ["3DS", "Hardwarde"],
+        "draft": false,
+        "summary": "My 3DS that installed with CFW got a softbrick problem, and I got it multiple times. Yet, I keep forgetting how to fix it",
+        "slug": "things-i-keep-forgetting-softbrick-3ds"
+      }
+    ],
+    "tag": "3ds"
+  },
+  "__N_SSG": true
+}

@@ -1,0 +1,290 @@
+{
+  "version": 3,
+  "pages404": true,
+  "appType": "pages",
+  "caseSensitive": false,
+  "basePath": "",
+  "redirects": [
+    {
+      "source": "/:path+/",
+      "destination": "/:path+",
+      "internal": true,
+      "priority": true,
+      "statusCode": 308,
+      "regex": "^(?:/((?:[^/]+?)(?:/(?:[^/]+?))*))/$"
+    },
+    {
+      "source": "/linkedin",
+      "destination": "https://www.linkedin.com/in/esa-firman-01b8096b/",
+      "basePath": false,
+      "statusCode": 307,
+      "regex": "^(?!/_next)/linkedin(?:/)?$"
+    },
+    {
+      "source": "/github",
+      "destination": "https://www.github.com/esafirm",
+      "basePath": false,
+      "statusCode": 307,
+      "regex": "^(?!/_next)/github(?:/)?$"
+    }
+  ],
+  "headers": [
+    {
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "Content-Security-Policy",
+          "value": "  default-src 'self';  script-src 'self' 'unsafe-eval' 'unsafe-inline' giscus.app;  style-src 'self' 'unsafe-inline';  img-src * blob: data:;  media-src 'none';  connect-src *;  font-src 'self';  frame-src giscus.app"
+        },
+        {
+          "key": "Referrer-Policy",
+          "value": "strict-origin-when-cross-origin"
+        },
+        {
+          "key": "X-Frame-Options",
+          "value": "DENY"
+        },
+        {
+          "key": "X-Content-Type-Options",
+          "value": "nosniff"
+        },
+        {
+          "key": "X-DNS-Prefetch-Control",
+          "value": "on"
+        },
+        {
+          "key": "Strict-Transport-Security",
+          "value": "max-age=31536000; includeSubDomains"
+        },
+        {
+          "key": "Permissions-Policy",
+          "value": "camera=(), microphone=(), geolocation=()"
+        }
+      ],
+      "regex": "^(?:/(.*))(?:/)?$"
+    }
+  ],
+  "onMatchHeaders": [],
+  "rewrites": {
+    "beforeFiles": [],
+    "afterFiles": [],
+    "fallback": []
+  },
+  "dynamicRoutes": [
+    {
+      "page": "/api/reviews/[slug]/badge",
+      "regex": "^/api/reviews/([^/]+?)/badge(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/api/reviews/(?<nxtPslug>[^/]+?)/badge(?:/)?$"
+    },
+    {
+      "page": "/api/reviews/[slug]/badge-image",
+      "regex": "^/api/reviews/([^/]+?)/badge\\-image(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/api/reviews/(?<nxtPslug>[^/]+?)/badge\\-image(?:/)?$"
+    },
+    {
+      "page": "/posts/page/[page]",
+      "regex": "^/posts/page/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPpage": "nxtPpage"
+      },
+      "namedRegex": "^/posts/page/(?<nxtPpage>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/posts/[...slug]",
+      "regex": "^/posts/(.+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/posts/(?<nxtPslug>.+?)(?:/)?$"
+    },
+    {
+      "page": "/tags/[tag]",
+      "regex": "^/tags/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPtag": "nxtPtag"
+      },
+      "namedRegex": "^/tags/(?<nxtPtag>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/wfc-reviews/[slug]",
+      "regex": "^/wfc\\-reviews/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "namedRegex": "^/wfc\\-reviews/(?<nxtPslug>[^/]+?)(?:/)?$"
+    }
+  ],
+  "staticRoutes": [
+    {
+      "page": "/",
+      "regex": "^/(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/(?:/)?$"
+    },
+    {
+      "page": "/404",
+      "regex": "^/404(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/404(?:/)?$"
+    },
+    {
+      "page": "/about",
+      "regex": "^/about(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/about(?:/)?$"
+    },
+    {
+      "page": "/api/buttondown",
+      "regex": "^/api/buttondown(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/buttondown(?:/)?$"
+    },
+    {
+      "page": "/api/convertkit",
+      "regex": "^/api/convertkit(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/convertkit(?:/)?$"
+    },
+    {
+      "page": "/api/emailoctopus",
+      "regex": "^/api/emailoctopus(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/emailoctopus(?:/)?$"
+    },
+    {
+      "page": "/api/klaviyo",
+      "regex": "^/api/klaviyo(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/klaviyo(?:/)?$"
+    },
+    {
+      "page": "/api/mailchimp",
+      "regex": "^/api/mailchimp(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/mailchimp(?:/)?$"
+    },
+    {
+      "page": "/api/reviews",
+      "regex": "^/api/reviews(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/reviews(?:/)?$"
+    },
+    {
+      "page": "/api/revue",
+      "regex": "^/api/revue(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/revue(?:/)?$"
+    },
+    {
+      "page": "/posts",
+      "regex": "^/posts(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/posts(?:/)?$"
+    },
+    {
+      "page": "/tags",
+      "regex": "^/tags(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/tags(?:/)?$"
+    },
+    {
+      "page": "/talks",
+      "regex": "^/talks(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/talks(?:/)?$"
+    },
+    {
+      "page": "/wanderlist",
+      "regex": "^/wanderlist(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/wanderlist(?:/)?$"
+    },
+    {
+      "page": "/wfc-reviews",
+      "regex": "^/wfc\\-reviews(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/wfc\\-reviews(?:/)?$"
+    }
+  ],
+  "dataRoutes": [
+    {
+      "page": "/",
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/index\\.json$"
+    },
+    {
+      "page": "/about",
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/about\\.json$"
+    },
+    {
+      "page": "/posts",
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/posts\\.json$"
+    },
+    {
+      "page": "/posts/page/[page]",
+      "routeKeys": {
+        "nxtPpage": "nxtPpage"
+      },
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/posts/page/([^/]+?)\\.json$",
+      "namedDataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/posts/page/(?<nxtPpage>[^/]+?)\\.json$"
+    },
+    {
+      "page": "/posts/[...slug]",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/posts/(.+?)\\.json$",
+      "namedDataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/posts/(?<nxtPslug>.+?)\\.json$"
+    },
+    {
+      "page": "/tags",
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/tags\\.json$"
+    },
+    {
+      "page": "/tags/[tag]",
+      "routeKeys": {
+        "nxtPtag": "nxtPtag"
+      },
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/tags/([^/]+?)\\.json$",
+      "namedDataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/tags/(?<nxtPtag>[^/]+?)\\.json$"
+    },
+    {
+      "page": "/talks",
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/talks\\.json$"
+    },
+    {
+      "page": "/wanderlist",
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/wanderlist\\.json$"
+    },
+    {
+      "page": "/wfc-reviews/[slug]",
+      "routeKeys": {
+        "nxtPslug": "nxtPslug"
+      },
+      "dataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/wfc\\-reviews/([^/]+?)\\.json$",
+      "namedDataRouteRegex": "^/_next/data/hz1EDesxKjwJERIb2Xnne/wfc\\-reviews/(?<nxtPslug>[^/]+?)\\.json$"
+    }
+  ],
+  "rsc": {
+    "header": "rsc",
+    "varyHeader": "rsc, next-router-state-tree, next-router-prefetch, next-router-segment-prefetch",
+    "prefetchHeader": "next-router-prefetch",
+    "didPostponeHeader": "x-nextjs-postponed",
+    "contentTypeHeader": "text/x-component",
+    "suffix": ".rsc",
+    "prefetchSegmentHeader": "next-router-segment-prefetch",
+    "prefetchSegmentSuffix": ".segment.rsc",
+    "prefetchSegmentDirSuffix": ".segments",
+    "clientParamParsing": false,
+    "dynamicRSCPrerender": false
+  },
+  "rewriteHeaders": {
+    "pathHeader": "x-nextjs-rewritten-path",
+    "queryHeader": "x-nextjs-rewritten-query"
+  }
+}

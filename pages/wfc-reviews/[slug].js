@@ -154,13 +154,13 @@ export default function WFCReview({
         <div className="grid gap-8 py-12 md:grid-cols-2">
           {/* Badge Section */}
           <div className="order-1">
-            <div className="flex items-center justify-between mb-4">
+            <div className="mb-4 flex items-center justify-between">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">WFC Badge</h2>
               <div className="flex gap-2">
                 <button
                   onClick={handleDownloadBadge}
                   disabled={downloading || !badgePngExists}
-                  className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium transition-colors"
+                  className="rounded-lg bg-primary-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-600 disabled:cursor-not-allowed disabled:opacity-50"
                   title={!badgePngExists ? 'Image not available' : ''}
                 >
                   {downloading ? 'Downloading...' : 'Download'}
@@ -168,7 +168,7 @@ export default function WFCReview({
                 <button
                   onClick={handleShareBadge}
                   disabled={downloading || !badgePngExists}
-                  className="px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-900 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium transition-colors"
+                  className="rounded-lg bg-gray-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-900 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-gray-700 dark:hover:bg-gray-600"
                   title={!badgePngExists ? 'Image not available' : ''}
                 >
                   {downloading ? 'Sharing...' : 'Share as Image'}
@@ -178,7 +178,7 @@ export default function WFCReview({
             <div className="flex justify-center">
               <iframe
                 srcDoc={badgeHtml}
-                className="w-full max-w-[500px] border-0 rounded-xl shadow-xl"
+                className="w-full max-w-[500px] rounded-xl border-0 shadow-xl"
                 style={{ height: '700px' }}
                 title="WFC Badge"
               />
@@ -188,28 +188,28 @@ export default function WFCReview({
           {/* Details Section */}
           <div className="order-2 space-y-6">
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+              <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-100">
                 Review Details
               </h2>
               <div className="space-y-3">
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">
+                  <h3 className="mb-1 font-semibold text-gray-900 dark:text-gray-100">
                     Atmosphere
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400">{data.atmosphere}</p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">Service</h3>
+                  <h3 className="mb-1 font-semibold text-gray-900 dark:text-gray-100">Service</h3>
                   <p className="text-gray-600 dark:text-gray-400">{data.service}</p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">
+                  <h3 className="mb-1 font-semibold text-gray-900 dark:text-gray-100">
                     Food & Drink
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400">{data.food}</p>
                 </div>
                 <div>
-                  <h3 className="font-semibold text-gray-900 dark:text-gray-100 mb-1">
+                  <h3 className="mb-1 font-semibold text-gray-900 dark:text-gray-100">
                     Final Verdict
                   </h3>
                   <p className="text-gray-600 dark:text-gray-400">{data.verdict}</p>
@@ -219,13 +219,13 @@ export default function WFCReview({
 
             {data.highlights && (
               <div>
-                <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+                <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-100">
                   Highlights
                 </h2>
                 <ul className="space-y-2">
                   {data.highlights.split(',').map((highlight, i) => (
                     <li key={i} className="flex items-start gap-2">
-                      <span className="text-primary-500 mt-1">•</span>
+                      <span className="mt-1 text-primary-500">•</span>
                       <span className="text-gray-600 dark:text-gray-400">{highlight.trim()}</span>
                     </li>
                   ))}
@@ -234,7 +234,7 @@ export default function WFCReview({
             )}
 
             <div>
-              <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100 mb-4">
+              <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-gray-100">
                 Review Context
               </h2>
               <div className="space-y-2 text-gray-600 dark:text-gray-400">

@@ -1,0 +1,3 @@
+{
+  "/api/reviews/[slug]/badge": "pages/api/reviews/[slug]/badge.js"
+}

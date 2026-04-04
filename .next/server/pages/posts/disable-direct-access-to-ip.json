@@ -1,0 +1,53 @@
+{
+  "pageProps": {
+    "post": {
+      "mdxSource": "var Component=(()=>{var d=Object.create;var a=Object.defineProperty;var l=Object.getOwnPropertyDescriptor;var m=Object.getOwnPropertyNames;var p=Object.getPrototypeOf,h=Object.prototype.hasOwnProperty;var i=e=>a(e,\"__esModule\",{value:!0});var u=(e,s)=>()=>(s||e((s={exports:{}}).exports,s),s.exports),x=(e,s)=>{i(e);for(var t in s)a(e,t,{get:s[t],enumerable:!0})},g=(e,s,t)=>{if(s&&typeof s==\"object\"||typeof s==\"function\")for(let r of m(s))!h.call(e,r)&&r!==\"default\"&&a(e,r,{get:()=>s[r],enumerable:!(t=l(s,r))||t.enumerable});return e},f=e=>g(i(a(e!=null?d(p(e)):{},\"default\",e&&e.__esModule&&\"default\"in e?{get:()=>e.default,enumerable:!0}:{value:e,enumerable:!0})),e);var o=u((v,c)=>{c.exports=_jsx_runtime});var j={};x(j,{default:()=>N,frontmatter:()=>w});var n=f(o()),w={title:\"Disable Direct Access to Your IP in Nginx\",date:\"2017-07-15T12:32:37.0Z\",draft:!1,category:\"Tech\",tags:[\"Nginx\",\"VPS\"],summary:\"Often times we don't want to expose our server IP address to public. We just want to access our domain address.\"};function _(e={}){let{wrapper:s}=e.components||{};return s?(0,n.jsx)(s,Object.assign({},e,{children:(0,n.jsx)(t,{})})):t();function t(){let r=Object.assign({p:\"p\",a:\"a\",code:\"code\",pre:\"pre\",span:\"span\"},e.components);return(0,n.jsxs)(n.Fragment,{children:[(0,n.jsx)(r.p,{children:\"Often times we don't want to expose our server IP address to public. We just want to access our domain address.\"}),(0,n.jsxs)(r.p,{children:[\"If you're using \",(0,n.jsx)(r.a,{href:\"https://www.nginx.com\",children:\"Nginx\"}),\" like me, there's a simple workaround for this problem.\"]}),(0,n.jsxs)(r.p,{children:[\"Just add another \",(0,n.jsx)(r.code,{children:\"server\"}),\" block in your config file under \",(0,n.jsx)(r.code,{children:\"/etc/nginx/site-available\"}),\" like this\"]}),(0,n.jsx)(r.pre,{children:(0,n.jsxs)(r.code,{className:\"code-highlight\",children:[(0,n.jsx)(r.span,{className:\"code-line\",children:`server {\n`}),(0,n.jsx)(r.span,{className:\"code-line\",children:`    listen 80;\n`}),(0,n.jsx)(r.span,{className:\"code-line\",children:`    server_name YOUR_IP_ADDERSS;\n`}),(0,n.jsx)(r.span,{className:\"code-line\",children:`    return 301 YOUR_DOMAIN_NAME;\n`}),(0,n.jsx)(r.span,{className:\"code-line\",children:`}\n`})]})}),(0,n.jsx)(r.p,{children:\"It will return 301 (Moved Permanently) and redirect it to your domain address instead.\"}),(0,n.jsx)(r.p,{children:\"Simple isn't it? \\u{1F44C}\"})]})}}var N=_;return j;})();\n;return Component;",
+      "toc": [],
+      "frontMatter": {
+        "readingTime": { "text": "1 min read", "minutes": 0.65, "time": 39000, "words": 130 },
+        "slug": "disable-direct-access-to-ip",
+        "fileName": "disable-direct-access-to-ip.md",
+        "title": "Disable Direct Access to Your IP in Nginx",
+        "date": "2017-07-15T12:32:37.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Nginx", "VPS"],
+        "summary": "Often times we don't want to expose our server IP address to public. We just want to access our domain address."
+      }
+    },
+    "authorDetails": [
+      {
+        "readingTime": { "text": "2 min read", "minutes": 1.345, "time": 80700, "words": 269 },
+        "slug": ["default"],
+        "fileName": "default.md",
+        "name": "Esa Firman",
+        "avatar": "/static/images/avatar.png",
+        "occupation": "Software Engineer",
+        "email": "esafirm21@gmail.com",
+        "twitter": "https://twitter.com/esafirm",
+        "linkedin": "https://www.linkedin.com/esa-firman-3",
+        "github": "https://github.com/esafirm",
+        "date": null
+      }
+    ],
+    "prev": {
+      "title": "Easy & Free HTTPS with Let's Encrypt",
+      "date": "2017-07-13T12:30:45.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["HTTPS", "SSL", "VPS"],
+      "summary": "HTTPS make the internet better and safer. It allows us to communicate securely in insecure channel such as public Wi-Fi or Internet Cafe.",
+      "slug": "free-https-lets-encrypt"
+    },
+    "next": {
+      "title": "Kotlin 101 - Extension Function",
+      "date": "2017-08-02T12:34:59.000Z",
+      "draft": false,
+      "category": "Tech",
+      "tags": ["Kotlin"],
+      "summary": "There is some code that we write everywhere. It doesn't have **state** and usually small enough to become a `class`. We often call it a helper function and in Java we used to save it in some `*Utils` class.",
+      "slug": "kotlin-101-extension-func"
+    }
+  },
+  "__N_SSG": true
+}

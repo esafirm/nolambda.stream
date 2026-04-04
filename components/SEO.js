@@ -32,6 +32,12 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
   )
 }
 
+/**
+ * @param {object} props
+ * @param {string} props.title
+ * @param {string} [props.description]
+ * @param {string} [props.ogImage]
+ */
 export const PageSEO = ({ title, description, ogImage }) => {
   const ogImageUrl = ogImage
     ? ogImage.includes('http')

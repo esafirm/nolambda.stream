@@ -1,0 +1,17 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "JaCoCo Setup for Android Multi Module Project",
+        "date": "2020-01-19T07:53:17.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Jacoco", "Android Development", "Code Coverage"],
+        "summary": "Easy JaCoCo configuration for your multi module Android projects",
+        "slug": "jacoco-setup-for-multi-module-project"
+      }
+    ],
+    "tag": "code-coverage"
+  },
+  "__N_SSG": true
+}

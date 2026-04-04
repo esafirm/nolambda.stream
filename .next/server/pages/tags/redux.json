@@ -1,0 +1,17 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Redux-Like State Management with Sealed Class in Kotlin",
+        "date": "2017-12-25T15:56:46.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin", "Redux", "Front End"],
+        "summary": "On the previous post, we already discussed how your view should have its own model. We also have discussed how you can make a simple redux-like state machine in Kotlin.",
+        "slug": "redux-like-state-management-with-sealed-class-kotlin"
+      }
+    ],
+    "tag": "redux"
+  },
+  "__N_SSG": true
+}

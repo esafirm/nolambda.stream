@@ -1,0 +1,12 @@
+var R = require('../chunks/ssr/[turbopack]_runtime.js')('server/pages/talks.js')
+R.c('server/chunks/ssr/_0puu7.8._.js')
+R.c('server/chunks/ssr/[root-of-the-server]__0udx4i.._.js')
+R.c('server/chunks/ssr/[root-of-the-server]__12rm8uy._.js')
+R.c('server/chunks/ssr/[root-of-the-server]__0z3d.uj._.js')
+R.c('server/chunks/ssr/[externals]__0rw1r85._.js')
+R.c('server/chunks/ssr/_0y9nugd._.js')
+R.c('server/chunks/ssr/[root-of-the-server]__0guj.ts._.js')
+R.c('server/chunks/ssr/[root-of-the-server]__0d.n527._.js')
+R.c('server/chunks/ssr/[root-of-the-server]__0b5m81u._.js')
+R.m(71877)
+module.exports = R.m(71877).exports

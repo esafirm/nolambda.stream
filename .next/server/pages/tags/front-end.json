@@ -1,0 +1,35 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Redux-Like State Management with Sealed Class in Kotlin",
+        "date": "2017-12-25T15:56:46.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Kotlin", "Redux", "Front End"],
+        "summary": "On the previous post, we already discussed how your view should have its own model. We also have discussed how you can make a simple redux-like state machine in Kotlin.",
+        "slug": "redux-like-state-management-with-sealed-class-kotlin"
+      },
+      {
+        "title": "Simple State Machine",
+        "date": "2017-12-17T16:08:13.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Front End", "Android"],
+        "summary": "After reading a bunch of unidirectional data flow, Cycle.js's MVI and this article about implementing MVI in Android by Hannes, I'm convinced that this is how I should write my code from now on.",
+        "slug": "simple-state-machine"
+      },
+      {
+        "title": "A Model for Your View",
+        "date": "2017-12-12T16:04:35.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Android", "Front End", "Kotlin"],
+        "summary": "Not so long ago, on my Android's MVP architecture, my view layer does not have a model. The view only renders what the presenter tell them to do which is good because then, we have a passive view. But, there's no representation of the view itself.",
+        "slug": "a-model-for-your-view"
+      }
+    ],
+    "tag": "front-end"
+  },
+  "__N_SSG": true
+}

@@ -1,0 +1,17 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Using MySQL Database with Docker",
+        "date": "2017-12-03T15:53:02.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Docker", "MySQL", "Ops"],
+        "summary": "Last Saturday I was attending a workshop for Spring Boot in Makers Institute Bandung. The prerequisite for the workshop is we have the tools installed on our private machine. Besides the obvious Java, we also have to install MySQL.",
+        "slug": "mysql-with-docker"
+      }
+    ],
+    "tag": "mysql"
+  },
+  "__N_SSG": true
+}

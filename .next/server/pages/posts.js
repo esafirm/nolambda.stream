@@ -1,0 +1,11 @@
+var R = require('../chunks/ssr/[turbopack]_runtime.js')('server/pages/posts.js')
+R.c('server/chunks/ssr/_0pawy8f._.js')
+R.c('server/chunks/ssr/[root-of-the-server]__0z3d.uj._.js')
+R.c('server/chunks/ssr/[root-of-the-server]__04-gc34._.js')
+R.c('server/chunks/ssr/[externals]__0rw1r85._.js')
+R.c('server/chunks/ssr/_0y9nugd._.js')
+R.c('server/chunks/ssr/[root-of-the-server]__0guj.ts._.js')
+R.c('server/chunks/ssr/[root-of-the-server]__0d.n527._.js')
+R.c('server/chunks/ssr/[root-of-the-server]__0b5m81u._.js')
+R.m(83490)
+module.exports = R.m(83490).exports

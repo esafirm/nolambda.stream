@@ -1,0 +1,26 @@
+{
+  "pageProps": {
+    "posts": [
+      {
+        "title": "Using MySQL Database with Docker",
+        "date": "2017-12-03T15:53:02.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Docker", "MySQL", "Ops"],
+        "summary": "Last Saturday I was attending a workshop for Spring Boot in Makers Institute Bandung. The prerequisite for the workshop is we have the tools installed on our private machine. Besides the obvious Java, we also have to install MySQL.",
+        "slug": "mysql-with-docker"
+      },
+      {
+        "title": "Domain Name Resolution with /etc/hosts",
+        "date": "2017-08-03T12:41:45.000Z",
+        "draft": false,
+        "category": "Tech",
+        "tags": ["Ops", "UNIX", "OS", "DNS"],
+        "summary": "I think we already know that the domain that we use to access some website is just a masking to IP(s). All that fancy name like this blog will be translated to IP by the DNS. But how we can override it?",
+        "slug": "domain-resolution-etc-hosts"
+      }
+    ],
+    "tag": "ops"
+  },
+  "__N_SSG": true
+}
