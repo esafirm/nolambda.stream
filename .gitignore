@@ -8,8 +8,11 @@
 # testing
 /coverage
 
-# next.js
-/.next/
+# logs
+*_output.txt
+dev_logs.txt
+serveo_final.txt
+serveo_output_new.txt
 /out/
 public/sitemap.xml
 .vercel

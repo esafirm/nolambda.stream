@@ -16,8 +16,8 @@ I rarely update this blog, so for reminder here are important file if you need t
 ### Development
 
 ```
-yarn install
-yarn dev
+pnpm install
+pnpm dev
 
 For more, read the `package.json`
 ```
