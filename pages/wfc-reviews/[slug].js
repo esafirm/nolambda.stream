@@ -286,6 +286,19 @@ export default function WFCReview({
                 Review Context
               </h2>
               <div className="space-y-2 text-gray-600 dark:text-gray-400">
+                {data.googleMapsLink && (
+                  <p>
+                    <span className="font-medium">Location:</span>{' '}
+                    <a
+                      href={data.googleMapsLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="text-primary-500 hover:underline"
+                    >
+                      View on Google Maps
+                    </a>
+                  </p>
+                )}
                 <p>
                   <span className="font-medium">Reviewed From:</span> {data.currentLocation}
                 </p>

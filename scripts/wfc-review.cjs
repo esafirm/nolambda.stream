@@ -106,7 +106,8 @@ function generateBadgeHtml(
   wfcSuitability,
   currentLocation,
   powerOutlets,
-  cappuccino
+  cappuccino,
+  googleMapsLink = ''
 ) {
   const stars = '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '')
   const suitabilityColor =
@@ -338,7 +339,8 @@ function generateMarkdownReview(
   verdict,
   currentLocation,
   powerOutlets,
-  cappuccino
+  cappuccino,
+  googleMapsLink = ''
 ) {
   const stars = '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '')
   const wfcSuitability = rating >= 4.5 ? 'Excellent' : rating >= 3.5 ? 'Good' : 'Average'
@@ -350,6 +352,7 @@ function generateMarkdownReview(
 
 ## 📍 Location Context
 **Reviewer Location:** ${currentLocation}
+${googleMapsLink ? `**Google Maps Link:** [View on Maps](${googleMapsLink})` : ''}
 
 ## 🌡️ Technical Metrics
 - **WiFi Speed:** ${wifiSpeed}
@@ -407,7 +410,8 @@ function generateNotionMarkdown(
   verdict,
   currentLocation,
   powerOutlets,
-  cappuccino
+  cappuccino,
+  googleMapsLink = ''
 ) {
   const stars = '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '')
   const wfcSuitability = rating >= 4.5 ? 'Excellent' : rating >= 3.5 ? 'Good' : 'Average'
@@ -426,6 +430,7 @@ function generateNotionMarkdown(
 | **Hot Cappuccino** | ${cappuccino} |
 | **Suitability** | ${wfcSuitability} |
 | **Location** | ${location} |
+| **Maps Link** | ${googleMapsLink ? `[Google Maps](${googleMapsLink})` : 'N/A'} |
 | **Reviewed From** | ${currentLocation} |
 | **Date** | ${new Date().toLocaleDateString()} |
 
@@ -473,7 +478,8 @@ function generateJSONData(
   verdict,
   currentLocation,
   powerOutlets,
-  cappuccino
+  cappuccino,
+  googleMapsLink = ''
 ) {
   return JSON.stringify(
     {
@@ -484,6 +490,7 @@ function generateJSONData(
       temperature,
       powerOutlets,
       cappuccino,
+      googleMapsLink,
       onlineReviews,
       userExperience,
       atmosphere,
@@ -551,7 +558,8 @@ function generateReviewOutputs(
   verdict,
   currentLocation,
   powerOutlets,
-  cappuccino = 'N/A'
+  cappuccino = 'N/A',
+  googleMapsLink = ''
 ) {
   const stars = '⭐'.repeat(Math.floor(rating)) + (rating % 1 >= 0.5 ? '⭐' : '')
   const wfcSuitability = rating >= 4.5 ? 'Excellent' : rating >= 3.5 ? 'Good' : 'Average'
@@ -570,6 +578,7 @@ Service: ${service}
 Food: ${food}
 
 ${highlights ? `Highlights: ${highlights}` : ''}
+${googleMapsLink ? `Link: ${googleMapsLink}` : ''}
   `.trim()
 
   // Markdown Formats
@@ -588,7 +597,8 @@ ${highlights ? `Highlights: ${highlights}` : ''}
     verdict,
     currentLocation,
     powerOutlets,
-    cappuccino
+    cappuccino,
+    googleMapsLink
   )
   const notionMarkdown = generateNotionMarkdown(
     name,
@@ -605,7 +615,8 @@ ${highlights ? `Highlights: ${highlights}` : ''}
     verdict,
     currentLocation,
     powerOutlets,
-    cappuccino
+    cappuccino,
+    googleMapsLink
   )
 
   // Data Formats
@@ -617,7 +628,8 @@ ${highlights ? `Highlights: ${highlights}` : ''}
     wfcSuitability,
     currentLocation,
     powerOutlets,
-    cappuccino
+    cappuccino,
+    googleMapsLink
   )
   const jsonData = generateJSONData(
     name,
@@ -634,7 +646,8 @@ ${highlights ? `Highlights: ${highlights}` : ''}
     verdict,
     currentLocation,
     powerOutlets,
-    cappuccino
+    cappuccino,
+    googleMapsLink
   )
 
   return { googleMapsReview, markdownReview, notionMarkdown, badgeHtml, jsonData, wfcSuitability }
@@ -685,6 +698,7 @@ if (args.length > 0) {
   const name = args[0]
   const location = args[1] || 'WFC'
   const rating = args[2] || '4.0'
+  const googleMapsLink = args[3] || ''
 
   const currentLocation = detectCurrentLocation()
 
@@ -733,7 +747,8 @@ if (args.length > 0) {
     verdict,
     currentLocation,
     powerOutlets,
-    cappuccino
+    cappuccino,
+    googleMapsLink
   )
 
   displayOutputs(name, outputs)
@@ -754,8 +769,8 @@ if (args.length > 0) {
   console.log('6. Generate formatted markdown review')
   console.log('7. Create visual badge with key metrics')
   console.log('\nCommand Line Usage (placeholder metrics):')
-  console.log('  node scripts/wfc_review.cjs "Name" [Location] [Rating]')
+  console.log('  node scripts/wfc_review.cjs "Name" [Location] [Rating] [GoogleMapsLink]')
   console.log('\nExamples:')
   console.log('  node scripts/wfc_review.cjs "Starbucks"')
-  console.log('  node scripts/wfc_review.cjs "Chatime" "Chatswood" 4.5')
+  console.log('  node scripts/wfc_review.cjs "Chatime" "Chatswood" 4.5 "https://maps.app.goo.gl/..."')
 }
