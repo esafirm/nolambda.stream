@@ -135,6 +135,7 @@ export default function WFCReview({
       <PageSEO
         title={`${data.name} - WFC Review`}
         description={`Work From Cafe review for ${data.name} in ${data.location}`}
+        ogImage={badgePngExists ? `/api/reviews/${slug}/badge-image` : null}
       />
       <div className="divide-y divide-gray-200 dark:divide-gray-700">
         <div className="space-y-2 pb-8 pt-6 md:space-y-5">
@@ -155,43 +156,33 @@ export default function WFCReview({
           <div className="order-1">
             <div className="flex items-center justify-between mb-4">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">WFC Badge</h2>
-              {badgePngExists && (
-                <div className="flex gap-2">
-                  <button
-                    onClick={handleDownloadBadge}
-                    disabled={downloading}
-                    className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium transition-colors"
-                  >
-                    {downloading ? 'Downloading...' : 'Download'}
-                  </button>
-                  <button
-                    onClick={handleShareBadge}
-                    disabled={downloading}
-                    className="px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-900 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium transition-colors"
-                  >
-                    {downloading ? 'Sharing...' : 'Share'}
-                  </button>
-                </div>
-              )}
+              <div className="flex gap-2">
+                <button
+                  onClick={handleDownloadBadge}
+                  disabled={downloading || !badgePngExists}
+                  className="px-4 py-2 bg-primary-500 text-white rounded-lg hover:bg-primary-600 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium transition-colors"
+                  title={!badgePngExists ? 'Image not available' : ''}
+                >
+                  {downloading ? 'Downloading...' : 'Download'}
+                </button>
+                <button
+                  onClick={handleShareBadge}
+                  disabled={downloading || !badgePngExists}
+                  className="px-4 py-2 bg-gray-800 dark:bg-gray-700 text-white rounded-lg hover:bg-gray-900 dark:hover:bg-gray-600 disabled:opacity-50 disabled:cursor-not-allowed text-sm font-medium transition-colors"
+                  title={!badgePngExists ? 'Image not available' : ''}
+                >
+                  {downloading ? 'Sharing...' : 'Share as Image'}
+                </button>
+              </div>
             </div>
-            {badgePngExists ? (
-              <div className="flex justify-center">
-                <img
-                  src={`/api/reviews/${slug}/badge-image`}
-                  alt={`${data.name} WFC Badge`}
-                  className="w-full max-w-[500px] border-4 border-black rounded-lg shadow-lg"
-                />
-              </div>
-            ) : (
-              <div className="flex justify-center">
-                <iframe
-                  srcDoc={badgeHtml}
-                  className="w-full max-w-[500px] border-0"
-                  style={{ height: '800px' }}
-                  title="WFC Badge"
-                />
-              </div>
-            )}
+            <div className="flex justify-center">
+              <iframe
+                srcDoc={badgeHtml}
+                className="w-full max-w-[500px] border-0 rounded-xl shadow-xl"
+                style={{ height: '700px' }}
+                title="WFC Badge"
+              />
+            </div>
           </div>
 
           {/* Details Section */}

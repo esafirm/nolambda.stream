@@ -14,7 +14,7 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
       <meta property="og:site_name" content={siteMetadata.title} />
       <meta property="og:description" content={description} />
       <meta property="og:title" content={title} />
-      {ogImage.constructor.name === 'Array' ? (
+      {Array.isArray(ogImage) ? (
         ogImage.map(({ url }) => <meta property="og:image" content={url} key={url} />)
       ) : (
         <meta property="og:image" content={ogImage} key={ogImage} />
@@ -32,9 +32,17 @@ const CommonSEO = ({ title, description, ogType, ogImage, twImage, canonicalUrl 
   )
 }
 
-export const PageSEO = ({ title, description }) => {
-  const ogImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
-  const twImageUrl = siteMetadata.siteUrl + siteMetadata.socialBanner
+export const PageSEO = ({ title, description, ogImage }) => {
+  const ogImageUrl = ogImage
+    ? ogImage.includes('http')
+      ? ogImage
+      : siteMetadata.siteUrl + ogImage
+    : siteMetadata.siteUrl + siteMetadata.socialBanner
+  const twImageUrl = ogImage
+    ? ogImage.includes('http')
+      ? ogImage
+      : siteMetadata.siteUrl + ogImage
+    : siteMetadata.siteUrl + siteMetadata.socialBanner
   return (
     <CommonSEO
       title={title}
