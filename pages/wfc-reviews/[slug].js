@@ -101,14 +101,32 @@ export default function WFCReview({
           type: 'image/png',
         })
 
-        if (navigator.share && navigator.canShare({ files: [file] })) {
-          await navigator.share({
-            title: `WFC Review: ${data.name}`,
-            text: `Check out my WFC review of ${data.name} in ${data.location}`,
-            files: [file],
-          })
+        const shareUrl = window.location.href
+        const shareTitle = `WFC Review: ${data.name}`
+        const shareText = `Check out my WFC review of ${data.name} in ${data.location}.\n\nRead more at: ${shareUrl}`
+
+        if (navigator.share) {
+          try {
+            if (navigator.canShare && navigator.canShare({ files: [file] })) {
+              await navigator.share({
+                title: shareTitle,
+                text: shareText,
+                url: shareUrl,
+                files: [file],
+              })
+            } else {
+              await navigator.share({
+                title: shareTitle,
+                text: shareText,
+                url: shareUrl,
+              })
+            }
+          } catch (error) {
+            // User cancelled or other share error
+            if (error.name !== 'AbortError') throw error
+          }
         } else {
-          // Fallback to download
+          // Fallback to download if navigator.share is not available at all
           const url = window.URL.createObjectURL(blob)
           const a = document.createElement('a')
           a.href = url
@@ -154,24 +172,54 @@ export default function WFCReview({
         <div className="grid gap-8 py-12 md:grid-cols-2">
           {/* Badge Section */}
           <div className="order-1">
-            <div className="mb-4 flex items-center justify-between">
+            <div className="mb-6 flex items-center justify-between">
               <h2 className="text-2xl font-bold text-gray-900 dark:text-gray-100">WFC Badge</h2>
-              <div className="flex gap-2">
+              <div className="flex gap-3">
                 <button
                   onClick={handleDownloadBadge}
                   disabled={downloading || !badgePngExists}
-                  className="rounded-lg bg-primary-500 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-primary-600 disabled:cursor-not-allowed disabled:opacity-50"
-                  title={!badgePngExists ? 'Image not available' : ''}
+                  className="inline-flex items-center gap-2 rounded-full bg-primary-500 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-primary-600 active:scale-95 disabled:cursor-not-allowed disabled:opacity-50"
+                  title={!badgePngExists ? 'Image not available' : 'Download Badge'}
                 >
-                  {downloading ? 'Downloading...' : 'Download'}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+                    <polyline points="7 10 12 15 17 10" />
+                    <line x1="12" x2="12" y1="15" y2="3" />
+                  </svg>
+                  {downloading ? '...' : 'Download'}
                 </button>
                 <button
                   onClick={handleShareBadge}
                   disabled={downloading || !badgePngExists}
-                  className="rounded-lg bg-gray-800 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-gray-900 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-gray-700 dark:hover:bg-gray-600"
-                  title={!badgePngExists ? 'Image not available' : ''}
+                  className="inline-flex items-center gap-2 rounded-full bg-gray-900 px-5 py-2.5 text-sm font-semibold text-white transition-all hover:bg-black active:scale-95 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-gray-700 dark:hover:bg-gray-600"
+                  title={!badgePngExists ? 'Image not available' : 'Share Review'}
                 >
-                  {downloading ? 'Sharing...' : 'Share as Image'}
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="18"
+                    height="18"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8" />
+                    <polyline points="16 6 12 2 8 6" />
+                    <line x1="12" x2="12" y1="2" y2="15" />
+                  </svg>
+                  {downloading ? '...' : 'Share'}
                 </button>
               </div>
             </div>
