@@ -3,6 +3,7 @@ const headerNavLinks = [
   { href: '/tags', title: 'Tags' },
   { href: '/talks', title: 'Talks & Workshop' },
   { href: '/wanderlist', title: 'WanderList' },
+  { href: '/wfc-reviews', title: 'WFC Reviews' },
   { href: '/about', title: 'About' },
 ]
 

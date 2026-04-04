@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Moore Coffee And Pastry, Bandar Lampung - WFC Badge</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;800&display=swap');
+
+        body {
+            margin: 0;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background-color: #fef3c7;
+            background-image: radial-gradient(#d1d5db 1px, transparent 1px);
+            background-size: 20px 20px;
+            font-family: 'Lexend', sans-serif;
+        }
+
+        .badge {
+            background: #fffcf2;
+            border: 4px solid #000;
+            border-radius: 4px;
+            padding: 32px;
+            box-shadow: 12px 12px 0px 0px #000;
+            text-align: left;
+            width: 380px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .icon-box {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 48px;
+            height: 48px;
+            background: #ea580c;
+            border: 3px solid #000;
+            box-shadow: 4px 4px 0px 0px #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+        }
+
+        .subtitle {
+            font-weight: 800;
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 8px;
+            color: #000;
+        }
+
+        h1 {
+            margin: 0;
+            font-size: 32px;
+            font-weight: 800;
+            color: #000;
+            line-height: 1.1;
+            display: block;
+        }
+
+        .squiggle-container {
+            width: 120px;
+            height: 12px;
+            margin: 8px 0 24px 0;
+        }
+
+        .rating-container {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 24px;
+        }
+
+        .rating-box {
+            background: #fef3c7;
+            border: 3px solid #000;
+            padding: 8px 16px;
+            font-weight: 800;
+            box-shadow: 4px 4px 0px 0px #000;
+        }
+
+        .metrics {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+            margin-top: 24px;
+        }
+
+        .metric {
+            background: #fff;
+            border: 3px solid #000;
+            padding: 12px;
+            box-shadow: 4px 4px 0px 0px #000;
+        }
+
+        .metric.full {
+            grid-column: span 2;
+        }
+
+        .metric .label {
+            display: block;
+            font-size: 10px;
+            font-weight: 800;
+            text-transform: uppercase;
+            color: #4b5563;
+            margin-bottom: 4px;
+        }
+
+        .metric .value {
+            font-size: 16px;
+            font-weight: 800;
+            color: #000;
+        }
+
+        .wfc-tag {
+            background: #3b82f6;
+            border: 3px solid #000;
+            padding: 10px;
+            font-weight: 800;
+            text-align: center;
+            text-transform: uppercase;
+            font-size: 14px;
+            margin-top: 24px;
+            box-shadow: 6px 6px 0px 0px #000;
+        }
+
+        .footer {
+            margin-top: 32px;
+            font-size: 11px;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            color: #4b5563;
+        }
+
+        .dot {
+            width: 8px;
+            height: 8px;
+            background: #ea580c;
+            border: 2px solid #000;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+    <div class="badge">
+        <div class="icon-box">☕</div>
+        <div class="subtitle">WFC Verified Spot</div>
+        <h1>Moore Coffee And Pastry, Bandar Lampung</h1>
+        <div class="squiggle-container">
+            <svg width="120" height="12" viewBox="0 0 120 12" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0 6 C 10 0, 20 12, 30 6 C 40 0, 50 12, 60 6 C 70 0, 80 12, 90 6 C 100 0, 110 12, 120 6" stroke="black" stroke-width="4" fill="none" stroke-linecap="round" style="transform: translate(2px, 2px); opacity: 0.2;"/>
+                <path d="M0 6 C 10 0, 20 12, 30 6 C 40 0, 50 12, 60 6 C 70 0, 80 12, 90 6 C 100 0, 110 12, 120 6" stroke="#ea580c" stroke-width="4" fill="none" stroke-linecap="round"/>
+            </svg>
+        </div>
+
+        <div class="rating-container">
+            <div class="rating-box">4.0 / 5.0</div>
+            <div style="font-size: 20px;">⭐⭐⭐⭐</div>
+        </div>
+
+        <div class="metrics">
+            <div class="metric full">
+                <span class="label">WiFi Speed</span>
+                <span class="value">⚡ 50 Mbps</span>
+            </div>
+            <div class="metric">
+                <span class="label">Comfort</span>
+                <span class="value">🌡️ 22°C</span>
+            </div>
+            <div class="metric">
+                <span class="label">Power Access</span>
+                <span class="value">🔌 Available</span>
+            </div>
+            <div class="metric full">
+                <span class="label">Hot Cappuccino</span>
+                <span class="value">☕ Excellent</span>
+            </div>
+        </div>
+
+        <div class="wfc-tag">Status: Good</div>
+
+        <div class="footer">
+            <div class="dot"></div>
+            <span>LOCATED IN BANDAR LAMPUNG, LAMPUNG, ID</span>
+        </div>
+    </div>
+</body>
+</html>

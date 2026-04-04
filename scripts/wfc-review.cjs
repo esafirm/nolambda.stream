@@ -391,6 +391,23 @@ function saveReviewPackage(name, outputs) {
   fs.writeFileSync(path.join(dir, 'badge.html'), outputs.badgeHtml);
   fs.writeFileSync(path.join(dir, 'data.json'), outputs.jsonData);
 
+  // Generate badge image using npx pageres-cli
+  const badgeHtmlPath = path.join(dir, 'badge.html');
+  const badgeImagePath = path.join(dir, 'badge.png');
+
+  try {
+    console.log('\n📸 Generating badge image...');
+    execSync(`npx pageres-cli "file://${badgeHtmlPath}" "${badgeImagePath}" --crop --delay=2`, {
+      stdio: 'inherit',
+      timeout: 30000
+    });
+    console.log('✅ Badge image generated successfully!');
+  } catch (error) {
+    console.warn('⚠️  Failed to generate badge image:', error.message);
+    console.warn('   You can manually generate it later with:');
+    console.warn(`   npx pageres-cli "file://${badgeHtmlPath}" "${badgeImagePath}" --crop --delay=2`);
+  }
+
   return dir;
 }
 
@@ -440,6 +457,7 @@ function displayOutputs(name, outputs) {
   console.log(`📁 Path: ${dir}`);
   console.log('  📄 notion.md        <- Best for Notion paste');
   console.log('  📄 badge.html       <- Open & screenshot for social');
+  console.log('  📄 badge.png        <- Generated image for sharing');
   console.log('  📄 google-maps.txt  <- Quick copy for Google');
   console.log('  📄 data.json        <- Structured data for your database');
 
