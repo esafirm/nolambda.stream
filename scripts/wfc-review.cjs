@@ -127,7 +127,7 @@ function generateBadgeHtml(
     <meta charset="UTF-8">
     <title>${name} - WFC Badge</title>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;800&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Lexend:wght@400;700;800&family=Noto+Color+Emoji&display=swap');
 
         body {
             margin: 0;
@@ -139,7 +139,11 @@ function generateBadgeHtml(
             background-color: #fef3c7;
             background-image: radial-gradient(#d1d5db 1px, transparent 1px);
             background-size: 20px 20px;
-            font-family: 'Lexend', sans-serif;
+            font-family: 'Lexend', 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Emoji', sans-serif;
+        }
+
+        .icon-box, .rating-container div, .metric .value {
+            font-family: 'Lexend', 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Emoji', sans-serif;
         }
 
         .badge {
