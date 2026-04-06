@@ -8,6 +8,7 @@
 
 const fs = require('fs')
 const path = require('path')
+const puppeteer = require('puppeteer')
 
 const reviewTemplates = {
   excellent: {
@@ -140,11 +141,11 @@ function generateBadgeHtml(
             background-color: #fef3c7;
             background-image: radial-gradient(#d1d5db 1px, transparent 1px);
             background-size: 20px 20px;
-            font-family: 'Lexend', 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Emoji', sans-serif;
+            font-family: 'Lexend', ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, 'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji';
         }
 
         .icon-box, .rating-container div, .metric .value {
-            font-family: 'Lexend', 'Noto Color Emoji', 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Emoji', sans-serif;
+            font-family: inherit;
         }
 
         .badge {
@@ -507,7 +508,7 @@ function generateJSONData(
   )
 }
 
-function saveReviewPackage(name, outputs) {
+async function saveReviewPackage(name, outputs) {
   const safeName = name.toLowerCase().replace(/[^a-z0-9]/g, '-')
   const dir = path.join(process.cwd(), 'reviews', safeName)
 
@@ -521,23 +522,29 @@ function saveReviewPackage(name, outputs) {
   fs.writeFileSync(path.join(dir, 'badge.html'), outputs.badgeHtml)
   fs.writeFileSync(path.join(dir, 'data.json'), outputs.jsonData)
 
-  // Generate badge image using npx pageres-cli
+  // Generate badge image using puppeteer
   const badgeHtmlPath = path.join(dir, 'badge.html')
   const badgeImagePath = path.join(dir, 'badge.png')
 
   try {
     console.log('\n📸 Generating badge image...')
-    execSync(`npx pageres-cli "file://${badgeHtmlPath}" "${badgeImagePath}" --crop --delay=2`, {
-      stdio: 'inherit',
-      timeout: 30000,
+    const browser = await puppeteer.launch({
+      args: ['--no-sandbox', '--disable-setuid-sandbox'],
     })
-    console.log('✅ Badge image generated successfully!')
+    const page = await browser.newPage()
+    await page.goto(`file://${badgeHtmlPath}`, { waitUntil: 'networkidle0' })
+    const element = await page.$('.badge')
+    if (element) {
+      await element.screenshot({ path: badgeImagePath })
+      console.log('✅ Badge image generated successfully!')
+    } else {
+      console.warn('⚠️  Could not find .badge element in badge.html')
+    }
+    await browser.close()
   } catch (error) {
     console.warn('⚠️  Failed to generate badge image:', error.message)
     console.warn('   You can manually generate it later with:')
-    console.warn(
-      `   npx pageres-cli "file://${badgeHtmlPath}" "${badgeImagePath}" --crop --delay=2`
-    )
+    console.warn(`   node scripts/generate-badges.js`)
   }
 
   return dir
@@ -653,8 +660,8 @@ ${googleMapsLink ? `Link: ${googleMapsLink}` : ''}
   return { googleMapsReview, markdownReview, notionMarkdown, badgeHtml, jsonData, wfcSuitability }
 }
 
-function displayOutputs(name, outputs) {
-  const dir = saveReviewPackage(name, outputs)
+async function displayOutputs(name, outputs) {
+  const dir = await saveReviewPackage(name, outputs)
   const data = JSON.parse(outputs.jsonData)
 
   console.log('\n' + '✨'.repeat(25))
@@ -751,13 +758,13 @@ if (args.length > 0) {
     googleMapsLink
   )
 
-  displayOutputs(name, outputs)
-
-  console.log('\n💡 Tip: Use the badge HTML to create a visual badge image for sharing!')
-  console.log('💡 Tip: The markdown review is comprehensive and ready for documentation!')
-  console.log(
-    '💡 Note: Command line mode uses placeholder metrics. Use /wfc-review for real data collection.'
-  )
+  displayOutputs(name, outputs).then(() => {
+    console.log('\n💡 Tip: Use the badge HTML to create a visual badge image for sharing!')
+    console.log('💡 Tip: The markdown review is comprehensive and ready for documentation!')
+    console.log(
+      '💡 Note: Command line mode uses placeholder metrics. Use /wfc-review for real data collection.'
+    )
+  })
 } else {
   console.log('🍽️  WFC Review Generator - Interactive Mode')
   console.log('\nWorkflow when invoked via /wfc-review:')
