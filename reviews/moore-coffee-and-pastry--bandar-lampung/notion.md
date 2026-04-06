@@ -6,7 +6,7 @@
 
 | Property           | Value                       |
 | :----------------- | :-------------------------- |
-| **Rating**         | 4.0/5                       |
+| **Rating**         | 4/5                         |
 | **WiFi**           | 50 Mbps                     |
 | **Temp**           | 22°C                        |
 | **Power Access**   | Available                   |

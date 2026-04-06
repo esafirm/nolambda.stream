@@ -291,7 +291,7 @@ function generateBadgeHtml(
         </div>
 
         <div class="rating-container">
-            <div class="rating-box">${rating} / 5.0</div>
+            <div class="rating-box">${Number(rating)} / 5</div>
             <div style="font-size: 20px;">${stars}</div>
         </div>
 
@@ -349,7 +349,7 @@ function generateMarkdownReview(
   return `# ${name} @ ${location}
 
 ## 📊 Rating
-**${rating}/5** ${stars}
+**${Number(rating)}/5** ${stars}
 
 ## 📍 Location Context
 **Reviewer Location:** ${currentLocation}
@@ -424,7 +424,7 @@ function generateNotionMarkdown(
 ## 📋 Properties
 | Property | Value |
 | :--- | :--- |
-| **Rating** | ${rating}/5 |
+| **Rating** | ${Number(rating)}/5 |
 | **WiFi** | ${wifiSpeed} |
 | **Temp** | ${temperature} |
 | **Power Access** | ${powerOutlets} |
@@ -574,7 +574,7 @@ function generateReviewOutputs(
   // Google Maps Review Format
   const googleMapsReview = `
 ${name} @ ${location}
-Rating: ${rating}/5 ${stars}
+Rating: ${Number(rating)}/5 ${stars}
 
 Quick Summary: ${verdict}
 
@@ -669,7 +669,7 @@ async function displayOutputs(name, outputs) {
   console.log('✨'.repeat(25))
 
   console.log(`\n📍 Place: ${name}`)
-  console.log(`⭐ Rating: ${outputs.wfcSuitability} (${data.rating || 'N/A'}/5)`)
+  console.log(`⭐ Rating: ${outputs.wfcSuitability} (${Number(data.rating) || 'N/A'}/5)`)
 
   console.log('\n📦 REVIEW PACKAGE GENERATED:')
   console.log(`📁 Path: ${dir}`)

@@ -87,7 +87,9 @@ export default function WFCReviews() {
                     </p>
                   </div>
                   <div className="flex items-center gap-4">
-                    <div className="text-lg font-bold text-primary-500">{review.data.rating}/5</div>
+                    <div className="text-lg font-bold text-primary-500">
+                      {Number(review.data.rating)}/5
+                    </div>
                     <div
                       className={`rounded px-3 py-1 text-xs font-medium ${
                         review.data.wfcSuitability === 'Excellent'
