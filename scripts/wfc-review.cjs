@@ -779,5 +779,7 @@ if (args.length > 0) {
   console.log('  node scripts/wfc_review.cjs "Name" [Location] [Rating] [GoogleMapsLink]')
   console.log('\nExamples:')
   console.log('  node scripts/wfc_review.cjs "Starbucks"')
-  console.log('  node scripts/wfc_review.cjs "Chatime" "Chatswood" 4.5 "https://maps.app.goo.gl/..."')
+  console.log(
+    '  node scripts/wfc_review.cjs "Chatime" "Chatswood" 4.5 "https://maps.app.goo.gl/..."'
+  )
 }
