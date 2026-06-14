@@ -12,7 +12,7 @@ const eslintConfig = [
   js.configs.recommended,
   // Ignore patterns
   {
-    ignores: ['node_modules/**', '.next/**'],
+    ignores: ['node_modules/**', '.next/**', 'next-env.d.ts'],
   },
   // JavaScript/JSX files
   {

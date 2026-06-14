@@ -92,5 +92,14 @@
     "*.+(js|jsx|ts|tsx|json|css|md|mdx)": [
       "prettier --write"
     ]
+  },
+  "pnpm": {
+    "onlyBuiltDependencies": [
+      "deasync",
+      "esbuild",
+      "puppeteer",
+      "sharp",
+      "unrs-resolver"
+    ]
   }
 }
