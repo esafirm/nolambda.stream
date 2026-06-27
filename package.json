@@ -5,9 +5,9 @@
   "private": true,
   "scripts": {
     "start": "cross-env SOCKET=true node ./scripts/next-remote-watch.js ./data",
-    "dev": "next dev -H 0.0.0.0 --webpack",
-    "dev:expose": "concurrently \"pnpm run dev\" \"lt --port 3000\"",
-    "dev:tunnel": "lt --port 3000",
+    "dev": "next dev -H 0.0.0.0 -p 3500 --webpack",
+    "dev:expose": "concurrently \"pnpm run dev\" \"lt --port 3500\"",
+    "dev:tunnel": "lt --port 3500",
     "build": "next build && node ./scripts/generate-sitemap",
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
