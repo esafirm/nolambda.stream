@@ -8,6 +8,7 @@ import siteMetadata from '../data/siteMetadata.ts'
   const pages = await globby([
     'pages/*.js',
     'pages/*.tsx',
+    'pages/tools/*.tsx',
     'data/posts/**/*.mdx',
     'data/posts/**/*.md',
     'public/tags/**/*.xml',
