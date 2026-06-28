@@ -35,6 +35,86 @@ const formatIDR = (num: number) =>
 
 const formatNum = (num: number) => new Intl.NumberFormat('id-ID').format(num)
 
+function parseDecimalStr(s: string): number {
+  if (s.includes(',')) {
+    return parseFloat(s.replace(/\./g, '').replace(',', '.')) || 0
+  }
+  if (/\.\d{1,2}$/.test(s)) {
+    return parseFloat(s) || 0
+  }
+  return parseFloat(s.replace(/\./g, '')) || 0
+}
+
+function parseIndonesianNumber(val: string): number {
+  let s = val.trim()
+  s = s.replace(/^[Rr][Pp]\s*/, '').trim()
+  if (!s) return 0
+
+  let multiplier = 1
+  const suffixMatch = s.match(/\s*(miliar|milyar|m|juta|jt|ribu|rb|k)\s*$/i)
+  if (suffixMatch) {
+    const sfx = suffixMatch[1].toLowerCase()
+    if (sfx === 'miliar' || sfx === 'milyar' || sfx === 'm') {
+      multiplier = 1_000_000_000
+    } else if (sfx === 'juta' || sfx === 'jt') {
+      multiplier = 1_000_000
+    } else if (sfx === 'ribu' || sfx === 'rb' || sfx === 'k') {
+      multiplier = 1_000
+    }
+    s = s.slice(0, suffixMatch.index).trim()
+  }
+
+  s = s.replace(/\s+/g, '')
+  if (!s) return 0
+
+  return Math.round(parseDecimalStr(s) * multiplier)
+}
+
+function evalMathExpression(val: string): number {
+  let s = val.trim()
+  if (!s) return 0
+
+  s = s.replace(/\s*[Rr][Pp]\s*/g, ' ').trim()
+
+  s = s.replace(/([\d.,]+)\s*(miliar|milyar|m|juta|jt|ribu|rb|k)\b/gi, (_m, num, suffix) => {
+    const sfx = suffix.toLowerCase()
+    let mult = 1
+    if (sfx === 'miliar' || sfx === 'milyar' || sfx === 'm') mult = 1_000_000_000
+    else if (sfx === 'juta' || sfx === 'jt') mult = 1_000_000
+    else if (sfx === 'ribu' || sfx === 'rb' || sfx === 'k') mult = 1_000
+    return String(Math.round(parseDecimalStr(num) * mult))
+  })
+
+  s = s.replace(/([\d.,]+)/g, (_m, num) => String(parseDecimalStr(num)))
+  s = s.replace(/[^\d+\-*/().\s]/g, '')
+
+  if (!s) return 0
+
+  try {
+    return Math.round(new Function('return (' + s + ')')())
+  } catch {
+    return 0
+  }
+}
+
+function evalAnswer(val: string): { amount: number; isYearly: boolean } {
+  const lower = val.toLowerCase()
+  const hasYearlyKeyword = /\b(tahun|tahunan|yearly|annual|annually|pertahun|setahun)\b/.test(lower)
+  const hasDivision = /\/\s*\d/.test(val)
+
+  const expr = val.replace(
+    /\b(tahun|tahunan|yearly|annual|annually|pertahun|setahun|bulan|bulanan|monthly|month)\b/gi,
+    ''
+  )
+
+  const amount = evalMathExpression(expr)
+
+  return {
+    amount: hasYearlyKeyword && !hasDivision ? Math.round(amount / 12) : amount,
+    isYearly: hasYearlyKeyword && !hasDivision,
+  }
+}
+
 const CATEGORY_GROUPS = [
   { key: 'Housing', label: 'Housing', color: 'bg-teal-500' },
   { key: 'Food', label: 'Food & Dining', color: 'bg-emerald-500' },
@@ -238,7 +318,15 @@ function CategoryBar({
 
 export default function MonthlyExpense() {
   const [mode, setMode] = useState<Mode>('select')
-  const [expenses, setExpenses] = useState<ExpenseEntry[]>([])
+  const [expenses, setExpenses] = useState<ExpenseEntry[]>(() => {
+    if (typeof window === 'undefined') return []
+    try {
+      const saved = localStorage.getItem('monthly-expenses')
+      return saved ? JSON.parse(saved) : []
+    } catch {
+      return []
+    }
+  })
   const [importText, setImportText] = useState('')
   const [isAnalyzing, setIsAnalyzing] = useState(false)
   const [analyzeError, setAnalyzeError] = useState('')
@@ -254,9 +342,11 @@ export default function MonthlyExpense() {
   const [isGrilling, setIsGrilling] = useState(false)
   const [grillQuestions, setGrillQuestions] = useState<Question[]>([])
   const [grillQIndex, setGrillQIndex] = useState(0)
+  const [isEditingExpenses, setIsEditingExpenses] = useState(false)
 
   const chatEndRef = useRef<HTMLDivElement>(null)
   const inputRef = useRef<HTMLInputElement>(null)
+  const lastAnswerAddedRef = useRef(false)
 
   useEffect(() => {
     chatEndRef.current?.scrollIntoView({ behavior: 'smooth' })
@@ -267,6 +357,14 @@ export default function MonthlyExpense() {
       inputRef.current?.focus()
     }
   }, [qnaPhase, currentQIndex, grillQIndex])
+
+  useEffect(() => {
+    try {
+      localStorage.setItem('monthly-expenses', JSON.stringify(expenses))
+    } catch {
+      /* empty */
+    }
+  }, [expenses])
 
   function startImport() {
     setMode('import')
@@ -353,7 +451,7 @@ export default function MonthlyExpense() {
   function handleParsedEdit(index: number, value: string) {
     if (!parsedExpenses) return
     const next = [...parsedExpenses]
-    next[index] = { ...next[index], amount: parseInt(value.replace(/\D/g, '')) || 0 }
+    next[index] = { ...next[index], amount: parseIndonesianNumber(value) }
     setParsedExpenses(next)
   }
 
@@ -373,9 +471,16 @@ export default function MonthlyExpense() {
   function handleQuestionAnswer(val: string) {
     const q = activeQuestions[currentQIndex]
     const isSkip = val.toLowerCase() === 'skip'
-    const num = isSkip ? 0 : parseInt(val.replace(/\D/g, '')) || 0
+    const { amount: num, isYearly } = isSkip ? { amount: 0, isYearly: false } : evalAnswer(val)
 
-    setMessages((prev) => [...prev, { role: 'user', text: isSkip ? 'Skipped' : formatIDR(num) }])
+    lastAnswerAddedRef.current = num > 0
+    setMessages((prev) => [
+      ...prev,
+      {
+        role: 'user',
+        text: isSkip ? 'Skipped' : formatIDR(num) + (isYearly ? '/bln' : ''),
+      },
+    ])
 
     if (num > 0) {
       setExpenses((prev) => [...prev, { category: q.subcategory, amount: num, group: q.group }])
@@ -407,9 +512,16 @@ export default function MonthlyExpense() {
   function handleGrillAnswer(val: string) {
     const q = grillQuestions[grillQIndex]
     const isSkip = val.toLowerCase() === 'skip'
-    const num = isSkip ? 0 : parseInt(val.replace(/\D/g, '')) || 0
+    const { amount: num, isYearly } = isSkip ? { amount: 0, isYearly: false } : evalAnswer(val)
 
-    setMessages((prev) => [...prev, { role: 'user', text: isSkip ? 'Skipped' : formatIDR(num) }])
+    lastAnswerAddedRef.current = num > 0
+    setMessages((prev) => [
+      ...prev,
+      {
+        role: 'user',
+        text: isSkip ? 'Skipped' : formatIDR(num) + (isYearly ? '/bln' : ''),
+      },
+    ])
 
     if (num > 0) {
       setExpenses((prev) => [...prev, { category: q.subcategory, amount: num, group: q.group }])
@@ -432,6 +544,26 @@ export default function MonthlyExpense() {
           { role: 'assistant', text: "Excellent! Here's your complete expense breakdown." },
         ])
       }, 300)
+    }
+  }
+
+  function handleEditLastAnswer() {
+    setMessages((prev) => {
+      for (let i = prev.length - 1; i >= 0; i--) {
+        if (prev[i].role === 'user') return prev.slice(0, i)
+      }
+      return prev
+    })
+
+    if (lastAnswerAddedRef.current) {
+      setExpenses((prev) => prev.slice(0, -1))
+      lastAnswerAddedRef.current = false
+    }
+
+    if (qnaPhase === 'questioning') {
+      setCurrentQIndex((prev) => Math.max(0, prev - 1))
+    } else if (qnaPhase === 'grilling') {
+      setGrillQIndex((prev) => Math.max(0, prev - 1))
     }
   }
 
@@ -502,20 +634,38 @@ export default function MonthlyExpense() {
       const g = assignGroup(e.category)
       grouped[g] = (grouped[g] || 0) + e.amount
     }
-    return CATEGORY_GROUPS.map((g) => ({
-      ...g,
-      amount: grouped[g.key] || 0,
-    })).filter((g) => g.amount > 0)
+    return CATEGORY_GROUPS.filter((g) => g.key !== 'Savings')
+      .map((g) => ({
+        ...g,
+        amount: grouped[g.key] || 0,
+      }))
+      .filter((g) => g.amount > 0)
   }
 
   const groupTotals = calcGroupTotals()
   const grandTotal = groupTotals.reduce((s, g) => s + g.amount, 0)
-  const hasMissingCategories = PREDEFINED_QUESTIONS.some(
+  const savingsAmount = expenses
+    .filter((e) => assignGroup(e.category) === 'Savings')
+    .reduce((s, e) => s + e.amount, 0)
+  const hasMissingCategories = PREDEFINED_QUESTIONS.filter((q) => q.group !== 'Savings').some(
     (q) =>
       !expenses.some(
         (e) => e.category.toLowerCase() === q.subcategory.toLowerCase() && e.amount > 0
       )
   )
+
+  function handleExpenseAmountChange(index: number, value: string) {
+    const amount = parseIndonesianNumber(value)
+    setExpenses((prev) => {
+      const next = [...prev]
+      next[index] = { ...next[index], amount }
+      return next
+    })
+  }
+
+  function handleDeleteExpense(index: number) {
+    setExpenses((prev) => prev.filter((_, i) => i !== index))
+  }
 
   function handleReset() {
     setMode('select')
@@ -529,7 +679,21 @@ export default function MonthlyExpense() {
     setGrillQuestions([])
     setGrillQIndex(0)
     setIsGrilling(false)
+    setIsEditingExpenses(false)
+    lastAnswerAddedRef.current = false
+    try {
+      localStorage.removeItem('monthly-expenses')
+    } catch {
+      /* empty */
+    }
   }
+
+  const lastUserMsgIndex = (() => {
+    for (let i = messages.length - 1; i >= 0; i--) {
+      if (messages[i].role === 'user') return i
+    }
+    return -1
+  })()
 
   return (
     <>
@@ -542,7 +706,7 @@ export default function MonthlyExpense() {
           <div className="flex items-center gap-3">
             {mode !== 'select' && (
               <button
-                onClick={handleReset}
+                onClick={() => setMode('select')}
                 className="rounded-lg p-2 text-gray-400 transition-colors hover:bg-gray-100 hover:text-gray-600 dark:hover:bg-gray-800 dark:hover:text-gray-300"
               >
                 <svg
@@ -575,51 +739,102 @@ export default function MonthlyExpense() {
 
         <div className="py-8">
           {mode === 'select' && (
-            <div className="mx-auto grid max-w-2xl gap-6 sm:grid-cols-2">
-              <ModeCard
-                icon={
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-10 w-10"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
-                    />
-                  </svg>
-                }
-                title="Import Data"
-                desc="Paste your expense records from Excel, CSV, or notes. AI will parse and organize them."
-                badge="Paste & Analyze"
-                onClick={startImport}
-              />
-              <ModeCard
-                icon={
-                  <svg
-                    xmlns="http://www.w3.org/2000/svg"
-                    className="h-10 w-10"
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    strokeWidth={1.5}
-                  >
-                    <path
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
-                    />
-                  </svg>
-                }
-                title="Chat with me"
-                desc="Answer a few guided questions about your spending categories one at a time."
-                badge="Interactive Q&A"
-                onClick={startQna}
-              />
+            <div className="mx-auto max-w-2xl">
+              {expenses.length > 0 && (
+                <div className="mb-6 rounded-2xl border border-gray-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-900">
+                  <div className="mb-4 flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-medium uppercase tracking-wider text-gray-400">
+                        Previous Session
+                      </p>
+                      <p className="mt-1 text-2xl font-extrabold text-gray-900 dark:text-gray-100">
+                        {formatIDR(grandTotal)}
+                      </p>
+                    </div>
+                    <div className="flex flex-col gap-2">
+                      <button
+                        onClick={() => setMode('results')}
+                        className="rounded-xl bg-primary-600 px-5 py-2 text-sm font-semibold text-white transition-all hover:bg-primary-700"
+                      >
+                        View Details
+                      </button>
+                      <button
+                        onClick={startImport}
+                        className="rounded-xl border border-gray-300 px-5 py-2 text-sm font-medium text-gray-600 transition-all hover:bg-gray-50 dark:border-gray-600 dark:text-gray-400 dark:hover:bg-gray-800"
+                      >
+                        Add More
+                      </button>
+                      <button
+                        onClick={handleReset}
+                        className="text-xs font-medium text-gray-400 underline transition-colors hover:text-gray-600 dark:hover:text-gray-300"
+                      >
+                        Start Fresh
+                      </button>
+                    </div>
+                  </div>
+                  <div className="space-y-3">
+                    {groupTotals.map((g, i) => (
+                      <CategoryBar
+                        key={g.key}
+                        label={g.label}
+                        amount={g.amount}
+                        total={grandTotal}
+                        color={g.color}
+                        index={i}
+                      />
+                    ))}
+                  </div>
+                  <div className="mt-3 text-right text-xs text-gray-400">
+                    {expenses.length} item{expenses.length > 1 ? 's' : ''}
+                  </div>
+                </div>
+              )}
+              <div className="grid gap-6 sm:grid-cols-2">
+                <ModeCard
+                  icon={
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-10 w-10"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M19.5 14.25v-2.625a3.375 3.375 0 00-3.375-3.375h-1.5A1.125 1.125 0 0113.5 7.125v-1.5a3.375 3.375 0 00-3.375-3.375H8.25m0 12.75h7.5m-7.5 3H12M10.5 2.25H5.625c-.621 0-1.125.504-1.125 1.125v17.25c0 .621.504 1.125 1.125 1.125h12.75c.621 0 1.125-.504 1.125-1.125V11.25a9 9 0 00-9-9z"
+                      />
+                    </svg>
+                  }
+                  title="Import Data"
+                  desc="Paste your expense records from Excel, CSV, or notes. AI will parse and organize them."
+                  badge="Paste & Analyze"
+                  onClick={startImport}
+                />
+                <ModeCard
+                  icon={
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      className="h-10 w-10"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      strokeWidth={1.5}
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M20.25 8.511c.884.284 1.5 1.128 1.5 2.097v4.286c0 1.136-.847 2.1-1.98 2.193-.34.027-.68.052-1.02.072v3.091l-3-3c-1.354 0-2.694-.055-4.02-.163a2.115 2.115 0 01-.825-.242m9.345-8.334a2.126 2.126 0 00-.476-.095 48.64 48.64 0 00-8.048 0c-1.131.094-1.976 1.057-1.976 2.192v4.286c0 .837.46 1.58 1.155 1.951m9.345-8.334V6.637c0-1.621-1.152-3.026-2.76-3.235A48.455 48.455 0 0011.25 3c-2.115 0-4.198.137-6.24.402-1.608.209-2.76 1.614-2.76 3.235v6.226c0 1.621 1.152 3.026 2.76 3.235.577.075 1.157.14 1.74.194V21l4.155-4.155"
+                      />
+                    </svg>
+                  }
+                  title="Chat with me"
+                  desc="Answer a few guided questions about your spending categories one at a time."
+                  badge="Interactive Q&A"
+                  onClick={startQna}
+                />
+              </div>
             </div>
           )}
 
@@ -630,7 +845,7 @@ export default function MonthlyExpense() {
                   <textarea
                     value={importText}
                     onChange={(e) => setImportText(e.target.value)}
-                    placeholder={`Paste your expense data here...\n\nExample:\nRent: Rp 5.000.000\nElectricity: Rp 500.000\nGroceries: Rp 1.500.000\nTransport: Rp 1.200.000\nInsurance: Rp 400.000`}
+                    placeholder={`Paste your expense data here...\n\nExample:\nRent: Rp 5.000.000\nElectricity: Rp 500.000\nGroceries: Rp 1.500.000\nTransport: Rp 1.200.000\nInsurance: Rp 400.000\n\nTip: supports Indonesian notation (76jt, 500rb, 1,5jt)`}
                     rows={10}
                     className="block w-full rounded-xl border border-gray-300 bg-white p-4 text-sm text-gray-900 transition-all placeholder:text-gray-400 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100 dark:focus:border-primary-500"
                   />
@@ -751,7 +966,7 @@ export default function MonthlyExpense() {
                         </div>
                       )}
                       <div
-                        className={`max-w-[75%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
+                        className={`flex items-center gap-1.5 max-w-[75%] rounded-2xl px-4 py-2.5 text-sm leading-relaxed ${
                           msg.role === 'user'
                             ? 'bg-primary-500 text-white'
                             : 'bg-gray-100 text-gray-800 dark:bg-gray-800 dark:text-gray-200'
@@ -763,7 +978,25 @@ export default function MonthlyExpense() {
                             msg.role === 'user' && showAvatar ? '4px' : undefined,
                         }}
                       >
-                        {msg.text}
+                        <span className="flex-1">{msg.text}</span>
+                        {msg.role === 'user' &&
+                          i === lastUserMsgIndex &&
+                          (qnaPhase === 'questioning' || qnaPhase === 'grilling') && (
+                            <button
+                              onClick={handleEditLastAnswer}
+                              className="shrink-0 rounded-md p-1 text-white/60 transition-colors hover:bg-white/20 hover:text-white"
+                              title="Edit answer"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-3.5 w-3.5"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                              >
+                                <path d="M13.586 3.586a2 2 0 112.828 2.828l-.793.793-2.828-2.828.793-.793zM11.379 5.793L3 14.172V17h2.828l8.38-8.379-2.83-2.828z" />
+                              </svg>
+                            </button>
+                          )}
                       </div>
                     </div>
                   )
@@ -779,7 +1012,7 @@ export default function MonthlyExpense() {
                     inputMode="numeric"
                     value={inputValue}
                     onChange={(e) => setInputValue(e.target.value)}
-                    placeholder="Type amount (e.g. 5000000) or 'skip'..."
+                    placeholder="e.g. 5jt, 500rb, 46jt/12, 60jt/tahun, or 'skip'..."
                     className="block flex-1 rounded-xl border border-gray-300 bg-white px-4 py-2.5 text-sm text-gray-900 transition-all focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-100"
                   />
                   <button
@@ -837,6 +1070,17 @@ export default function MonthlyExpense() {
                   {formatIDR(grandTotal)}
                 </p>
               </div>
+
+              {savingsAmount > 0 && (
+                <div className="rounded-xl border border-dashed border-indigo-200 bg-indigo-50/50 p-5 text-center dark:border-indigo-900 dark:bg-indigo-900/20">
+                  <p className="text-xs font-medium uppercase tracking-wider text-indigo-400">
+                    Savings & Investment (not an expense)
+                  </p>
+                  <p className="mt-1 text-xl font-bold text-indigo-600 dark:text-indigo-400">
+                    {formatIDR(savingsAmount)}
+                  </p>
+                </div>
+              )}
 
               {groupTotals.length > 0 && (
                 <div className="space-y-4">
@@ -896,14 +1140,73 @@ export default function MonthlyExpense() {
                 </Link>
               </div>
 
-              <details className="group">
-                <summary className="cursor-pointer text-sm font-medium text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-200">
-                  Raw expense data
-                </summary>
-                <pre className="mt-2 overflow-x-auto rounded-xl bg-gray-50 p-4 text-xs text-gray-600 dark:bg-gray-800 dark:text-gray-400">
-                  {JSON.stringify(expenses, null, 2)}
-                </pre>
-              </details>
+              <div className="rounded-2xl border border-gray-200 dark:border-gray-700">
+                <div className="flex items-center justify-between border-b border-gray-200 px-4 py-3 dark:border-gray-700">
+                  <h3 className="text-sm font-semibold text-gray-900 dark:text-gray-100">
+                    All Expenses
+                  </h3>
+                  <button
+                    onClick={() => setIsEditingExpenses(!isEditingExpenses)}
+                    className="rounded-lg px-3 py-1.5 text-xs font-medium text-gray-500 transition-colors hover:bg-gray-100 hover:text-gray-700 dark:text-gray-400 dark:hover:bg-gray-800 dark:hover:text-gray-200"
+                  >
+                    {isEditingExpenses ? 'Done' : 'Edit'}
+                  </button>
+                </div>
+                <div className="divide-y divide-gray-100 dark:divide-gray-800">
+                  {expenses.length === 0 && (
+                    <p className="px-4 py-6 text-center text-sm text-gray-400">No expenses yet.</p>
+                  )}
+                  {expenses.map((e, i) => {
+                    const groupColor =
+                      CATEGORY_GROUPS.find((g) => g.key === e.group)?.color ?? 'bg-gray-500'
+                    return (
+                      <div key={i} className="flex items-center gap-3 px-4 py-3">
+                        <span className={`inline-block h-7 w-1 rounded-full ${groupColor}`} />
+                        <span className="min-w-0 flex-1 text-sm font-medium text-gray-700 dark:text-gray-300">
+                          {e.category}
+                        </span>
+                        {isEditingExpenses ? (
+                          <>
+                            <div className="relative w-36">
+                              <span className="pointer-events-none absolute inset-y-0 left-0 flex items-center pl-2 text-xs text-gray-400">
+                                Rp
+                              </span>
+                              <input
+                                type="text"
+                                inputMode="numeric"
+                                value={formatNum(e.amount)}
+                                onChange={(ev) => handleExpenseAmountChange(i, ev.target.value)}
+                                className="block w-full rounded-lg border border-gray-200 bg-white py-1.5 pl-8 pr-2.5 text-right text-sm text-gray-900 focus:border-primary-500 focus:ring-2 focus:ring-primary-500/20 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-100"
+                              />
+                            </div>
+                            <button
+                              onClick={() => handleDeleteExpense(i)}
+                              className="rounded-lg p-1.5 text-gray-400 transition-colors hover:bg-red-50 hover:text-red-500 dark:hover:bg-red-900/20"
+                            >
+                              <svg
+                                xmlns="http://www.w3.org/2000/svg"
+                                className="h-4 w-4"
+                                viewBox="0 0 20 20"
+                                fill="currentColor"
+                              >
+                                <path
+                                  fillRule="evenodd"
+                                  d="M9 2a1 1 0 00-.894.553L7.382 4H4a1 1 0 000 2v10a2 2 0 002 2h8a2 2 0 002-2V6a1 1 0 100-2h-3.382l-.724-1.447A1 1 0 0011 2H9zM7 8a1 1 0 012 0v6a1 1 0 11-2 0V8zm5-1a1 1 0 00-1 1v6a1 1 0 102 0V8a1 1 0 00-1-1z"
+                                  clipRule="evenodd"
+                                />
+                              </svg>
+                            </button>
+                          </>
+                        ) : (
+                          <span className="text-sm font-medium text-gray-900 dark:text-gray-100">
+                            {formatIDR(e.amount)}
+                          </span>
+                        )}
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
             </div>
           )}
         </div>
