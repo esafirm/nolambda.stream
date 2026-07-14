@@ -6,6 +6,7 @@ visited:
     - ID
     - SA
     - SG
+    - MY
   indonesia:
     - JK
     - JB
@@ -14,9 +15,16 @@ visited:
     - BA
     - BT
     - YO
+    - SB
+    - SS
 planned:
-  world:
-    - MY
   indonesia:
     - NB
     - LA
+photos:
+  - url: https://lh3.googleusercontent.com/pw/AP1GczOVxw3DBtBf3g8juiKZ6WAXABwQxhu-1TU-Nme6x4ZVfIYGgwMYBNif0b8UXt5trMSiA606MyWvuS5HCKg6n_MPbVpkSM4qEH_HabK758XNhs-5qPta=w2400
+    caption: "🇲🇾 Malaysia"
+    location: "Malaysia"
+  - url: https://lh3.googleusercontent.com/pw/AP1GczOeCS-HlxcsLCIj_-fADy3AmUzAaXYR5Y-pM7NmSdE2Qc6zShgsyTg0ro417VVN5pw0WFE2jlSKnG5fHoqoQDqZgbNNxq24Eab2FXafgD7Sa3_6p4H3=w2400
+    caption: "🇸🇬 Singapore"
+    location: "Singapore"

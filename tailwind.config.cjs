@@ -18,6 +18,9 @@ module.exports = {
     'border-indigo-500',
     'border-green-500',
     'border-pink-500',
+    'shadow-indigo-500/10',
+    'shadow-green-500/10',
+    'shadow-pink-500/10',
   ],
   content: [
     './pages/**/*.js',
