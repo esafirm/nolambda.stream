@@ -101,6 +101,8 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
     return members && members.length > 0 ? [members[0]] : []
   })
 
+  const [filter, setFilter] = useState<'all' | 'tracked'>('all')
+
   const toggleMemberSelection = (memberToToggle: Member) => {
     setSelectedMembers((prevSelected) => {
       if (prevSelected.length === 1 && prevSelected[0].name === memberToToggle.name) {
@@ -380,6 +382,23 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
             </div>
           </div>
 
+          <div className="mb-8 flex flex-wrap items-center gap-2">
+            {(['all', 'tracked'] as const).map((option) => (
+              <button
+                key={option}
+                type="button"
+                onClick={() => setFilter(option)}
+                className={`rounded-lg px-4 py-2 text-sm font-semibold transition-colors ${
+                  filter === option
+                    ? 'bg-gray-900 text-white dark:bg-gray-100 dark:text-gray-900'
+                    : 'border border-gray-200 bg-white text-gray-600 hover:border-gray-300 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-400'
+                }`}
+              >
+                {option === 'all' ? 'All' : 'Visited & Want to go'}
+              </button>
+            ))}
+          </div>
+
           {selectedMembers.length > 0 && (
             <div className="mb-16 grid grid-cols-1 gap-10 lg:grid-cols-2">
               <section>
@@ -389,45 +408,51 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
                     ({worldVisited}/{nations.length})
                   </span>
                 </h2>
-                <div className="space-y-1.5">
-                  {nations.map((nation) => {
-                    const visitingMember = getVisitingMember(nation.code, 'world')
-                    const planningMember = getPlanningMember(nation.code, 'world')
-                    const visited = !!visitingMember
-                    const planned = !!planningMember && !visited
-                    const colors =
-                      colorMap[visitingMember?.color || planningMember?.color || 'indigo-500']
+                <div className="max-h-[48rem] space-y-1.5 overflow-y-auto pr-1">
+                  {nations
+                    .filter((nation) => {
+                      const visited = !!getVisitingMember(nation.code, 'world')
+                      const planned = !!getPlanningMember(nation.code, 'world') && !visited
+                      return filter === 'all' || visited || planned
+                    })
+                    .map((nation) => {
+                      const visitingMember = getVisitingMember(nation.code, 'world')
+                      const planningMember = getPlanningMember(nation.code, 'world')
+                      const visited = !!visitingMember
+                      const planned = !!planningMember && !visited
+                      const colors =
+                        colorMap[visitingMember?.color || planningMember?.color || 'indigo-500']
 
-                    return (
-                      <div
-                        key={nation.code}
-                        className={`flex items-center justify-between rounded-lg px-4 py-2.5 transition-colors ${
-                          visited || planned
-                            ? 'bg-gray-50 dark:bg-gray-800/80'
-                            : 'text-gray-500 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800/50'
-                        }`}
-                      >
-                        <span className="flex items-center gap-2 text-sm">
-                          <span className="text-base">{getFlagEmoji(nation.code)}</span>
-                          <span>{nation.name}</span>
-                        </span>
-                        {visited && (
-                          <span
-                            className={`animate-jumpy rounded-md ${colors.bg} px-2 py-0.5 text-[10px] font-bold text-white`}
-                          >
-                            Visited
+                      return (
+                        <div
+                          key={nation.code}
+                          className={`flex items-center justify-between rounded-lg px-4 py-2.5 transition-colors ${
+                            visited || planned
+                              ? 'bg-gray-50 dark:bg-gray-800/80'
+                              : 'text-gray-500 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800/50'
+                          }`}
+                        >
+                          <span className="flex items-center gap-2 text-sm">
+                            <span className="text-base">{getFlagEmoji(nation.code)}</span>
+                            <span>{nation.name}</span>
                           </span>
-                        )}
-                        {planned && (
-                          <span
-                            className={`animate-jumpy rounded-md border border-dashed ${colors.border} ${colors.text} px-2 py-0.5 text-[10px] font-bold`}
-                          >
-                            Planned
-                          </span>
-                        )}
-                      </div>
-                    )
-                  })}
+                          {visited && (
+                            <span
+                              className={`animate-jumpy rounded-md ${colors.bg} px-2 py-0.5 text-[10px] font-bold text-white`}
+                            >
+                              Visited
+                            </span>
+                          )}
+                          {planned && (
+                            <span
+                              className={`animate-jumpy rounded-md border border-dashed ${colors.border} ${colors.text} px-2 py-0.5 text-[10px] font-bold`}
+                            >
+                              Planned
+                            </span>
+                          )}
+                        </div>
+                      )
+                    })}
                 </div>
               </section>
 
@@ -438,42 +463,48 @@ const WorldChecks: React.FC<WorldChecksProps> = ({ nations, provinces, members }
                     ({indonesiaVisited}/{provinces.length})
                   </span>
                 </h2>
-                <div className="space-y-1.5">
-                  {provinces.map((province) => {
-                    const visitingMember = getVisitingMember(province.code, 'indonesia')
-                    const planningMember = getPlanningMember(province.code, 'indonesia')
-                    const visited = !!visitingMember
-                    const planned = !!planningMember && !visited
-                    const colors =
-                      colorMap[visitingMember?.color || planningMember?.color || 'indigo-500']
+                <div className="max-h-[48rem] space-y-1.5 overflow-y-auto pr-1">
+                  {provinces
+                    .filter((province) => {
+                      const visited = !!getVisitingMember(province.code, 'indonesia')
+                      const planned = !!getPlanningMember(province.code, 'indonesia') && !visited
+                      return filter === 'all' || visited || planned
+                    })
+                    .map((province) => {
+                      const visitingMember = getVisitingMember(province.code, 'indonesia')
+                      const planningMember = getPlanningMember(province.code, 'indonesia')
+                      const visited = !!visitingMember
+                      const planned = !!planningMember && !visited
+                      const colors =
+                        colorMap[visitingMember?.color || planningMember?.color || 'indigo-500']
 
-                    return (
-                      <div
-                        key={province.code}
-                        className={`flex items-center justify-between rounded-lg px-4 py-2.5 transition-colors ${
-                          visited || planned
-                            ? 'bg-gray-50 dark:bg-gray-800/80'
-                            : 'text-gray-500 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800/50'
-                        }`}
-                      >
-                        <span className="text-sm">{province.name}</span>
-                        {visited && (
-                          <span
-                            className={`animate-jumpy rounded-md ${colors.bg} px-2 py-0.5 text-[10px] font-bold text-white`}
-                          >
-                            Visited
-                          </span>
-                        )}
-                        {planned && (
-                          <span
-                            className={`animate-jumpy rounded-md border border-dashed ${colors.border} ${colors.text} px-2 py-0.5 text-[10px] font-bold`}
-                          >
-                            Planned
-                          </span>
-                        )}
-                      </div>
-                    )
-                  })}
+                      return (
+                        <div
+                          key={province.code}
+                          className={`flex items-center justify-between rounded-lg px-4 py-2.5 transition-colors ${
+                            visited || planned
+                              ? 'bg-gray-50 dark:bg-gray-800/80'
+                              : 'text-gray-500 hover:bg-gray-50 dark:text-gray-400 dark:hover:bg-gray-800/50'
+                          }`}
+                        >
+                          <span className="text-sm">{province.name}</span>
+                          {visited && (
+                            <span
+                              className={`animate-jumpy rounded-md ${colors.bg} px-2 py-0.5 text-[10px] font-bold text-white`}
+                            >
+                              Visited
+                            </span>
+                          )}
+                          {planned && (
+                            <span
+                              className={`animate-jumpy rounded-md border border-dashed ${colors.border} ${colors.text} px-2 py-0.5 text-[10px] font-bold`}
+                            >
+                              Planned
+                            </span>
+                          )}
+                        </div>
+                      )
+                    })}
                 </div>
               </section>
             </div>

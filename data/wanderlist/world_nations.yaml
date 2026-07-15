@@ -64,6 +64,8 @@
   code: SG
 - name: Malaysia
   code: MY
+- name: Taiwan
+  code: TW
 - name: Thailand
   code: TH
 - name: Vietnam
@@ -72,3 +74,59 @@
   code: PH
 - name: Indonesia
   code: ID
+- name: Portugal
+  code: PT
+- name: Ireland
+  code: IE
+- name: Iceland
+  code: IS
+- name: Poland
+  code: PL
+- name: Czech Republic
+  code: CZ
+- name: Hungary
+  code: HU
+- name: Croatia
+  code: HR
+- name: Cambodia
+  code: KH
+- name: Laos
+  code: LA
+- name: Nepal
+  code: NP
+- name: Sri Lanka
+  code: LK
+- name: Maldives
+  code: MV
+- name: Bhutan
+  code: BT
+- name: Qatar
+  code: QA
+- name: Oman
+  code: OM
+- name: Jordan
+  code: JO
+- name: Israel
+  code: IL
+- name: Morocco
+  code: MA
+- name: Kenya
+  code: KE
+- name: Tanzania
+  code: TZ
+- name: Mauritius
+  code: MU
+- name: Seychelles
+  code: SC
+- name: Peru
+  code: PE
+- name: Chile
+  code: CL
+- name: Colombia
+  code: CO
+- name: Costa Rica
+  code: CR
+- name: Cuba
+  code: CU
+- name: Fiji
+  code: FJ

@@ -13,6 +13,17 @@ visited:
     - BA
     - BT
     - YO
+planned:
+  world:
+    - TW
+    - KR
+    - TH
+    - VN
+    - JP
+    - CN
+  indonesia:
+    - AC
+    - BB
 photos:
   - url: https://lh3.googleusercontent.com/pw/AP1GczOVxw3DBtBf3g8juiKZ6WAXABwQxhu-1TU-Nme6x4ZVfIYGgwMYBNif0b8UXt5trMSiA606MyWvuS5HCKg6n_MPbVpkSM4qEH_HabK758XNhs-5qPta=w2400
     caption: "🇲🇾 Malaysia"
