@@ -12,8 +12,7 @@
     "serve": "next start",
     "analyze": "cross-env ANALYZE=true next build",
     "lint": "eslint --fix pages components lib layouts scripts",
-    "prepare": "husky install",
-    "generate-badges": "node scripts/generate-badges.js"
+    "prepare": "husky install"
   },
   "dependencies": {
     "@fontsource/inter": "4.5.2",
@@ -88,7 +87,6 @@
     "next-remote-watch": "^1.0.0",
     "prettier": "^2.5.1",
     "prettier-plugin-tailwindcss": "^0.1.4",
-    "puppeteer": "^24.40.0",
     "socket.io": "^4.4.0",
     "socket.io-client": "^4.4.0",
     "typescript": "^5.6",
@@ -111,7 +109,6 @@
     "onlyBuiltDependencies": [
       "deasync",
       "esbuild",
-      "puppeteer",
       "sharp",
       "unrs-resolver"
     ]

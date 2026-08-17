@@ -29,8 +29,8 @@ const tools = [
   {
     title: 'WFC Reviews',
     description:
-      'Work From Cafe reviews. Discover places suitable for remote work, complete with internet speed benchmarks, rating scores, and accessibility.',
-    href: '/wfc-reviews',
+      'A curated collection of work-from-cafe spots on Google Maps. Discover places suitable for remote work.',
+    href: 'https://maps.app.goo.gl/cfhaktcYSnGPpSj27',
     icon: (
       <svg
         xmlns="http://www.w3.org/2000/svg"
