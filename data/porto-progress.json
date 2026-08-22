@@ -1,0 +1,152 @@
+{
+  "meta": {
+    "stockbitTabs": ["PORTFOLIO", "ORDER", "HISTORY"],
+    "bibitPortfolioName": "SEKOLAH ANAKKKKK",
+    "gotradeGreetingName": "Esa"
+  },
+  "snapshots": {
+    "Now": {
+      "progressToRE": 43,
+      "platforms": [
+        { "key": "stockbit", "label": "Stockbit", "desc": "Local stocks", "pl": -3.2 },
+        { "key": "bibit", "label": "Bibit", "desc": "Mutual funds", "pl": 6.4 },
+        { "key": "gotrade", "label": "GoTrade", "desc": "US stocks", "pl": 2.1 }
+      ],
+      "stockbit": {
+        "portfolioPL": -2.8,
+        "holdings": [
+          { "symbol": "BFIN", "pl": -4.1, "redacted": false },
+          { "symbol": "PRDA", "pl": -2.7, "redacted": false },
+          { "symbol": "RAJA", "pl": -1.9, "redacted": false },
+          { "symbol": "????", "pl": -0.8, "redacted": true }
+        ]
+      },
+      "bibit": {
+        "value": 18450000,
+        "target": 50000000,
+        "allocations": [
+          { "name": "Pasar Uang", "percent": 40, "color": "emerald" },
+          { "name": "Obligasi", "percent": 18, "color": "sky" },
+          { "name": "Saham", "percent": 42, "color": "purple" }
+        ]
+      },
+      "gotrade": {
+        "portfolioPL": 3.6,
+        "positions": [
+          { "symbol": "AAPL", "name": "Apple Inc.", "pl": 5.4, "redacted": false },
+          { "symbol": "TSLA", "name": "Tesla, Inc.", "pl": -6.2, "redacted": false },
+          { "symbol": "MSFT", "name": "Microsoft Corp.", "pl": 3.1, "redacted": false },
+          { "symbol": "????", "name": "????", "pl": 1.0, "redacted": true }
+        ]
+      }
+    },
+    "Aug 2026": {
+      "progressToRE": 41,
+      "platforms": [
+        { "key": "stockbit", "label": "Stockbit", "desc": "Local stocks", "pl": -2.5 },
+        { "key": "bibit", "label": "Bibit", "desc": "Mutual funds", "pl": 5.8 },
+        { "key": "gotrade", "label": "GoTrade", "desc": "US stocks", "pl": 1.4 }
+      ],
+      "stockbit": {
+        "portfolioPL": -2.1,
+        "holdings": [
+          { "symbol": "BFIN", "pl": -3.6, "redacted": false },
+          { "symbol": "PRDA", "pl": -2.2, "redacted": false },
+          { "symbol": "RAJA", "pl": -1.5, "redacted": false }
+        ]
+      },
+      "bibit": {
+        "allocations": [
+          { "name": "Pasar Uang", "percent": 40, "color": "emerald" },
+          { "name": "Obligasi", "percent": 20, "color": "sky" },
+          { "name": "Saham", "percent": 40, "color": "purple" }
+        ]
+      },
+      "gotrade": {
+        "portfolioPL": 2.9,
+        "positions": [
+          { "symbol": "AAPL", "name": "Apple Inc.", "pl": 4.8, "redacted": false },
+          { "symbol": "TSLA", "name": "Tesla, Inc.", "pl": -5.5, "redacted": false },
+          { "symbol": "MSFT", "name": "Microsoft Corp.", "pl": 2.7, "redacted": false }
+        ]
+      }
+    },
+    "Jul 2026": {
+      "progressToRE": 35,
+      "platforms": [
+        { "key": "stockbit", "label": "Stockbit", "desc": "Local stocks", "pl": 1.8 },
+        { "key": "bibit", "label": "Bibit", "desc": "Mutual funds", "pl": 4.9 },
+        { "key": "gotrade", "label": "GoTrade", "desc": "US stocks", "pl": -0.6 }
+      ],
+      "stockbit": {
+        "holdings": [
+          { "symbol": "BFIN", "pl": 2.3, "redacted": false },
+          { "symbol": "PRDA", "pl": -1.1, "redacted": false },
+          { "symbol": "RAJA", "pl": 0.9, "redacted": false }
+        ]
+      },
+      "bibit": {
+        "allocations": [
+          { "name": "Pasar Uang", "percent": 45, "color": "emerald" },
+          { "name": "Obligasi", "percent": 25, "color": "sky" },
+          { "name": "Saham", "percent": 30, "color": "purple" }
+        ]
+      },
+      "gotrade": {
+        "positions": [
+          { "symbol": "AAPL", "name": "Apple Inc.", "pl": -1.4, "redacted": false },
+          { "symbol": "TSLA", "name": "Tesla, Inc.", "pl": -3.9, "redacted": false },
+          { "symbol": "MSFT", "name": "Microsoft Corp.", "pl": 1.8, "redacted": false }
+        ]
+      }
+    },
+    "Jun 2026": {
+      "progressToRE": 28,
+      "platforms": [
+        { "key": "stockbit", "label": "Stockbit", "desc": "Local stocks", "pl": 3.4 },
+        { "key": "bibit", "label": "Bibit", "desc": "Mutual funds", "pl": 3.7 },
+        { "key": "gotrade", "label": "GoTrade", "desc": "US stocks", "pl": 2.8 }
+      ],
+      "stockbit": {
+        "holdings": [
+          { "symbol": "BFIN", "pl": 3.8, "redacted": false },
+          { "symbol": "RAJA", "pl": 2.6, "redacted": false }
+        ]
+      },
+      "bibit": {
+        "allocations": [
+          { "name": "Pasar Uang", "percent": 48, "color": "emerald" },
+          { "name": "Obligasi", "percent": 27, "color": "sky" },
+          { "name": "Saham", "percent": 25, "color": "purple" }
+        ]
+      },
+      "gotrade": {
+        "positions": [
+          { "symbol": "AAPL", "name": "Apple Inc.", "pl": 2.9, "redacted": false },
+          { "symbol": "MSFT", "name": "Microsoft Corp.", "pl": 2.2, "redacted": false }
+        ]
+      }
+    },
+    "May 2026": {
+      "progressToRE": 20,
+      "platforms": [
+        { "key": "stockbit", "label": "Stockbit", "desc": "Local stocks", "pl": 0.9 },
+        { "key": "bibit", "label": "Bibit", "desc": "Mutual funds", "pl": -1.2 },
+        { "key": "gotrade", "label": "GoTrade", "desc": "US stocks", "pl": 1.6 }
+      ],
+      "stockbit": {
+        "holdings": [{ "symbol": "BFIN", "pl": 1.2, "redacted": false }]
+      },
+      "bibit": {
+        "allocations": [
+          { "name": "Pasar Uang", "percent": 50, "color": "emerald" },
+          { "name": "Obligasi", "percent": 30, "color": "sky" },
+          { "name": "Saham", "percent": 20, "color": "purple" }
+        ]
+      },
+      "gotrade": {
+        "positions": [{ "symbol": "AAPL", "name": "Apple Inc.", "pl": 1.1, "redacted": false }]
+      }
+    }
+  }
+}
