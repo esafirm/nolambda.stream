@@ -437,6 +437,7 @@ function GoTradeCard({
           ) : (
             <DeltaBadge pl={portfolioPL} variant="solid" />
           )}
+          <span className="text-xs font-normal text-emerald-950/70">(All time)</span>
         </div>
       </div>
 
