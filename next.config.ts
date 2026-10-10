@@ -93,6 +93,11 @@ export default withBundleAnalyzer({
   async redirects() {
     return [
       {
+        source: '/tools/portfolio-progress',
+        destination: 'https://menolakngantor.fyi/portfolio-progress',
+        permanent: true,
+      },
+      {
         source: '/linkedin',
         destination: 'https://www.linkedin.com/in/esa-firman-01b8096b/',
         permanent: false,
